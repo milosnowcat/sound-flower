@@ -18,7 +18,7 @@ if ($resultado_verificacion->num_rows > 0) {
     if ($conn->query($sql)) {
         header("Location: /crear-disquera.html");
     } else {
-        echo 'Ha ocurrido un error al insertar los datos >:3 <img src="assets/img/cat.jpeg" alt="gato">';
+        echo 'Ha ocurrido un error al insertar los datos >:3 <img src="/assets/img/cat.jpeg" alt="gato">';
     }
 }
 
