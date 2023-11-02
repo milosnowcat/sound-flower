@@ -10,7 +10,7 @@ include_once 'assets/php/conexion.php';
     <title>Document</title>
   </head>
   <body>
-    <form action="assets/php/crear-artista.php" method="post">
+    <form action="assets/php/crear-artista.php" method="post" enctype="multipart/form-data">
       <label for="nombre">Nombre</label>
       <input type="text" name="nombre" id="nombre" required />
       <label for="descripcion">Descripción</label>
