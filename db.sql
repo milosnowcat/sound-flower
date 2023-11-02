@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 01-11-2023 a las 18:17:39
--- Versión del servidor: 8.0.31
--- Versión de PHP: 8.0.26
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 02-11-2023 a las 20:26:23
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,12 +29,10 @@ USE sound;
 -- Estructura de tabla para la tabla `albumes`
 --
 
-DROP TABLE IF EXISTS `albumes`;
-CREATE TABLE IF NOT EXISTS `albumes` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Portada` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `id_Artista` int NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `albumes` (
+  `Id` int(11) NOT NULL,
+  `Portada` varchar(255) NOT NULL,
+  `id_Artista` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -43,15 +41,13 @@ CREATE TABLE IF NOT EXISTS `albumes` (
 -- Estructura de tabla para la tabla `artistas`
 --
 
-DROP TABLE IF EXISTS `artistas`;
-CREATE TABLE IF NOT EXISTS `artistas` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Foto` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Id_Disquera` int NOT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+CREATE TABLE `artistas` (
+  `Id` int(11) NOT NULL,
+  `Nombre` varchar(255) NOT NULL,
+  `Descripcion` text NOT NULL,
+  `Foto` varchar(255) NOT NULL,
+  `Id_Disquera` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `artistas`
@@ -74,7 +70,17 @@ INSERT INTO `artistas` (`Id`, `Nombre`, `Descripcion`, `Foto`, `Id_Disquera`) VA
 (14, 'Jvstin', 'Jvstin', '/assets/img/artists/Jvstin.jpg', 8),
 (15, 'Kim Petras', 'Kim Petras', '/assets/img/artists/Kim Petras.jpg', 9),
 (16, 'Sam Smith', 'Sam Smith', '/assets/img/artists/Sam Smith.jpg', 9),
-(17, 'LIT killah', 'LIT killah', '/assets/img/artists/LIT killah.jpg', 10);
+(17, 'LIT killah', 'LIT killah', '/assets/img/artists/LIT killah.jpg', 10),
+(18, 'Chris Isaak', 'Chris Isaak', '/assets/img/artists/Chris Isaak.jpg', 11),
+(19, 'Sickick', 'Sickick', '/assets/img/artists/Sickick.jpg', 12),
+(20, 'KALEO', 'KALEO', '/assets/img/artists/KALEO.jpg', 13),
+(21, 'Birdy', 'Birdy', '/assets/img/artists/Birdy.jpg', 14),
+(22, 'Sigma', 'Sigma', '/assets/img/artists/Sigma.jpg', 14),
+(23, 'Arctic Monkeys', 'Arctic Monkeys', '/assets/img/artists/Arctic Monkeys.jpg', 15),
+(24, 'Kat Nestel', 'Kat Nestel', '/assets/img/artists/Kat Nestel.jpg', 16),
+(25, 'Vicetone', 'Vicetone', '/assets/img/artists/Vicetone.jpg', 16),
+(26, 'Sickick', 'Sickick', '/assets/img/artists/Sickick.jpg', 17),
+(27, 'Tally Hall', 'Tally Hall', '/assets/img/artists/Tally Hall.jpg', 18);
 
 -- --------------------------------------------------------
 
@@ -82,11 +88,10 @@ INSERT INTO `artistas` (`Id`, `Nombre`, `Descripcion`, `Foto`, `Id_Disquera`) VA
 -- Estructura de tabla para la tabla `cacion_artista`
 --
 
-DROP TABLE IF EXISTS `cacion_artista`;
-CREATE TABLE IF NOT EXISTS `cacion_artista` (
-  `Id` int NOT NULL,
-  `Id_Cancion` int NOT NULL,
-  `Id_Artista` int NOT NULL
+CREATE TABLE `cacion_artista` (
+  `Id` int(11) NOT NULL,
+  `Id_Cancion` int(11) NOT NULL,
+  `Id_Artista` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -95,17 +100,15 @@ CREATE TABLE IF NOT EXISTS `cacion_artista` (
 -- Estructura de tabla para la tabla `canciones`
 --
 
-DROP TABLE IF EXISTS `canciones`;
-CREATE TABLE IF NOT EXISTS `canciones` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Archivo` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Duracion` int NOT NULL,
-  `Portada` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Numero` int NOT NULL,
-  `Id_Albun` int NOT NULL,
-  `Reproducciones` int NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `canciones` (
+  `Id` int(11) NOT NULL,
+  `Nombre` varchar(255) NOT NULL,
+  `Archivo` varchar(500) NOT NULL,
+  `Duracion` int(11) NOT NULL,
+  `Portada` varchar(500) NOT NULL,
+  `Numero` int(11) NOT NULL,
+  `Id_Albun` int(11) NOT NULL,
+  `Reproducciones` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -114,12 +117,10 @@ CREATE TABLE IF NOT EXISTS `canciones` (
 -- Estructura de tabla para la tabla `cancion_playlist`
 --
 
-DROP TABLE IF EXISTS `cancion_playlist`;
-CREATE TABLE IF NOT EXISTS `cancion_playlist` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_Playlist` int NOT NULL,
-  `Id_Cancion` int NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `cancion_playlist` (
+  `Id` int(11) NOT NULL,
+  `Id_Playlist` int(11) NOT NULL,
+  `Id_Cancion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -128,12 +129,10 @@ CREATE TABLE IF NOT EXISTS `cancion_playlist` (
 -- Estructura de tabla para la tabla `dislikes_usuario`
 --
 
-DROP TABLE IF EXISTS `dislikes_usuario`;
-CREATE TABLE IF NOT EXISTS `dislikes_usuario` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_Usuario` int NOT NULL,
-  `Id_Cancion` int NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `dislikes_usuario` (
+  `Id` int(11) NOT NULL,
+  `Id_Usuario` int(11) NOT NULL,
+  `Id_Cancion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -142,12 +141,10 @@ CREATE TABLE IF NOT EXISTS `dislikes_usuario` (
 -- Estructura de tabla para la tabla `favoritos`
 --
 
-DROP TABLE IF EXISTS `favoritos`;
-CREATE TABLE IF NOT EXISTS `favoritos` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_Usuario` int NOT NULL,
-  `Id_Artista` int NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `favoritos` (
+  `Id` int(11) NOT NULL,
+  `Id_Usuario` int(11) NOT NULL,
+  `Id_Artista` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -156,11 +153,9 @@ CREATE TABLE IF NOT EXISTS `favoritos` (
 -- Estructura de tabla para la tabla `generos`
 --
 
-DROP TABLE IF EXISTS `generos`;
-CREATE TABLE IF NOT EXISTS `generos` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `generos` (
+  `Id` int(11) NOT NULL,
+  `Nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -169,12 +164,10 @@ CREATE TABLE IF NOT EXISTS `generos` (
 -- Estructura de tabla para la tabla `generos_cancion`
 --
 
-DROP TABLE IF EXISTS `generos_cancion`;
-CREATE TABLE IF NOT EXISTS `generos_cancion` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_Genero` int NOT NULL,
-  `Id_Cancion` int NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `generos_cancion` (
+  `Id` int(11) NOT NULL,
+  `Id_Genero` int(11) NOT NULL,
+  `Id_Cancion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -183,12 +176,10 @@ CREATE TABLE IF NOT EXISTS `generos_cancion` (
 -- Estructura de tabla para la tabla `likes_usuario`
 --
 
-DROP TABLE IF EXISTS `likes_usuario`;
-CREATE TABLE IF NOT EXISTS `likes_usuario` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_Nombre` int NOT NULL,
-  `Id_Cancion` int NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `likes_usuario` (
+  `Id` int(11) NOT NULL,
+  `Id_Nombre` int(11) NOT NULL,
+  `Id_Cancion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -197,14 +188,12 @@ CREATE TABLE IF NOT EXISTS `likes_usuario` (
 -- Estructura de tabla para la tabla `playlists`
 --
 
-DROP TABLE IF EXISTS `playlists`;
-CREATE TABLE IF NOT EXISTS `playlists` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Foto` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Id_Usuario` int NOT NULL,
-  `Id_Publica` int NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `playlists` (
+  `Id` int(11) NOT NULL,
+  `Nombre` varchar(255) NOT NULL,
+  `Foto` varchar(500) NOT NULL,
+  `Id_Usuario` int(11) NOT NULL,
+  `Id_Publica` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -213,12 +202,10 @@ CREATE TABLE IF NOT EXISTS `playlists` (
 -- Estructura de tabla para la tabla `seguidos`
 --
 
-DROP TABLE IF EXISTS `seguidos`;
-CREATE TABLE IF NOT EXISTS `seguidos` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_Usuario` int NOT NULL,
-  `id_Artista` int NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `seguidos` (
+  `Id` int(11) NOT NULL,
+  `Id_Usuario` int(11) NOT NULL,
+  `id_Artista` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -227,17 +214,15 @@ CREATE TABLE IF NOT EXISTS `seguidos` (
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Correo` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Contraseña` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Esta_Suscrito` int NOT NULL DEFAULT '0',
-  `Es_Disquera` int NOT NULL DEFAULT '0',
-  `Es_Admin` int NOT NULL DEFAULT '0',
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+CREATE TABLE `usuarios` (
+  `Id` int(11) NOT NULL,
+  `Nombre` varchar(255) NOT NULL,
+  `Correo` varchar(255) NOT NULL,
+  `Contraseña` varchar(500) NOT NULL,
+  `Esta_Suscrito` int(11) NOT NULL DEFAULT 0,
+  `Es_Disquera` int(11) NOT NULL DEFAULT 0,
+  `Es_Admin` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -277,6 +262,158 @@ INSERT INTO `usuarios` (`Id`, `Nombre`, `Correo`, `Contraseña`, `Esta_Suscrito`
 (31, 'Big Machine Records', 'machine@soundflower.rahcode.com', '$2y$10$3vKPk8NPRldvYL7x5yO.9eaNtIMc0G0SoHp4jDsTGxg3IQIUfjq8a', 1, 1, 0),
 (32, 'OMORI', 'omori@soundflower.rahcode.com', '$2y$10$woS1txCeJoxkiLa/.TdFV.r4KX.tv5.SQn72tOkE73uPwJeb3dAJy', 1, 1, 0),
 (33, 'Pelo Music', 'pelo@soundflower.rahcode.com', '$2y$10$MOjUDKgW8ndH79Dcy2/J8O16sVrsnv8oJa57D/FJamid66RYhemVy', 1, 1, 0);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `albumes`
+--
+ALTER TABLE `albumes`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `artistas`
+--
+ALTER TABLE `artistas`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `canciones`
+--
+ALTER TABLE `canciones`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `cancion_playlist`
+--
+ALTER TABLE `cancion_playlist`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `dislikes_usuario`
+--
+ALTER TABLE `dislikes_usuario`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `favoritos`
+--
+ALTER TABLE `favoritos`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `generos`
+--
+ALTER TABLE `generos`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `generos_cancion`
+--
+ALTER TABLE `generos_cancion`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `likes_usuario`
+--
+ALTER TABLE `likes_usuario`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `playlists`
+--
+ALTER TABLE `playlists`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `seguidos`
+--
+ALTER TABLE `seguidos`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `albumes`
+--
+ALTER TABLE `albumes`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `artistas`
+--
+ALTER TABLE `artistas`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT de la tabla `canciones`
+--
+ALTER TABLE `canciones`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `cancion_playlist`
+--
+ALTER TABLE `cancion_playlist`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `dislikes_usuario`
+--
+ALTER TABLE `dislikes_usuario`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `favoritos`
+--
+ALTER TABLE `favoritos`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `generos`
+--
+ALTER TABLE `generos`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `generos_cancion`
+--
+ALTER TABLE `generos_cancion`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `likes_usuario`
+--
+ALTER TABLE `likes_usuario`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `playlists`
+--
+ALTER TABLE `playlists`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `seguidos`
+--
+ALTER TABLE `seguidos`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
