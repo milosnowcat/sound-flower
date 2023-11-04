@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2023 a las 18:35:13
+-- Tiempo de generación: 05-11-2023 a las 00:33:49
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -19,9 +19,9 @@ SET time_zone = "+00:00";
 
 --
 -- Base de datos: `sound`
-CREATE DATABASE sound CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci;
-USE sound;
 --
+CREATE DATABASE IF NOT EXISTS `sound` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci;
+USE `sound`;
 
 -- --------------------------------------------------------
 
@@ -95,7 +95,18 @@ INSERT INTO `artistas` (`Id`, `Nombre`, `Descripcion`, `Foto`, `Id_Disquera`) VA
 (39, 'Vicious Vampira', 'Vicious Vampira', '/assets/img/artists/Vicious Vampira.jpg', 23),
 (40, 'Ashnikko', 'Ashnikko', '/assets/img/artists/Ashnikko.jpg', 24),
 (41, 'Baby Tate', 'Baby Tate', '/assets/img/artists/Baby Tate.jpg', 24),
-(42, 'cupcakKe', 'cupcakKe', '/assets/img/artists/cupcakKe.jpg', 25);
+(42, 'cupcakKe', 'cupcakKe', '/assets/img/artists/cupcakKe.jpg', 25),
+(43, 'Tarune', 'Tarune', '/assets/img/artists/Tarune.jpg', 26),
+(44, 'Kanye West', 'Kanye West', '/assets/img/artists/Kanye West.jpg', 21),
+(45, 'El Cuarteto De Nos', 'El Cuarteto De Nos', '/assets/img/artists/El Cuarteto De Nos.jpg', 21),
+(46, 'Bad Bunny', 'Bad Bunny', '/assets/img/artists/Bad Bunny.jpg', 21),
+(47, 'Lana Del Rey', 'Lana Del Rey', '/assets/img/artists/Lana Del Rey.jpg', 27),
+(48, 'Ashnikko', 'Ashnikko', '/assets/img/artists/Ashnikko.jpg', 28),
+(49, 'Dwele', 'Dwele', '/assets/img/artists/Dwele.jpg', 7),
+(50, 'Kanye West', 'Kanye West', '/assets/img/artists/Kanye West.jpg', 7),
+(51, 'Ed Maverick', 'Ed Maverick', '/assets/img/artists/Ed Maverick.jpg', 1),
+(52, 'Muelas De Gallo', 'Muelas De Gallo', '/assets/img/artists/Muelas De Gallo.jpg', 1),
+(53, 'Daniel, Me Estás Matando', 'Daniel, Me Estás Matando', '/assets/img/artists/Daniel, Me Estás Matando.jpg', 29);
 
 -- --------------------------------------------------------
 
@@ -368,7 +379,7 @@ ALTER TABLE `albumes`
 -- AUTO_INCREMENT de la tabla `artistas`
 --
 ALTER TABLE `artistas`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT de la tabla `canciones`
