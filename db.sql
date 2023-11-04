@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2023 a las 20:26:23
+-- Tiempo de generación: 04-11-2023 a las 18:35:13
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -45,7 +45,7 @@ CREATE TABLE `artistas` (
   `Id` int(11) NOT NULL,
   `Nombre` varchar(255) NOT NULL,
   `Descripcion` text NOT NULL,
-  `Foto` varchar(255) NOT NULL,
+  `Foto` varchar(255) NOT NULL DEFAULT '/assets/img/artist.jpg',
   `Id_Disquera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
@@ -80,7 +80,22 @@ INSERT INTO `artistas` (`Id`, `Nombre`, `Descripcion`, `Foto`, `Id_Disquera`) VA
 (24, 'Kat Nestel', 'Kat Nestel', '/assets/img/artists/Kat Nestel.jpg', 16),
 (25, 'Vicetone', 'Vicetone', '/assets/img/artists/Vicetone.jpg', 16),
 (26, 'Sickick', 'Sickick', '/assets/img/artists/Sickick.jpg', 17),
-(27, 'Tally Hall', 'Tally Hall', '/assets/img/artists/Tally Hall.jpg', 18);
+(27, 'Tally Hall', 'Tally Hall', '/assets/img/artists/Tally Hall.jpg', 18),
+(28, 'Laufey', 'Laufey', '/assets/img/artists/Laufey.jpg', 19),
+(29, 'Mitski', 'Mitski', '/assets/img/artists/Mitski.jpg', 20),
+(30, 'Baby Tate', 'Baby Tate', '/assets/img/artists/Baby Tate.jpg', 21),
+(31, 'Kaliii', 'Kaliii', '/assets/img/artists/Kaliii.jpg', 21),
+(32, 'Mon Laferte', 'Mon Laferte', '/assets/img/artists/Mon Laferte.jpg', 1),
+(33, 'AURORA', 'AURORA', '/assets/img/artists/AURORA.jpg', 1),
+(34, 'Qveen Herby', 'Qveen Herby', '/assets/img/artists/Qveen Herby.jpg', 22),
+(35, 'Ice Spice', 'Ice Spice', '/assets/img/artists/Ice Spice.jpg', 9),
+(36, 'Nicki Minaj', 'Nicki Minaj', '/assets/img/artists/Nicki Minaj.jpg', 9),
+(37, 'Hexmane', 'Hexmane', '/assets/img/artists/Hexmane.jpg', 23),
+(38, 'Ko$te', 'Ko$te', '/assets/img/artists/Ko$te.jpg', 23),
+(39, 'Vicious Vampira', 'Vicious Vampira', '/assets/img/artists/Vicious Vampira.jpg', 23),
+(40, 'Ashnikko', 'Ashnikko', '/assets/img/artists/Ashnikko.jpg', 24),
+(41, 'Baby Tate', 'Baby Tate', '/assets/img/artists/Baby Tate.jpg', 24),
+(42, 'cupcakKe', 'cupcakKe', '/assets/img/artists/cupcakKe.jpg', 25);
 
 -- --------------------------------------------------------
 
@@ -353,7 +368,7 @@ ALTER TABLE `albumes`
 -- AUTO_INCREMENT de la tabla `artistas`
 --
 ALTER TABLE `artistas`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de la tabla `canciones`
