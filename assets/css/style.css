@@ -1,0 +1,59 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+  /*========== Colores ==========*/
+  --color-uno: #0067f4;
+  --color-dos: #31b8fc;
+  --color-tres: #2594cc;
+  --color-cuatro: #134a68;
+  --color-cinco: #0a1d2b;
+  --color-seis: #f3f3f3;
+  --color-siete: #fafeff;
+
+  /*========== +Colores ==========*/
+  --color-texto: #000;
+  --color-texto-light: #fff;
+  --color-texto-gray: #929496;
+
+  /*========== Fuentes y tipografía ==========*/
+  --texto-fuente: "Roboto", sans-serif;
+
+  /* tamaño */
+  --texto-grande: 2rem;
+  --texto-h1: 1.5rem;
+  --texto-h2: 1.25rem;
+  --texto-h3: 1.125rem;
+  --texto-normal: 0.938rem;
+  --texto-small: 0.813rem;
+  --texto-smaller: 0.75rem;
+
+  /* tipo */
+  --texto-fuente-medium: 500;
+  --texto-fuente-bold: 700;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+
+  color: #fff;
+}
+
+html,
+body {
+  width: 100%;
+  height: auto;
+}
+
+body{
+    padding: 1%;
+    box-sizing: border-box;
+    
+    background: linear-gradient(180deg, #000 0%, #000 0.01%, #3F0E53 100%);
+}
+
+a{
+  text-decoration: none;
+}
