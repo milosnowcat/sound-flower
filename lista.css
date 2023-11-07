@@ -1,0 +1,187 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    color: #fff;  
+}
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: linear-gradient(180deg, #000 0%, #000 0.01%, #3f0e53 100%);
+    font-family: consolas;
+}
+main{    
+    width: 50%;
+    height: 100vh;
+}
+/*---------------------------------------------*/
+.hed-list{
+    width: 100%;
+    height: 17%;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid rgba(245, 243, 243, 0.2);
+}
+.foto-titu{
+    margin-left: 2%;
+    float: left;
+    width: 5rem;
+    height: 5rem;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.titu{
+    margin-left: 2%;
+    float: left;
+    width: 60%;
+    height: 70%;
+}
+
+.c1{
+    position: relative;
+    display: inline-block;
+    padding: 8px 10px;
+    color: #fff;
+    letter-spacing: 4px;
+    font-size: 20px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    float: right;
+    margin-right: 35%;
+    margin-bottom: 2rem;
+}
+.c1:hover{
+    background: #a945c7;
+    box-shadow: 0 0 10px #d9bce1, 0 0 40px #a945c7, 0 0 80px #a945c7;
+    transition-delay: 1s;
+    
+}
+.c1 span{
+    position: absolute;
+    display: block;   
+}
+#span1{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: #50205e;
+}
+.c1:hover #span1{
+    left: 100%;
+    transition: 1s;
+}
+#span3{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: #50205e;
+}
+.c1:hover #span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+#span2{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: #50205e;
+}
+.c1:hover #span2{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+#span4{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: #50205e;
+}
+.c1:hover #span4{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+/*---------------------------------------------*/
+.body-list{
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    overflow-y: scroll;
+    background: transparent;
+    border: 1px solid rgba(245, 243, 243, 0.2);
+}
+.body-list::-webkit-scrollbar{
+    width: 7px;
+}
+.body-list::-webkit-scrollbar-thumb{
+    background-color: #4c135d;
+    border-radius: 3rem;
+}
+.cancion{
+    position: relative;
+    padding: 8px 10px;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+}
+.cancion:hover{
+    opacity: 75%;
+}
+.cancion span{
+    position: absolute;
+    display: block;   
+}
+#span3{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 1px;
+    background: #50205e;
+}
+.cancion:hover #span3{
+    right: 100%;
+    transition: 1s;
+}
+.cancion{
+    margin: 1%;
+    width: 98%;
+    height: 15%;
+}
+/*---------------------------------------------*/
+.dody-img{
+    width: 3.5rem;
+    height: 3.5rem;
+    float: left;
+}
+.body-contenido{
+    width: 90%;
+    height: 90%;
+    margin-left: 4rem;
+}
+.body-likes{
+    width: 65%;
+    height: 100%;
+    float: right;
+    display: flex;
+    align-items: center;
+}
+i{
+    float: left;
+}
+div{
+    width: 1rem;
+}
