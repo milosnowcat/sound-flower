@@ -1,0 +1,87 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    color: #fff;  
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: linear-gradient(180deg, #000 0%, #000 0.01%, #3f0e53 100%);
+    font-family: consolas;
+}
+main{    
+    margin-top: 2%;
+    padding: 1%;
+    width: 35rem;
+    height: 90vh;
+}
+.head_perfil{
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    padding-top: 2%;
+    border: 1px solid rgba(245, 243, 243, 0.2);
+}
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8ex;
+}
+.foto_perfil{
+    margin-left: 40%;
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid #a945c7;
+    border-radius: 8ex;
+}
+.nombre_perfil{
+    font-size: x-large;
+    width: 100%;
+}
+.body_perfil{
+    float: left;
+    width: 60%;
+    height: 70%;
+    text-align: center;
+    padding-top: 2%;
+    border: 1px solid rgba(245, 243, 243, 0.2);
+}
+.playlist{
+    float: left;
+    width: 20%;
+    height: 70%;
+    border: 1px solid rgba(245, 243, 243, 0.2);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.playlist::-webkit-scrollbar{
+    width: 0px;
+}
+.cancion{
+    width: 90%;
+    height: 4rem;
+    border: 1px solid #a945c7;
+    margin-top: 3px;
+    margin-left: 5%;
+    margin-bottom: 3px;
+}
+#desc{
+    border: 1px solid #a945c7;
+    background-color: transparent;
+    width: 17rem;
+    height: 10rem;
+    overflow: hidden;
+    resize: none;
+}
+a{
+    font-size: larger;
+    text-decoration: none;
+    color: #fff;
+}
+a:hover{
+    opacity: 50%;
+}
