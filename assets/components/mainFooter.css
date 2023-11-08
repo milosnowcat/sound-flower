@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#main_Footer{
+    min-width: 97vw;
+    min-height: 30vh;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+#up_Footer_Section{
+    display: flex;
+    flex-direction: row;
+}
+#logo_Footer_Container{
+    height: 100%;
+    width: 5vw;
+}
+#logo_Footer_Container img{
+    height: 100%;
+    width: 100%;
+}
+#name_Container{
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+#name_Container h1{
+    font-size: var(--texto-h1);
+}
+
+#middle_Footer_Section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#middle_left_Container hr, #middle_center_Container hr, #middle_right_Container hr{
+    margin-bottom: 1rem;
+}
+#middle_left_Container, #middle_right_Container{
+    width: 27%;
+}
+
+#middle_left_Container p{
+    margin-left: 1rem;
+    font-size: var(--texto-normal);
+}
+
+
+#middle_center_Container{
+    width: 40%;
+    justify-content: center;
+}
+#middle_center_Container div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#social_Icons_Container{
+    display: flex;
+    justify-content: space-evenly;
+}
+#social_Icons_Container i{
+    font-size: calc(var(--texto-h1) * 1.5);
+}
+#email_Footer_Container{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+#email_Footer_Container a{
+    font-size: var(--texto-normal);
+}
+
+
+
+#bottom_Footer_Section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
