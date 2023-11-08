@@ -13,7 +13,7 @@
 <body>
     <script src="assets/js/slider.js"></script>
     <?php
-        require 'mainHeader.php';
+        require 'assets/components/mainHeader.php';
     ?>
 
     <main id="main_Home">
@@ -103,7 +103,7 @@
 
 
     <?php
-        require 'mainFooter.php';
+        require 'assets/components/mainFooter.php';
     ?>
 </body>
 </html>
