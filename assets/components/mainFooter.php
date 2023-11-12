@@ -53,7 +53,7 @@
                 </div>
                 
                 <div id="email_Footer_Container">
-                    <a href="#">soundflower@rhcode.com</a>
+                    <a href="mailto:soundflower@rahcode.com">soundflower@rahcode.com</a>
                 </div>
             </article>
         </section>
