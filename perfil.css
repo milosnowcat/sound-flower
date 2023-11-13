@@ -52,13 +52,13 @@ img{
 }
 .playlist{
     float: left;
-    width: 85%;
-    height: 10rem;
+    width: 90%;
+    height: 12rem;
     border: 1px solid rgba(245, 243, 243, 0.2);
     overflow: hidden;
     overflow-y: scroll;
-    margin-left: 7.5%;
-    margin-top: 3%;
+    margin-left: 5%;
+    margin-top: 2%;
 }
 .playlist::-webkit-scrollbar{
     width: 5px;
@@ -73,11 +73,11 @@ div{
 }
 .cancion{
     float: left;
-    width: 7rem;
-    height: 7rem;
+    width: 8rem;
+    height: 8rem;
     border: 1px solid #a945c7;
     margin-top: 8px;
-    margin-left: 6.5%;
+    margin-left: 4.7%;
     margin-bottom: 3px;
 }
 #desc{
