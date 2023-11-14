@@ -1,0 +1,101 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    color: #fff;  
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: linear-gradient(180deg, #000 0%, #000 0.01%, #3f0e53 100%);
+    font-family: consolas;
+}
+main{    
+    margin-top: 2%;
+    padding: 1%;
+    width: 35rem;
+    height: 95vh;
+}
+.head_perfil{
+    width: 100%;
+    height:25%;
+    text-align: center;
+    padding-top: 2%;
+    border: 1px solid rgba(245, 243, 243, 0.2);
+}
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8ex;
+}
+.foto_perfil{
+    margin-left: 40%;
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid #a945c7;
+    border-radius: 8ex;
+}
+.nombre_perfil{
+    font-size: x-large;
+    width: 100%;
+}
+.body_perfil{
+    float: left;
+    width: 100%;
+    height: 75%;
+    text-align: center;
+    padding-top: 2%;
+    border: 1px solid rgba(245, 243, 243, 0.2);
+}
+.playlist{
+    float: left;
+    width: 90%;
+    height: 12rem;
+    border: 1px solid rgba(245, 243, 243, 0.2);
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+.playlist::-webkit-scrollbar{
+    width: 5px;
+}
+.playlist::-webkit-scrollbar-thumb{
+    background-color: #a945c7;
+    border-radius: 1rem;
+}
+div{
+    height: 5rem;
+    width: 100%;
+}
+.cancion{
+    float: left;
+    width: 8rem;
+    height: 8rem;
+    border: 1px solid #a945c7;
+    margin-top: 8px;
+    margin-left: 4.7%;
+    margin-bottom: 3px;
+}
+#desc{
+    border: 1px solid #a945c7;
+    background-color: transparent;
+    width: 28rem;
+    height: 6rem;
+    overflow: hidden;
+    resize: none;
+}
+.hov{
+    font-size: larger;
+    text-decoration: none;
+    color: #fff;
+}
+.hov:hover{
+    opacity: 50%;
+}
+.play-foto{
+    border-radius: 0%;
+}
