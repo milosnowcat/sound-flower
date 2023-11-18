@@ -8,7 +8,7 @@
     $pass2 = $_POST['confirmcontra'];
 
     $verificarUsuario = "SELECT * FROM usuarios WHERE Nombre = '$user' AND Correo = '$email'";
-    $resultadoVU = mysqli_query($conexion, $verificarUsuario);
+    $resultadoVU = mysqli_query($conn, $verificarUsuario);
 
     if (mysqli_num_rows($resultadoVU) > 0){
         echo'<script> alert("El usuario que pusiste ya es existente.") </script>';
@@ -21,7 +21,7 @@
 
         if (mysqli_num_rows($resultadoVC) > 0){
             echo'<script> alert("El correo que pusiste ya esta siendo usado.") </script>';
-            echo'<script> window.location.href("registro.html") </script>';
+            echo'<script> window.location.href("/registro.html") </script>';
             //aqui el mensajede que ya hay una cuenta con ese correo
         }
         elseif ($pass1 == $pass2){
@@ -34,7 +34,7 @@
         }
         else{
             echo'<script> alert("Las contraseñas son diferentes.") </script>';
-            echo'<script> window.location.href("registro.html") </script>';
+            echo'<script> window.location.href("/registro.html") </script>';
             //aqui el mensaje de que las  contraseñas son distintas
         }
     }
