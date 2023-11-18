@@ -11,7 +11,7 @@
             $has=password_hash($contra,PASSWORD_DEFAULT,['cost'=>5]);
             $sql2="UPDATE `usuarios` SET Contraseña='$has' WHERE Correo='$correo'";
             $envio2=mysqli_query($conexion, $sql2);
-            header('location: login.html');
+            header('location: /login.html');
         }
         else{
             echo'<script> alert("Datos no encontrados") </script>';

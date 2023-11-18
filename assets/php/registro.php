@@ -12,7 +12,7 @@
 
     if (mysqli_num_rows($resultadoVU) > 0){
         echo'<script> alert("El usuario que pusiste ya es existente.") </script>';
-        echo'<script> window.location.href("registro.html") </script>';
+        echo'<script> window.location.href("/registro.html") </script>';
         //aqui poner el mensaje de que ya existe el usuario y que redirija nuevamente al registro
     }
     else{

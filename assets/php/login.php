@@ -15,7 +15,7 @@
                     session_start();
                     $_SESSION['logueado']=TRUE;
                     $_SESSION['emailUs'] = $correo;
-                    header("location: cambiaPassword.html");
+                    header("location: /password.html");
                 }
                 else{
                     echo'<script> alert("Escribiste mal la contraseña :b") </script>';
