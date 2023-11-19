@@ -2,35 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="login.css">
     <title>Registrate</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
     <main class="c2">
         <div  class="logi1">
            
-            <form action="">
+            <form action="assets/php/registro.php" method="post">
                 <h1>Resgistro</h1>
                 <div class="input-box">
-                    <input type="text" required>
+                    <input type="text"  name="nombre" required>
                     <label>Nombre</label>
+                    <i class='bx bxs-user-circle'></i>
                    
                 </div>
                 
                 <div class="input-box">
-                    <input type="email" required>
+                    <input type="email" name="correo" required>
                     <label>Correo</label>
-                   
+                    <i class='bx bx-at'></i>
                 </div>
                 
                 <div class="input-box">
-                    <input type="password" required>
+                    <input type="password"  name="contra"  required>
                     <label>Contraseña</label>
+                    <i class="bx bxs-lock"></i>
                 </div>
                 
                 <div class="input-box">
-                    <input type="password" required>
+                    <input type="password" name="confirmcontra" required>
                     <label>Confirma contraseña</label>
+                    <i class="bx bxs-lock"></i>
                 </div>
                 
                 <div class="remember-forgot">
@@ -40,14 +45,13 @@
                     <a href="#">Contraseña</a>
     
                 </div>
-    
-                <a href="#" class="c1">
+                <div  class="c1" >
+                    <input class="botonTerminar" type="submit"value="continuar">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
                     <span id="span4"></span>
-                    Continuar
-                </a> 
+                </div>
     
                 <div class="register-link">
                     <p>Ya tienes cuenta? <a href="login.html">Iniciar sesion</a></p>

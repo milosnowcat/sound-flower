@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Inicia Sesion</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
@@ -11,16 +11,16 @@
     <main class="c2">
         <div  class="logi1">
            
-            <form action="">
+            <form action="assets/php/login.php" method="post">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="email" required>
+                    <input type="email" name="loginCorreo" required>
                     <label>Email</label>
                     <i class='bx bx-at'></i>                
                 </div>
     
                 <div class="input-box">
-                    <input type="password" required>
+                    <input type="password" name="loginContra" required>
                     <label>Contraseña</label>
                     <i class="bx bxs-lock"></i>
                 </div>
@@ -32,17 +32,17 @@
     
                 </div>
     
-                <a href="#" class="c1">
+                <div  class="c1" >
+                    <input class="botonTerminar" type="submit"value="continuar">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
                     <span id="span4"></span>
-                    iniciar
-                </a> 
+                </div>
     
                 <div class="register-link">
-                    <p>No tienes cuenta? <a href="register.html">Resgistrate</a></p><br>
-                    <p>Olvidaste tu contraseña? <a href="password.html">Cambiar contraseña</a></p>
+                    <p>No tienes cuenta? <a href="resgistro.html">Resgistrate</a></p><br>
+                    <p>Olvidaste tu contraseña? <a href="cambiaPassword.html">Cambiar contraseña</a></p>
                 </div>
             </form>
         </div>
