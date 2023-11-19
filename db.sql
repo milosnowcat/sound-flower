@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2023 a las 00:33:49
+-- Tiempo de generación: 19-11-2023 a las 04:54:21
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -106,7 +106,24 @@ INSERT INTO `artistas` (`Id`, `Nombre`, `Descripcion`, `Foto`, `Id_Disquera`) VA
 (50, 'Kanye West', 'Kanye West', '/assets/img/artists/Kanye West.jpg', 7),
 (51, 'Ed Maverick', 'Ed Maverick', '/assets/img/artists/Ed Maverick.jpg', 1),
 (52, 'Muelas De Gallo', 'Muelas De Gallo', '/assets/img/artists/Muelas De Gallo.jpg', 1),
-(53, 'Daniel, Me Estás Matando', 'Daniel, Me Estás Matando', '/assets/img/artists/Daniel, Me Estás Matando.jpg', 29);
+(53, 'Daniel, Me Estás Matando', 'Daniel, Me Estás Matando', '/assets/img/artists/Daniel, Me Estás Matando.jpg', 29),
+(54, 'Alex Lacamoire', 'Alex Lacamoire', '/assets/img/artist.jpg', 30),
+(55, 'Christopher Jackson', 'Christopher Jackson', '/assets/img/artist.jpg', 30),
+(56, 'Leslie Odom Jr.', 'Leslie Odom Jr.', '/assets/img/artists/Leslie Odom Jr..jpg', 30),
+(57, 'Lin-Manuel Miranda', 'Lin-Manuel Miranda', '/assets/img/artists/Lin-Manuel Miranda.jpg', 30),
+(58, 'Original Broadway Cast of Hamilton', 'Original Broadway Cast of Hamilton', '/assets/img/artist.jpg', 30),
+(59, 'Phillipa Soo', 'Phillipa Soo', '/assets/img/artist.jpg', 30),
+(60, 'Renée Elise Goldsberry', 'Renée Elise Goldsberry', '/assets/img/artist.jpg', 30),
+(61, 'Jonathan Groff', 'Jonathan Groff', '/assets/img/artists/Jonathan Groff.jpg', 30),
+(62, 'imase', 'imase', '/assets/img/artists/imase.jpg', 1),
+(63, 'ギヴン', 'ギヴン', '/assets/img/artists/ギヴン.jpg', 14),
+(64, 'Justin Bieber', 'Justin Bieber', '/assets/img/artists/Justin Bieber.jpg', 1),
+(65, 'The Kid LAROI', 'The Kid LAROI', '/assets/img/artists/The Kid LAROI.jpg', 1),
+(66, 'Maroon 5', 'Maroon 5', '/assets/img/artists/Maroon 5.jpg', 1),
+(67, 'Bunbury', 'Bunbury', '/assets/img/artists/Bunbury.jpg', 1),
+(68, 'Taylor Swift', 'Taylor Swift', '/assets/img/artists/Taylor Swift.jpg', 31),
+(69, 'Omori', 'Omori', '/assets/img/artist.jpg', 32),
+(70, 'Miranda!', 'Miranda!', '/assets/img/artists/Miranda!.jpg', 33);
 
 -- --------------------------------------------------------
 
@@ -379,7 +396,7 @@ ALTER TABLE `albumes`
 -- AUTO_INCREMENT de la tabla `artistas`
 --
 ALTER TABLE `artistas`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT de la tabla `canciones`
