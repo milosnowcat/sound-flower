@@ -15,9 +15,14 @@ if ($resultado_verificacion->num_rows > 0) {
     echo '<script>window.alert("Esta disquera ya tiene asignado a este artista.");
     location.href="/crear-artista.php";</script>';
 } else {
-    $foto_path = $path . $nombre . '.jpg';
-    move_uploaded_file($foto['tmp_name'], '../..' . $foto_path);
-    $sql = "INSERT INTO artistas (Nombre, Descripcion, Foto, Id_Disquera) VALUES ('$nombre', '$descripcion', '$foto_path', $disquera)";
+    if (is_uploaded_file($foto['tmp_name'])) {
+        $foto_path = $path . $nombre . '.jpg';
+        move_uploaded_file($foto['tmp_name'], '../..' . $foto_path);
+        $sql = "INSERT INTO artistas (Nombre, Descripcion, Foto, Id_Disquera)
+        VALUES ('$nombre', '$descripcion', '$foto_path', $disquera)";
+    } else {
+        $sql = "INSERT INTO artistas (Nombre, Descripcion, Id_Disquera) VALUES ('$nombre', '$descripcion', $disquera)";
+    }
 
     if ($conn->query($sql)) {
         header("Location: /crear-artista.php");
