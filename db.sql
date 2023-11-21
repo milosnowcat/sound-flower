@@ -261,7 +261,7 @@ CREATE TABLE `usuarios` (
   `Id` int(11) NOT NULL,
   `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `Correo` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Contraseña` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `Pass` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `Tipo_Usuario` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
@@ -269,7 +269,7 @@ CREATE TABLE `usuarios` (
 -- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`Id`, `Nombre`, `Correo`, `Contraseña`, `Tipo_Usuario`) VALUES
+INSERT INTO `usuarios` (`Id`, `Nombre`, `Correo`, `Pass`, `Tipo_Usuario`) VALUES
 (1, 'Universal Records', 'universal@soundflower.rahcode.com', '$2y$10$dIPE3XYkheNjn.6fE8CQxull.0wNaPtBqvu83llXvDKgh/lQFB9Fm', 2),
 (2, 'Tommy Boy Music', 'tommy@soundflower.rahcode.com', '$2y$10$sHRfNtceahuNu.QUIlOTruJ2wNeWYKwziGfg7MlzWs189E4oj9nVO', 2),
 (3, 'UME', 'ume@soundflower.rahcode.com', '$2y$10$TQFz9iMWeVWlOMBBLEudSuj7r3CvBbZ2lHxDNxOePodelOqUeCaiq', 2),
