@@ -1,3 +1,17 @@
+<?php
+    session_start();
+    /*
+    if(!isset($_SESSION['logeado'])|| !$_SESSION['logeado']){
+        header('Location: login.html');
+    }
+    */
+    require_once('assets/php/conexion.php');
+    mysqli_set_charset($conn,'utf8');
+    $usuario=$_SESSION['emailUs'];
+    $sql="SELECT * FROM usuarios WHERE Correo = '$usuario'";
+    $envio=mysqli_query($conn,$sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +27,7 @@
                 <img src="assets/img/cat.jpeg" alt="">
             </article>
             <article class="nombre_perfil">
-                <h1>Nombre_Usuario</h1>
+                <h1> <?php echo $sql['Nombre']; ?> </h1>
             </article>
         </section>
         
