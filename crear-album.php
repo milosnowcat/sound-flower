@@ -25,7 +25,7 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
         <input type="text" name="nombre" id="nombre" required />
         <label for="foto">Portada</label>
         <input type="file" name="foto" id="foto" accept="image/*" />
-        <img id="preview" src="/assets/img/album.jpg" />
+        <img id="preview" src="/assets/img/album.jpg" alt="album" />
         
         <label for="artista">Artista</label>
         <select name="artista" id="disquera" required>

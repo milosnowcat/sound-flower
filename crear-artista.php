@@ -26,7 +26,7 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
         <textarea name="descripcion" id="descripcion" cols="30" rows="10" required></textarea>
         <label for="foto">Foto</label>
         <input type="file" name="foto" id="foto" accept="image/*" />
-        <img id="preview" src="/assets/img/artist.jpg" />
+        <img id="preview" src="/assets/img/artist.jpg" alt="album" />
         <?php
         if ($_SESSION['tipo'] == 3) {
           ?>
