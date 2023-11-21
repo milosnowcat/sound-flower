@@ -271,7 +271,7 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`Id`, `Nombre`, `Correo`, `Contraseña`, `Esta_Suscrito`, `Es_Disquera`, `Es_Admin`) VALUES
+INSERT INTO `usuarios` (`Id`, `Nombre`, `Correo`, `Pass`, `Esta_Suscrito`, `Es_Disquera`, `Es_Admin`) VALUES
 (1, 'Universal Records', 'universal@soundflower.rahcode.com', '$2y$10$dIPE3XYkheNjn.6fE8CQxull.0wNaPtBqvu83llXvDKgh/lQFB9Fm', 1, 1, 0),
 (2, 'Tommy Boy Music', 'tommy@soundflower.rahcode.com', '$2y$10$sHRfNtceahuNu.QUIlOTruJ2wNeWYKwziGfg7MlzWs189E4oj9nVO', 1, 1, 0),
 (3, 'UME', 'ume@soundflower.rahcode.com', '$2y$10$TQFz9iMWeVWlOMBBLEudSuj7r3CvBbZ2lHxDNxOePodelOqUeCaiq', 1, 1, 0),
