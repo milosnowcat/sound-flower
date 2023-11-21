@@ -12,7 +12,7 @@ if ($resultado_verificacion->num_rows > 0) {
     echo '<script>window.alert("El correo electrónico ya está en uso. Por favor, elige otro.");
     location.href="/crear-disquera.html";</script>';
 } else {
-    $sql = "INSERT INTO usuarios (Nombre, Correo, Contraseña, Tipo_Usuario)
+    $sql = "INSERT INTO usuarios (Nombre, Correo, Pass, Tipo_Usuario)
         VALUES ('$nombre', '$mail', '$pass' , 2)";
 
     if ($conn->query($sql)) {
