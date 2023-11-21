@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Nov 21, 2023 at 03:42 PM
+-- Generation Time: Nov 21, 2023 at 03:52 PM
 -- Server version: 5.7.43
 -- PHP Version: 8.2.8
 
@@ -32,7 +32,7 @@ USE `sound`;
 CREATE TABLE `albumes` (
   `Id` int(11) NOT NULL,
   `Portada` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `id_Artista` int(11) NOT NULL
+  `Id_Artista` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -199,18 +199,18 @@ CREATE TABLE `favoritos_albumes` (
 CREATE TABLE `favoritos_artistas` (
   `Id` int(11) NOT NULL,
   `Id_Usuario` int(11) NOT NULL,
-  `id_Artista` int(11) NOT NULL
+  `Id_Artista` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favoritos_usuario`
+-- Table structure for table `favoritos_canciones`
 --
 
-CREATE TABLE `favoritos_usuario` (
+CREATE TABLE `favoritos_canciones` (
   `Id` int(11) NOT NULL,
-  `Id_Nombre` int(11) NOT NULL,
+  `Id_Usuario` int(11) NOT NULL,
   `Id_Cancion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
@@ -327,9 +327,9 @@ ALTER TABLE `favoritos_artistas`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `favoritos_usuario`
+-- Indexes for table `favoritos_canciones`
 --
-ALTER TABLE `favoritos_usuario`
+ALTER TABLE `favoritos_canciones`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -361,9 +361,9 @@ ALTER TABLE `favoritos_artistas`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `favoritos_usuario`
+-- AUTO_INCREMENT for table `favoritos_canciones`
 --
-ALTER TABLE `favoritos_usuario`
+ALTER TABLE `favoritos_canciones`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
