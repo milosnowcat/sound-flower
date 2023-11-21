@@ -10,6 +10,7 @@
     $usuario=$_SESSION['id'];
     $sql="SELECT * FROM usuarios WHERE Id = '$usuario'";
     $envio=mysqli_query($conn,$sql);
+    $mostrar = mysqli_fetch_array($envio)
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +28,7 @@
                 <img src="assets/img/cat.jpeg" alt="">
             </article>
             <article class="nombre_perfil">
-                <h1> <?php echo $sql['Nombre']; ?> </h1>
+                <h1> <?php echo $mostrar['Nombre']; ?> </h1>
             </article>
         </section>
         
