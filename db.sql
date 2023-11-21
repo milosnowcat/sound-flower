@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2023 a las 04:54:21
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Host: db
+-- Generation Time: Nov 21, 2023 at 03:42 PM
+-- Server version: 5.7.43
+-- PHP Version: 8.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sound`
+-- Database: `sound`
 --
 CREATE DATABASE IF NOT EXISTS `sound` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci;
 USE `sound`;
@@ -26,31 +26,31 @@ USE `sound`;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `albumes`
+-- Table structure for table `albumes`
 --
 
 CREATE TABLE `albumes` (
   `Id` int(11) NOT NULL,
-  `Portada` varchar(255) NOT NULL,
+  `Portada` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `id_Artista` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `artistas`
+-- Table structure for table `artistas`
 --
 
 CREATE TABLE `artistas` (
   `Id` int(11) NOT NULL,
-  `Nombre` varchar(255) NOT NULL,
-  `Descripcion` text NOT NULL,
-  `Foto` varchar(255) NOT NULL DEFAULT '/assets/img/artist.jpg',
+  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `Descripcion` text COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `Foto` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL DEFAULT '/assets/img/artist.jpg',
   `Id_Disquera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
--- Volcado de datos para la tabla `artistas`
+-- Dumping data for table `artistas`
 --
 
 INSERT INTO `artistas` (`Id`, `Nombre`, `Descripcion`, `Foto`, `Id_Disquera`) VALUES
@@ -128,29 +128,27 @@ INSERT INTO `artistas` (`Id`, `Nombre`, `Descripcion`, `Foto`, `Id_Disquera`) VA
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cacion_artista`
+-- Table structure for table `cacion_artista`
 --
 
-DROP TABLE IF EXISTS `cacion_artista`;
-CREATE TABLE IF NOT EXISTS `cacion_artista` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_Cancion` int NOT NULL,
-  `Id_Artista` int NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `cacion_artista` (
+  `Id` int(11) NOT NULL,
+  `Id_Cancion` int(11) NOT NULL,
+  `Id_Artista` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `canciones`
+-- Table structure for table `canciones`
 --
 
 CREATE TABLE `canciones` (
   `Id` int(11) NOT NULL,
-  `Nombre` varchar(255) NOT NULL,
-  `Archivo` varchar(500) NOT NULL,
+  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `Archivo` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `Duracion` int(11) NOT NULL,
-  `Portada` varchar(500) NOT NULL,
+  `Portada` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `Numero` int(11) NOT NULL,
   `Id_Albun` int(11) NOT NULL,
   `Reproducciones` int(11) NOT NULL
@@ -159,7 +157,7 @@ CREATE TABLE `canciones` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cancion_playlist`
+-- Table structure for table `cancion_playlist`
 --
 
 CREATE TABLE `cancion_playlist` (
@@ -171,7 +169,7 @@ CREATE TABLE `cancion_playlist` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `dislikes_usuario`
+-- Table structure for table `dislikes_usuario`
 --
 
 CREATE TABLE `dislikes_usuario` (
@@ -183,32 +181,54 @@ CREATE TABLE `dislikes_usuario` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `favoritos`
+-- Table structure for table `favoritos_albumes`
 --
 
-DROP TABLE IF EXISTS `favoritos_albumes`;
-CREATE TABLE IF NOT EXISTS `favoritos_albumes` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_Usuario` int NOT NULL,
-  `Id_Album` int NOT NULL,
-  PRIMARY KEY (`Id`)
+CREATE TABLE `favoritos_albumes` (
+  `Id` int(11) NOT NULL,
+  `Id_Usuario` int(11) NOT NULL,
+  `Id_Album` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `generos`
+-- Table structure for table `favoritos_artistas`
+--
+
+CREATE TABLE `favoritos_artistas` (
+  `Id` int(11) NOT NULL,
+  `Id_Usuario` int(11) NOT NULL,
+  `id_Artista` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `favoritos_usuario`
+--
+
+CREATE TABLE `favoritos_usuario` (
+  `Id` int(11) NOT NULL,
+  `Id_Nombre` int(11) NOT NULL,
+  `Id_Cancion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `generos`
 --
 
 CREATE TABLE `generos` (
   `Id` int(11) NOT NULL,
-  `Nombre` varchar(255) NOT NULL
+  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `generos_cancion`
+-- Table structure for table `generos_cancion`
 --
 
 CREATE TABLE `generos_cancion` (
@@ -220,27 +240,13 @@ CREATE TABLE `generos_cancion` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `likes_usuario`
---
-
-DROP TABLE IF EXISTS `favoritos_usuario`;
-CREATE TABLE IF NOT EXISTS `favoritos_usuario` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_Nombre` int NOT NULL,
-  `Id_Cancion` int NOT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `playlists`
+-- Table structure for table `playlists`
 --
 
 CREATE TABLE `playlists` (
   `Id` int(11) NOT NULL,
-  `Nombre` varchar(255) NOT NULL,
-  `Foto` varchar(500) NOT NULL,
+  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `Foto` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `Id_Usuario` int(11) NOT NULL,
   `Id_Publica` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
@@ -248,35 +254,19 @@ CREATE TABLE `playlists` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `seguidos`
+-- Table structure for table `usuarios`
 --
 
-DROP TABLE IF EXISTS `favoritos_artistas`;
-CREATE TABLE IF NOT EXISTS `favoritos_artistas` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_Usuario` int NOT NULL,
-  `id_Artista` int NOT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-DROP TABLE IF EXISTS `usuarios`;
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `Id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `usuarios` (
+  `Id` int(11) NOT NULL,
   `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `Correo` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `Contraseña` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Tipo_Usuario` int NOT NULL DEFAULT 0, 
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+  `Tipo_Usuario` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`Id`, `Nombre`, `Correo`, `Contraseña`, `Tipo_Usuario`) VALUES
@@ -313,6 +303,74 @@ INSERT INTO `usuarios` (`Id`, `Nombre`, `Correo`, `Contraseña`, `Tipo_Usuario`)
 (31, 'Big Machine Records', 'machine@soundflower.rahcode.com', '$2y$10$3vKPk8NPRldvYL7x5yO.9eaNtIMc0G0SoHp4jDsTGxg3IQIUfjq8a', 2),
 (32, 'OMORI', 'omori@soundflower.rahcode.com', '$2y$10$woS1txCeJoxkiLa/.TdFV.r4KX.tv5.SQn72tOkE73uPwJeb3dAJy', 2),
 (33, 'Pelo Music', 'pelo@soundflower.rahcode.com', '$2y$10$MOjUDKgW8ndH79Dcy2/J8O16sVrsnv8oJa57D/FJamid66RYhemVy', 2);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cacion_artista`
+--
+ALTER TABLE `cacion_artista`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `favoritos_albumes`
+--
+ALTER TABLE `favoritos_albumes`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `favoritos_artistas`
+--
+ALTER TABLE `favoritos_artistas`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `favoritos_usuario`
+--
+ALTER TABLE `favoritos_usuario`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cacion_artista`
+--
+ALTER TABLE `cacion_artista`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `favoritos_albumes`
+--
+ALTER TABLE `favoritos_albumes`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `favoritos_artistas`
+--
+ALTER TABLE `favoritos_artistas`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `favoritos_usuario`
+--
+ALTER TABLE `favoritos_usuario`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
