@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 0){
+    header('Location: login.html');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +16,7 @@
     <main class="c2">
         <div  class="logi1">
            
-            <form action="">
+            <form action="assets/php/pago.php">
                 <h1>Suscribete</h1>
                 <p>Tansolo paga $299.00 y haste vip ya</p>
                 <div class="input-box">
