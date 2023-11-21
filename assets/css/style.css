@@ -45,6 +45,7 @@ html,
 body {
   width: 100%;
   height: auto;
+  font-family: var(--texto-fuente);
 }
 
 body{
