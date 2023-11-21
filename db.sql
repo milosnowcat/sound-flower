@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Nov 21, 2023 at 05:46 PM
+-- Generation Time: Nov 21, 2023 at 06:29 PM
 -- Server version: 5.7.43
 -- PHP Version: 8.2.8
 
@@ -31,7 +31,8 @@ USE `sound`;
 
 CREATE TABLE `albumes` (
   `Id` int(11) NOT NULL,
-  `Portada` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `Portada` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL DEFAULT '/assets/img/album.jpg',
   `Id_Artista` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
