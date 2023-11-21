@@ -261,7 +261,7 @@ CREATE TABLE `usuarios` (
   `Id` int(11) NOT NULL,
   `Nombre` varchar(255) NOT NULL,
   `Correo` varchar(255) NOT NULL,
-  `Contraseña` varchar(500) NOT NULL,
+  `Pass` varchar(500) NOT NULL,
   `Esta_Suscrito` int(11) NOT NULL DEFAULT 0,
   `Es_Disquera` int(11) NOT NULL DEFAULT 0,
   `Es_Admin` int(11) NOT NULL DEFAULT 0
