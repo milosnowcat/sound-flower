@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: db
--- Generation Time: Nov 21, 2023 at 06:29 PM
--- Server version: 5.7.43
--- PHP Version: 8.2.8
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 22-11-2023 a las 00:48:13
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sound`
+-- Base de datos: `sound`
 --
 CREATE DATABASE IF NOT EXISTS `sound` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci;
 USE `sound`;
@@ -26,32 +26,86 @@ USE `sound`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `albumes`
+-- Estructura de tabla para la tabla `albumes`
 --
 
 CREATE TABLE `albumes` (
   `Id` int(11) NOT NULL,
-  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Portada` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL DEFAULT '/assets/img/album.jpg',
+  `Nombre` varchar(255) NOT NULL,
+  `Portada` varchar(255) NOT NULL DEFAULT '/assets/img/album.jpg',
   `Id_Artista` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `albumes`
+--
+
+INSERT INTO `albumes` (`Id`, `Nombre`, `Portada`, `Id_Artista`) VALUES
+(1, 'Konvicted', '/assets/img/albums/Konvicted.jpg', 1),
+(2, 'Gangsta`s Paradise', '/assets/img/albums/Gangsta`s Paradise.jpg', 3),
+(3, 'How Can You Mend A Broken Heart', '/assets/img/albums/How Can You Mend A Broken Heart.jpg', 5),
+(4, 'Daylight', '/assets/img/albums/Daylight.jpg', 6),
+(5, 'It`s Been So Long', '/assets/img/albums/It`s Been So Long.jpg', 7),
+(6, 'The Eminem Show', '/assets/img/albums/The Eminem Show.jpg', 9),
+(7, 'ARDIPITHECUS', '/assets/img/albums/ARDIPITHECUS.jpg', 10),
+(8, 'Clandestina (JVSTIN Remix)', '/assets/img/albums/Clandestina (JVSTIN Remix).jpg', 13),
+(9, 'Unholy (feat. Kim Petras)', '/assets/img/albums/Unholy (feat. Kim Petras).jpg', 16),
+(10, 'La Trampa es Ley', '/assets/img/albums/La Trampa es Ley.jpg', 17),
+(11, 'Best Of Chris Isaak', '/assets/img/albums/Best Of Chris Isaak.jpg', 18),
+(12, 'Mind Games', '/assets/img/albums/Mind Games.jpg', 19),
+(13, 'A-B', '/assets/img/albums/A-B.jpg', 20),
+(14, 'Voices', '/assets/img/albums/Voices.jpg', 71),
+(15, 'Find Me', '/assets/img/albums/Find Me.jpg', 22),
+(16, 'Favourite Worst Nightmare', '/assets/img/albums/Favourite Worst Nightmare.jpg', 23),
+(17, 'AM', '/assets/img/albums/AM.jpg', 23),
+(18, 'Angels (Radio Edit)', '/assets/img/albums/Angels (Radio Edit).jpg', 25),
+(19, 'Talksick 3', '/assets/img/albums/Talksick 3.jpg', 26),
+(20, 'Marvin`s Marvelous Mechanical Museum', '/assets/img/albums/Marvin`s Marvelous Mechanical Museum.jpg', 27),
+(21, 'Bewitched', '/assets/img/albums/Bewitched.jpg', 28),
+(22, 'The Land Is Inhospitable and So Are We', '/assets/img/albums/The Land Is Inhospitable and So Are We.jpg', 29),
+(23, 'Mani-Pedi', '/assets/img/albums/Mani-Pedi.jpg', 30),
+(24, '1940 Carmen', '/assets/img/albums/1940 Carmen.jpg', 32),
+(25, 'A Potion For Love', '/assets/img/albums/A Potion For Love.jpg', 33),
+(26, 'HOUSEWIFE', '/assets/img/albums/HOUSEWIFE.jpg', 34),
+(27, 'Princess Diana (with Nicki Minaj)', '/assets/img/albums/Princess Diana (with Nicki Minaj).jpg', 35),
+(28, 'TRICK OR TREAT', '/assets/img/albums/TRICK OR TREAT.jpg', 38),
+(29, 'Hi, It`s Me', '/assets/img/albums/Hi, It`s Me.jpg', 40),
+(30, 'Queen Elizabitch', '/assets/img/albums/Queen Elizabitch.jpg', 42),
+(31, 'Met a Girl', '/assets/img/albums/Met a Girl.jpg', 43),
+(32, 'Yeezus', '/assets/img/albums/Yeezus.jpg', 44),
+(33, 'Bipolar', '/assets/img/albums/Bipolar.jpg', 45),
+(34, 'nadie sabe lo que va a pasar mañana', '/assets/img/albums/nadie sabe lo que va a pasar mañana.jpg', 46),
+(35, 'Born To Die', '/assets/img/albums/Born To Die.jpg', 47),
+(36, 'WEEDKILLER', '/assets/img/albums/WEEDKILLER.jpg', 48),
+(37, 'Graduation', '/assets/img/albums/Graduation.jpg', 50),
+(38, 'eduardo', '/assets/img/albums/eduardo.jpg', 51),
+(39, 'Somos Algo', '/assets/img/albums/Somos Algo.jpg', 53),
+(40, 'Hamilton (Original Broadway Cast Recording)', '/assets/img/albums/Hamilton (Original Broadway Cast Recording).jpg', 57),
+(41, 'NIGHT DANCER', '/assets/img/albums/NIGHT DANCER.jpg', 62),
+(42, 'gift', '/assets/img/albums/gift.jpg', 63),
+(43, 'STAY (with Justin Bieber)', '/assets/img/albums/STAY (with Justin Bieber).jpg', 65),
+(44, 'Overexposed (Deluxe)', '/assets/img/albums/Overexposed (Deluxe).jpg', 66),
+(45, 'La Trenza', '/assets/img/albums/La Trenza.jpg', 32),
+(46, '1989 (Deluxe)', '/assets/img/albums/1989 (Deluxe).jpg', 68),
+(47, 'Omori (Original Game Soundtrack), Pt.3', '/assets/img/albums/Omori (Original Game Soundtrack), Pt.3.jpg', 69),
+(48, 'El Templo del Pop', '/assets/img/albums/El Templo del Pop.jpg', 70);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `artistas`
+-- Estructura de tabla para la tabla `artistas`
 --
 
 CREATE TABLE `artistas` (
   `Id` int(11) NOT NULL,
-  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Descripcion` text COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Foto` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL DEFAULT '/assets/img/artist.jpg',
+  `Nombre` varchar(255) NOT NULL,
+  `Descripcion` text NOT NULL,
+  `Foto` varchar(255) NOT NULL DEFAULT '/assets/img/artist.jpg',
   `Id_Disquera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
--- Dumping data for table `artistas`
+-- Volcado de datos para la tabla `artistas`
 --
 
 INSERT INTO `artistas` (`Id`, `Nombre`, `Descripcion`, `Foto`, `Id_Disquera`) VALUES
@@ -124,12 +178,13 @@ INSERT INTO `artistas` (`Id`, `Nombre`, `Descripcion`, `Foto`, `Id_Disquera`) VA
 (67, 'Bunbury', 'Bunbury', '/assets/img/artists/Bunbury.jpg', 1),
 (68, 'Taylor Swift', 'Taylor Swift', '/assets/img/artists/Taylor Swift.jpg', 31),
 (69, 'Omori', 'Omori', '/assets/img/artist.jpg', 32),
-(70, 'Miranda!', 'Miranda!', '/assets/img/artists/Miranda!.jpg', 33);
+(70, 'Miranda!', 'Miranda!', '/assets/img/artists/Miranda!.jpg', 33),
+(71, 'Phantogram', 'Phantogram', '/assets/img/artists/Phantogram.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cacion_artista`
+-- Estructura de tabla para la tabla `cacion_artista`
 --
 
 CREATE TABLE `cacion_artista` (
@@ -141,15 +196,15 @@ CREATE TABLE `cacion_artista` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `canciones`
+-- Estructura de tabla para la tabla `canciones`
 --
 
 CREATE TABLE `canciones` (
   `Id` int(11) NOT NULL,
-  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Archivo` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `Nombre` varchar(255) NOT NULL,
+  `Archivo` varchar(500) NOT NULL,
   `Duracion` int(11) NOT NULL,
-  `Portada` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `Portada` varchar(500) NOT NULL,
   `Numero` int(11) NOT NULL,
   `Id_Albun` int(11) NOT NULL,
   `Reproducciones` int(11) NOT NULL
@@ -158,7 +213,7 @@ CREATE TABLE `canciones` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cancion_playlist`
+-- Estructura de tabla para la tabla `cancion_playlist`
 --
 
 CREATE TABLE `cancion_playlist` (
@@ -170,7 +225,7 @@ CREATE TABLE `cancion_playlist` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dislikes_usuario`
+-- Estructura de tabla para la tabla `dislikes_usuario`
 --
 
 CREATE TABLE `dislikes_usuario` (
@@ -182,7 +237,7 @@ CREATE TABLE `dislikes_usuario` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favoritos_albumes`
+-- Estructura de tabla para la tabla `favoritos_albumes`
 --
 
 CREATE TABLE `favoritos_albumes` (
@@ -194,7 +249,7 @@ CREATE TABLE `favoritos_albumes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favoritos_artistas`
+-- Estructura de tabla para la tabla `favoritos_artistas`
 --
 
 CREATE TABLE `favoritos_artistas` (
@@ -206,7 +261,7 @@ CREATE TABLE `favoritos_artistas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favoritos_canciones`
+-- Estructura de tabla para la tabla `favoritos_canciones`
 --
 
 CREATE TABLE `favoritos_canciones` (
@@ -218,18 +273,18 @@ CREATE TABLE `favoritos_canciones` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `generos`
+-- Estructura de tabla para la tabla `generos`
 --
 
 CREATE TABLE `generos` (
   `Id` int(11) NOT NULL,
-  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL
+  `Nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `generos_cancion`
+-- Estructura de tabla para la tabla `generos_cancion`
 --
 
 CREATE TABLE `generos_cancion` (
@@ -241,13 +296,13 @@ CREATE TABLE `generos_cancion` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `playlists`
+-- Estructura de tabla para la tabla `playlists`
 --
 
 CREATE TABLE `playlists` (
   `Id` int(11) NOT NULL,
-  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Foto` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `Nombre` varchar(255) NOT NULL,
+  `Foto` varchar(500) NOT NULL,
   `Id_Usuario` int(11) NOT NULL,
   `Id_Publica` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
@@ -255,19 +310,19 @@ CREATE TABLE `playlists` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
   `Id` int(11) NOT NULL,
-  `Nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Correo` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Pass` varchar(500) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Tipo_Usuario` int(11) NOT NULL DEFAULT '0'
+  `Nombre` varchar(255) NOT NULL,
+  `Correo` varchar(255) NOT NULL,
+  `Pass` varchar(500) NOT NULL,
+  `Tipo_Usuario` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`Id`, `Nombre`, `Correo`, `Pass`, `Tipo_Usuario`) VALUES
@@ -306,165 +361,165 @@ INSERT INTO `usuarios` (`Id`, `Nombre`, `Correo`, `Pass`, `Tipo_Usuario`) VALUES
 (33, 'Pelo Music', 'pelo@soundflower.rahcode.com', '$2y$10$MOjUDKgW8ndH79Dcy2/J8O16sVrsnv8oJa57D/FJamid66RYhemVy', 2);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `albumes`
+-- Indices de la tabla `albumes`
 --
 ALTER TABLE `albumes`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `artistas`
+-- Indices de la tabla `artistas`
 --
 ALTER TABLE `artistas`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `cacion_artista`
+-- Indices de la tabla `cacion_artista`
 --
 ALTER TABLE `cacion_artista`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `canciones`
+-- Indices de la tabla `canciones`
 --
 ALTER TABLE `canciones`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `cancion_playlist`
+-- Indices de la tabla `cancion_playlist`
 --
 ALTER TABLE `cancion_playlist`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `dislikes_usuario`
+-- Indices de la tabla `dislikes_usuario`
 --
 ALTER TABLE `dislikes_usuario`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `favoritos_albumes`
+-- Indices de la tabla `favoritos_albumes`
 --
 ALTER TABLE `favoritos_albumes`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `favoritos_artistas`
+-- Indices de la tabla `favoritos_artistas`
 --
 ALTER TABLE `favoritos_artistas`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `favoritos_canciones`
+-- Indices de la tabla `favoritos_canciones`
 --
 ALTER TABLE `favoritos_canciones`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `generos`
+-- Indices de la tabla `generos`
 --
 ALTER TABLE `generos`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `generos_cancion`
+-- Indices de la tabla `generos_cancion`
 --
 ALTER TABLE `generos_cancion`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `playlists`
+-- Indices de la tabla `playlists`
 --
 ALTER TABLE `playlists`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`Id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `albumes`
+-- AUTO_INCREMENT de la tabla `albumes`
 --
 ALTER TABLE `albumes`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT for table `artistas`
+-- AUTO_INCREMENT de la tabla `artistas`
 --
 ALTER TABLE `artistas`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- AUTO_INCREMENT for table `cacion_artista`
+-- AUTO_INCREMENT de la tabla `cacion_artista`
 --
 ALTER TABLE `cacion_artista`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `canciones`
+-- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `cancion_playlist`
+-- AUTO_INCREMENT de la tabla `cancion_playlist`
 --
 ALTER TABLE `cancion_playlist`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `dislikes_usuario`
+-- AUTO_INCREMENT de la tabla `dislikes_usuario`
 --
 ALTER TABLE `dislikes_usuario`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `favoritos_albumes`
+-- AUTO_INCREMENT de la tabla `favoritos_albumes`
 --
 ALTER TABLE `favoritos_albumes`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `favoritos_artistas`
+-- AUTO_INCREMENT de la tabla `favoritos_artistas`
 --
 ALTER TABLE `favoritos_artistas`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `favoritos_canciones`
+-- AUTO_INCREMENT de la tabla `favoritos_canciones`
 --
 ALTER TABLE `favoritos_canciones`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `generos`
+-- AUTO_INCREMENT de la tabla `generos`
 --
 ALTER TABLE `generos`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `generos_cancion`
+-- AUTO_INCREMENT de la tabla `generos_cancion`
 --
 ALTER TABLE `generos_cancion`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `playlists`
+-- AUTO_INCREMENT de la tabla `playlists`
 --
 ALTER TABLE `playlists`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
