@@ -1,29 +1,10 @@
-<?php
-    session_start();
-    
-    if(!isset($_SESSION['logueado'])|| !$_SESSION['logueado']){
-        header('Location: login.html');
-    }
-    
-    require_once('assets/php/conexion.php');
-    mysqli_set_charset($conn,'utf8');
-    $usuario=$_SESSION['emailUs'];
-    if($_POST){
-        $active=$_POST['nombre'];
-        $sql="UPDATE usuarios SET Esta_Suscrito='1' WHERE Correo ='$usuario'";
-        $env=mysqli_query($conn,$sql);
-        echo '<script> alert("Su pago se realizo con exito") </script>';
-        header("Location: index.php");
-    }
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Inicia Sesion</title>
-    <link rel="stylesheet" href="pago.css">
+    <link rel="stylesheet" href="assets/css/pago.css">
 </head>
 <body>
     <main class="c2">
