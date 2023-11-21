@@ -13,7 +13,7 @@
                 if(password_verify($contra, $contras))
                 {
                     session_start();
-                    $_SERVER['id']=$indic['Id'];
+                    $_SESSION['id']=$indic['Id'];
                     $_SESSION['nombre']=$indic['Nombre'];
                     $_SESSION['tipo']=$indic['Tipo_Usuario'];
                     header("location: /");
