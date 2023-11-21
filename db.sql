@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Nov 21, 2023 at 03:52 PM
+-- Generation Time: Nov 21, 2023 at 05:46 PM
 -- Server version: 5.7.43
 -- PHP Version: 8.2.8
 
@@ -309,9 +309,39 @@ INSERT INTO `usuarios` (`Id`, `Nombre`, `Correo`, `Pass`, `Tipo_Usuario`) VALUES
 --
 
 --
+-- Indexes for table `albumes`
+--
+ALTER TABLE `albumes`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `artistas`
+--
+ALTER TABLE `artistas`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `cacion_artista`
 --
 ALTER TABLE `cacion_artista`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `canciones`
+--
+ALTER TABLE `canciones`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `cancion_playlist`
+--
+ALTER TABLE `cancion_playlist`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `dislikes_usuario`
+--
+ALTER TABLE `dislikes_usuario`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -333,6 +363,24 @@ ALTER TABLE `favoritos_canciones`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indexes for table `generos`
+--
+ALTER TABLE `generos`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `generos_cancion`
+--
+ALTER TABLE `generos_cancion`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `playlists`
+--
+ALTER TABLE `playlists`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -343,9 +391,39 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT for table `albumes`
+--
+ALTER TABLE `albumes`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `artistas`
+--
+ALTER TABLE `artistas`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+
+--
 -- AUTO_INCREMENT for table `cacion_artista`
 --
 ALTER TABLE `cacion_artista`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `canciones`
+--
+ALTER TABLE `canciones`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cancion_playlist`
+--
+ALTER TABLE `cancion_playlist`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `dislikes_usuario`
+--
+ALTER TABLE `dislikes_usuario`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -364,6 +442,24 @@ ALTER TABLE `favoritos_artistas`
 -- AUTO_INCREMENT for table `favoritos_canciones`
 --
 ALTER TABLE `favoritos_canciones`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `generos`
+--
+ALTER TABLE `generos`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `generos_cancion`
+--
+ALTER TABLE `generos_cancion`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `playlists`
+--
+ALTER TABLE `playlists`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
