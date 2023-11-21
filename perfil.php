@@ -1,14 +1,14 @@
 <?php
     session_start();
     /*
-    if(!isset($_SESSION['logeado'])|| !$_SESSION['logeado']){
+    if(!isset($_SESSION['id'])|| !$_SESSION['id']){
         header('Location: login.html');
     }
     */
     require_once('assets/php/conexion.php');
     mysqli_set_charset($conn,'utf8');
-    $usuario=$_SESSION['emailUs'];
-    $sql="SELECT * FROM usuarios WHERE Correo = '$usuario'";
+    $usuario=$_SESSION['id'];
+    $sql="SELECT * FROM usuarios WHERE Id = '$usuario'";
     $envio=mysqli_query($conn,$sql);
 ?>
 
