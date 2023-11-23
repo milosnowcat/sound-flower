@@ -18,7 +18,7 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 0){
     <main class="c2">
         <div  class="logi1">
            
-            <form action="assets/php/pago.php">
+            <form action="assets/php/pago.php" method="post">
                 <h1>Suscribete</h1>
                 <p>Tansolo paga $299.00 y haste vip ya</p>
                 <div class="input-box">
