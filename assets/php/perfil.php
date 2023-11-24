@@ -1,15 +1,17 @@
 <?php
-    require_once('conexion.php');
-    mysqli_set_charset($conn,'utf8');
-    $usuario=$_SESSION['id'];
+    session_start();
+    if(!isset($_SESSION['id'])|| !$_SESSION['id']){
+        header('Location: login.html');
+    } else {
+        require_once('conexion.php');
+        $usuario=$_SESSION['id'];
 
-    $foto=$_POST['foto_usuario'];
-    $archivo = $_FILES['foto_usuario']['tmp_name'];
-    $rut = "../img/users/$foto";
-    $bd = "/assets/img/users/$foto";
-    move_uploaded_file($archivo,$rut);
-    $sqlfoto="UPDATE usuarios SET Foto='$bd' WHERE Id ='$usuario'";
-    $env=$envio=mysqli_query($conn,$sqlfoto);
-    header('Location: perfil.php');
-
-?>
+        $archivo = $_FILES['foto_usuario'];
+        $rut = "/assets/img/users/";
+        $bd =  $rut . $usuario . ".jpg";
+        if (is_uploaded_file($archivo['tmp_name'])) {
+            move_uploaded_file($archivo['tmp_name'], '../..' . $bd);
+            $sqlfoto="UPDATE usuarios SET Foto='$bd' WHERE Id ='$usuario'";
+            $envio=mysqli_query($conn,$sqlfoto);
+        }
+    }

@@ -26,20 +26,20 @@
     <main>
         <section class="head_perfil">
             <article class="foto_perfil">
-                <form action="assests/php/perfil.php" method='post'>
-                    <input type="file" name="foto_usuario" id="fot">
-                    <label for="fot"><img src=" <?php echo $mostrar['Foto']; ?> " alt=""></label>
-                    <input type="submit" value="cabiar foto" class='cambiar'>
+                <form id="fotoUsuario" enctype="multipart/form-data">
+                    <input type="file" name="foto_usuario" id="fot" accept="image/*" >
+                    <label for="fot"><img src="<?php echo $mostrar['Foto']; ?>" alt="" id="preview"></label>
                 </form>
             </article>
             <article class="nombre_perfil">
-                <h1> <?php echo $mostrar['Nombre']; ?> </h1>
+                <h1><?php echo $mostrar['Nombre']; ?></h1>
             </article>
         </section>
         
-        <section class="body_perfil">            <h2>Descripccion</h2>
+        <section class="body_perfil">
+            <h2>Descripccion</h2>
             <textarea name="" id="desc" cols="30" rows="10">
-            </textarea>    
+            </textarea>
             <br>
             <a class="hov" href="password.html">cambiar contraseña</a>
             <br><br>
@@ -47,19 +47,20 @@
             <section class="playlist">
                 <?php while($playlist = mysqli_fetch_array($enviocnacion)){ ?>
                     <div>
-                        <a href="/playlist.php?id= <?php echo $playlist['Id']; ?>" class="cancion">
-                            <img class="play-foto" src=" <?php echo $playlist['Foto']; ?> " alt="">      
+                        <a href="/playlist.php?id=<?php echo $playlist['Id']; ?>" class="cancion">
+                            <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
                         </a>
                         <a href="/playlist.php?id= <?php echo $playlist['Id']; ?>" class="cancion">
-                            <img class="play-foto" src=" <?php echo $playlist['Foto']; ?> " alt="">      
+                            <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
                         </a>
                         <a href="/playlist.php?id= <?php echo $playlist['Id']; ?>" class="cancion">
-                            <img class="play-foto" src=" <?php echo $playlist['Foto']; ?> " alt="">      
+                            <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
                         </a>
                     </div>
                 <?php } ?>
             </section>
         </section>
     </main>
+    <script type="module" src="assets/js/perfil.js"></script>
 </body>
 </html>
