@@ -21,8 +21,7 @@ main{
 }
 .head_perfil{
     width: 100%;
-    height:25%;
-    text-align: center;
+    height:30%;
     padding-top: 2%;
     border: 1px solid rgba(245, 243, 243, 0.2);
 }
@@ -32,20 +31,31 @@ img{
     border-radius: 8ex;
 }
 .foto_perfil{
-    margin-left: 40%;
-    width: 5rem;
-    height: 5rem;
+    margin-left: 41%;
+    width: 6rem;
+    height: 6rem;
     border: 1px solid #a945c7;
     border-radius: 8ex;
+    text-align: center;
+}
+.cambiar{
+    background: none;
+    color: #fff;
+    border: none;
+}
+.cambiar:hover{
+    opacity: 70%;
 }
 .nombre_perfil{
     font-size: x-large;
     width: 100%;
+    text-align: center;
+    margin-top: 20px;
 }
 .body_perfil{
     float: left;
     width: 100%;
-    height: 75%;
+    height: 70%;
     text-align: center;
     padding-top: 2%;
     border: 1px solid rgba(245, 243, 243, 0.2);
@@ -98,4 +108,7 @@ div{
 }
 .play-foto{
     border-radius: 0%;
+}
+#fot{
+    display: none;
 }

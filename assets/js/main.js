@@ -1,7 +1,7 @@
 function randomPassword(length) {
   const characters =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let password = '';
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let password = "";
 
   for (let index = 0; index < length; index++) {
     password += characters.charAt(
@@ -24,8 +24,17 @@ function previewImg(input, img) {
   if (file) {
     reader.readAsDataURL(file);
   } else {
-    preview.src = '';
+    preview.src = "";
   }
 }
 
-export { randomPassword, previewImg };
+function post(form, action) {
+  let formData = new FormData(document.getElementById(form));
+
+  fetch(action, {
+    method: "POST",
+    body: formData,
+  });
+}
+
+export { randomPassword, previewImg, post };
