@@ -28,7 +28,7 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
         <img id="preview" src="/assets/img/album.jpg" alt="album" />
         
         <label for="artista">Artista</label>
-        <select name="artista" id="disquera" required>
+        <select name="artista" id="artista" required>
         <?php
         if ($_SESSION['tipo'] == 3) {
             $query = "SELECT Id, Nombre FROM artistas";
@@ -49,4 +49,4 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
     </body>
   </html>
 <?php
-  }
+}
