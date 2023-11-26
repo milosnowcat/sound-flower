@@ -28,23 +28,29 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
 
     if ($resultado_verificacion->num_rows > 0) {
         echo '<script>window.alert("Este album ya tiene asignada esta canción.");
-        location.href="/crear-album.php";</script>';
+        location.href="/crear-cancion.php";</script>';
     } else {
         if (is_uploaded_file($archivo['tmp_name'])) {
             $audio_path = $path . $nombre . '.mp3';
             move_uploaded_file($archivo['tmp_name'], '../..' . $audio_path);
             $sql = "INSERT INTO canciones (Nombre, Archivo, Duracion, Numero, Id_Album)
-                VALUES ('$nombre', '$audio_path', '$duracion', '$numero', $artista)";
+                VALUES ('$nombre', '$audio_path', '$duracion', '$numero', $album)";
         } else {
             $sql = "INSERT INTO canciones (Nombre, Duracion, Numero, Id_Album)
-                VALUES ('$nombre', '$duracion', '$numero', $artista)";
+                VALUES ('$nombre', '$duracion', '$numero', $album)";
         }
 
         if ($conn->query($sql)) {
             header("Location: /crear-cancion.php");
         } else {
             echo 'Ha ocurrido un error al insertar los datos >:3 <img src="/assets/img/cat.jpeg" alt="gato">';
-            echo $sql;
+        }
+
+        $resultado_verificacion = $conn->query($sql_verificacion);
+        $row_verificacion = $resultado_verificacion->num_rows;
+
+        foreach ($artistas as $artista) {
+            // TODO hacer un insert a cacion_artista por cada artista
         }
     }
 }
