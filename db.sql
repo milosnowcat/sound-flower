@@ -204,9 +204,8 @@ CREATE TABLE `canciones` (
   `Nombre` varchar(255) NOT NULL,
   `Archivo` varchar(500) NOT NULL,
   `Duracion` int(11) NOT NULL,
-  `Portada` varchar(500) NOT NULL,
   `Numero` int(11) NOT NULL,
-  `Id_Albun` int(11) NOT NULL,
+  `Id_Album` int(11) NOT NULL,
   `Reproducciones` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
