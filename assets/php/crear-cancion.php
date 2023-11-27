@@ -47,7 +47,7 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
         }
 
         $resultado_verificacion = $conn->query($sql_verificacion);
-        $row_verificacion = $resultado_verificacion->num_rows;
+        $row_verificacion = $resultado_verificacion->fetch_array();
 
         foreach ($artistas as $artista) {
             // TODO hacer un insert a cacion_artista por cada artista
