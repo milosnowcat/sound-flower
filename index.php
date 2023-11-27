@@ -1,7 +1,7 @@
 <?php
     // session_start();
     // if(!isset($_SESSION['id'])){
-    //     header('Location: login.php');
+    //     header('Location: login.html');
     // }
 ?>
 <!DOCTYPE html>
@@ -14,10 +14,11 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 
     <link rel="stylesheet" href="assets/css/Home.css">
+    <script src="assets/js/slider.js"></script>
     <title>Home</title>
 </head>
 <body>
-    <script src="assets/js/slider.js"></script>
+    
     <?php
         require 'assets/components/mainHeader.php';
     ?>
@@ -30,32 +31,47 @@
                 //realizo una busqueda y tiene que aparecer
             }
             else{
-                $_SESSION['emailUs'] = 'usuario1@gmail.com';
-                $email = $_SESSION['emailUs'];
-                $buscarUsuario = "SELECT * FROM usuarios WHERE Correo = '$email'";
-                
-                $resultadoBU = mysqli_query($conn, $buscarUsuario);
-                $filaRBU = mysqli_fetch_assoc($resultadoBU);
-    
-                $id = $filaRBU['Id'];
-                $usuario = $filaRBU['Tipo_Usuario'];
-                $usuario = '3';
+                // $mainid = $_SESSION['id'];
+                // $usuario = $_SESSION['tipo'];
 
-                // no suscrito = 0
-                // suscrito = 1
-                // disquera = 2
-                // admin = 3
+                // $mainid = '';
+                // $usuario = '3';
+
+                // $mainid = '6';
+                // $usuario = '2';
+
+                $mainid = '34';
+                $usuario = '';
     
                 if($usuario == 3){
                     ?>
-                        <section class="containers_Home superiors_Container_Home">
+                        <section class="containers_Home superiors_Container_Home"> <!-- CONTENEDOR DE TODAS LAS DISQUERAS -->
                             <h1>Disqueras</h1>
                             <article class="box_Covers_Container">
-                                <a href="" class="box_Covers round_Covers">
-                                    <img src="assets/img/wallhaven-e7qx3k.jpg">
-                                    <p>Cuarteto de Nos</p>
-                                </a>
+                                <?php
+                                    $disqueras = "SELECT * FROM usuarios WHERE Tipo_Usuario = '2'";
+                                    $envioD = mysqli_query($conn, $disqueras);
+                                    if(mysqli_num_rows($envioD) > 0){
+                                        while($mostrarD = mysqli_fetch_assoc($envioD)){
+                                            $id = $mostrarD['Id'];
+                                            $img = $mostrarD['Foto'];
+                                            $nom = $mostrarD['Nombre'];
+                                            ?>
+                                                <a href="/disquera.php?id=<?php echo $id ?>" class="box_Covers round_Covers">
+                                                    <img src="<?php echo $img ?>">
+                                                    <p><?php echo $nom ?></p>
+                                                </a>
+                                            <?php
+                                        }
+                                    }
+                                    else{
+
+                                    }
+                                ?>
                             </article>
+                            <a class="add_Playlists" href="">
+                                <i class='bx bxs-plus-circle'></i>
+                            </a>
                             <div class="slider_Container">
                                 <button class="slider_prev"><</button>
                                 <button class="slider_next">></button>
@@ -63,15 +79,33 @@
                         </section>
 
 
-
-                        <section class="containers_Home superiors_Container_Home">
+                        <section class="containers_Home superiors_Container_Home"> <!-- CONTENEDOR DE TODOS LOS ARTISTAS -->
                             <h1>Artistas</h1>
                             <article class="box_Covers_Container">
-                                <a href="" class="box_Covers round_Covers">
-                                    <img src="assets/img/wallhaven-e7qx3k.jpg">
-                                    <p>Cuarteto de Nos</p>
-                                </a>
+                                <?php
+                                    $disqueras = "SELECT * FROM artistas";
+                                    $envioD = mysqli_query($conn, $disqueras);
+                                    if(mysqli_num_rows($envioD) > 0){
+                                        while($mostrarD = mysqli_fetch_assoc($envioD)){
+                                            $id = $mostrarD['Id'];
+                                            $img = $mostrarD['Foto'];
+                                            $nom = $mostrarD['Nombre'];
+                                            ?>
+                                                <a href="/artista.php?id=<?php echo $id ?>" class="box_Covers round_Covers">
+                                                    <img src="<?php echo $img ?>">
+                                                    <p><?php echo $nom ?></p>
+                                                </a>
+                                            <?php
+                                        }
+                                    }
+                                    else{
+
+                                    }
+                                ?>
                             </article>
+                            <a class="add_Playlists" href="">
+                                <i class='bx bxs-plus-circle'></i>
+                            </a>
                             <div class="slider_Container">
                                 <button class="slider_prev"><</button>
                                 <button class="slider_next">></button>
@@ -79,14 +113,67 @@
                         </section>
 
 
-
-                        <section class="containers_Home superiors_Container_Home">
-                            <h1>Albumes</h1>
+                        <section class="containers_Home superiors_Container_Home"> <!-- CONTENEDOR DE TODOS LOS USUARIOS SUSCRITOS -->
+                            <h1>Usuarios Suscritos</h1>
                             <article class="box_Covers_Container">
-                                <a href="" class="box_Covers square_Covers">
-                                    <img src="assets/img/cat.jpeg">
-                                </a>
+                                <?php
+                                    $disqueras = "SELECT * FROM usuarios WHERE Tipo_Usuario = '1'";
+                                    $envioD = mysqli_query($conn, $disqueras);
+                                    if(mysqli_num_rows($envioD) > 0){
+                                        while($mostrarD = mysqli_fetch_assoc($envioD)){
+                                            $id = $mostrarD['Id'];
+                                            $img = $mostrarD['Foto'];
+                                            $nom = $mostrarD['Nombre'];
+                                            ?>
+                                                <a href="/usuario.php?id=<?php echo $id ?>" class="box_Covers round_Covers">
+                                                    <img src="<?php echo $img ?>">
+                                                    <p><?php echo $nom ?></p>
+                                                </a>
+                                            <?php
+                                        }
+                                    }
+                                    else{
+
+                                    }
+                                ?>
                             </article>
+                            <a class="add_Playlists" href="">
+                                <i class='bx bxs-plus-circle'></i>
+                            </a>
+                            <div class="slider_Container">
+                                <button class="slider_prev"><</button>
+                                <button class="slider_next">></button>
+                            </div>
+                        </section>
+
+
+                        <section class="containers_Home superiors_Container_Home"> <!-- CONTENEDOR DE TODOS LOS USUARIOS NO SUSCRITOS -->
+                            <h1>Usuarios No Suscritos</h1>
+                            <article class="box_Covers_Container">
+                                <?php
+                                    $disqueras = "SELECT * FROM usuarios WHERE Tipo_Usuario = '0'";
+                                    $envioD = mysqli_query($conn, $disqueras);
+                                    if(mysqli_num_rows($envioD) > 0){
+                                        while($mostrarD = mysqli_fetch_assoc($envioD)){
+                                            $id = $mostrarD['Id'];
+                                            $img = $mostrarD['Foto'];
+                                            $nom = $mostrarD['Nombre'];
+                                            ?>
+                                                <a href="/usuario.php?id=<?php echo $id ?>" class="box_Covers round_Covers">
+                                                    <img src="<?php echo $img ?>">
+                                                    <p><?php echo $nom ?></p>
+                                                </a>
+                                            <?php
+                                        }
+                                    }
+                                    else{
+
+                                    }
+                                ?>
+                            </article>
+                            <a class="add_Playlists" href="">
+                                <i class='bx bxs-plus-circle'></i>
+                            </a>
                             <div class="slider_Container">
                                 <button class="slider_prev"><</button>
                                 <button class="slider_next">></button>
@@ -96,7 +183,126 @@
                 }
                 elseif($usuario == 2){
                     ?>
-                        
+                        <section class="containers_Home superiors_Container_Home"> <!-- CONTENEDOR DE TODOS LOS ARTISTAS -->
+                            <h1>Artistas</h1>
+                            <article class="box_Covers_Container">
+                                <?php
+                                    $artistas = "SELECT * FROM artistas WHERE Id_Disquera = '$mainid'";
+                                    $envio = mysqli_query($conn, $artistas);
+                                    if(mysqli_num_rows($envio) > 0){
+                                        while($mostrar = mysqli_fetch_assoc($envio)){
+                                            $id1 = $mostrar['Id'];
+                                            $img1 = $mostrar['Foto'];
+                                            $nom1 = $mostrar['Nombre'];
+                                            ?>
+                                                <a href="/artista.php?id=<?php echo $id1 ?>" class="box_Covers round_Covers">
+                                                    <img src="<?php echo $img1 ?>">
+                                                    <p><?php echo $nom1 ?></p>
+                                                </a>
+                                            <?php
+                                        }
+                                    }
+                                    else{
+
+                                    }
+                                ?>
+                            </article>
+                            <a class="add_Playlists" href="">
+                                <i class='bx bxs-plus-circle'></i>
+                            </a>
+                            <div class="slider_Container">
+                                <button class="slider_prev"><</button>
+                                <button class="slider_next">></button>
+                            </div>
+                        </section>
+
+
+                        <section class="containers_Home superiors_Container_Home"> <!-- CONTENEDOR DE TODOS LOS ALBUMES -->
+                            <h1>Albumes</h1>
+                            <article class="box_Covers_Container">
+                                <?php
+                                    $artistas = "SELECT * FROM artistas WHERE Id_Disquera = '$mainid'";
+                                    $envioA = mysqli_query($conn, $artistas);
+                                    if(mysqli_num_rows($envioA) > 0){
+                                        while ($mostrarA = mysqli_fetch_array($envioA)){ 
+                                            $idA = $mostrarA['Id'];
+
+                                            $albumes = "SELECT * FROM albumes WHERE Id_Artista = '$idA'";
+                                            $envioAL = mysqli_query($conn, $albumes);
+
+                                            while($mostrarAL = mysqli_fetch_array($envioAL)){
+                                                $id1 = $mostrarAL['Id'];
+                                                $img1 = $mostrarAL['Portada'];
+
+                                                ?>
+                                                    <a href="/album.php?id=<?php echo $id1 ?>" class="box_Covers square_Covers">
+                                                        <img src="<?php echo $img1 ?>">
+                                                    </a>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                    else{
+
+                                    }
+                                ?>
+                            </article>
+                            <a class="add_Playlists" href="">
+                                <i class='bx bxs-plus-circle'></i>
+                            </a>
+                            <div class="slider_Container">
+                                <button class="slider_prev"><</button>
+                                <button class="slider_next">></button>
+                            </div>
+                        </section>
+
+
+                        <section class="containers_Home superiors_Container_Home"> <!-- CONTENEDOR DE TODOS LOS CANCIONES -->
+                            <h1>Canciones</h1>
+                            <article class="box_Covers_Container">
+                                <?php
+                                    $artistas = "SELECT * FROM artistas WHERE Id_Disquera = '$mainid'";
+                                    $envioA = mysqli_query($conn, $artistas);
+                                    if(mysqli_num_rows($envioA) > 0){
+                                        while ($mostrarA = mysqli_fetch_array($envioA)){ 
+                                            $idA = $mostrarA['Id'];
+
+                                            $albumes = "SELECT * FROM albumes WHERE Id_Artista = '$idA'";
+                                            $envioAL = mysqli_query($conn, $albumes);
+
+                                            while($mostrarAL = mysqli_fetch_array($envioAL)){
+                                                $idAL = $mostrarAL['Id'];
+                                                $img1 = $mostrarAL['Portada'];
+
+                                                $canciones = "SELECT * FROM canciones WHERE Id_Album = '$idAL'";
+                                                $envioC = mysqli_query($conn, $canciones);
+
+                                                while($mostrarC = mysqli_fetch_array($envioC)){
+                                                    $id1 = $mostrarC['Id'];
+                                                    // $img1 = $mostrarC['Portada'];
+                                                    ?>
+                                                        <a href="/cancion.php?id=<?php echo $id1 ?>" class="box_Covers square_Covers">
+                                                            <img src="<?php echo $img1 ?>">
+                                                            <i class='bx bx-play-circle' ></i>
+                                                        </a>
+                                                    <?php
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else{
+
+                                    }
+                                ?>
+                            </article>
+                            <a class="add_Playlists" href="">
+                                <i class='bx bxs-plus-circle'></i>
+                            </a>
+                            <div class="slider_Container">
+                                <button class="slider_prev"><</button>
+                                <button class="slider_next">></button>
+                            </div>
+                        </section>
                     <?php
                 }
                 else{
@@ -111,7 +317,7 @@
                                 </div>
                             </a>
                             <?php
-                                $playlists = "SELECT * FROM playlists WHERE Id_Usuario = '$id'";
+                                $playlists = "SELECT * FROM playlists WHERE Id_Usuario = '$mainid'";
                                 $envioPL = mysqli_query($conn, $playlists);
                                 while($mostrarPL = mysqli_fetch_array($envioPL)){
                             ?>
@@ -134,7 +340,7 @@
 
                         <section class="containers_Home user_Container_Home"> <!-- CONTENEDOR DE ALBUMES FAVORITOS O RECOMENDADOS -->
                             <?php
-                                $albumesU = "SELECT * FROM favoritos_albumes WHERE Id_Usuario = '$id'";
+                                $albumesU = "SELECT * FROM favoritos_albumes WHERE Id_Usuario = '$mainid'";
                                 $envioALU = mysqli_query($conn, $albumesU);
                                 if(mysqli_num_rows($envioALU) > 0){
                                     ?>
@@ -151,13 +357,20 @@
                                 <?php
                                     if (mysqli_num_rows($envioALU) > 0){ //el usuario SI tiene albumes favoritos
                                         while ($mostrarAlU = mysqli_fetch_array($envioALU)){ 
-                                            $id = $mostrarAlU['Id'];
-                                            $img = $mostrarAlU['Portada'];
-                                        ?>
-                                            <a href="/album.php?id=<?php echo $id ?>" class="box_Covers square_Covers">
-                                                <img src="<?php echo $img ?>">
-                                            </a>
-                                        <?php
+                                            $id1 = $mostrarAlU['Id_Album'];
+                                            
+                                            $albumesU2 = "SELECT * FROM albumes WHERE Id = '$id1'";
+                                            $envioU2 = mysqli_query($conn, $albumesU2);
+
+                                            while($mostrarU2 = mysqli_fetch_array($envioU2)){
+                                                $id = $mostrarU2['Id'];
+                                                $img = $mostrarU2['Portada'];
+                                            ?>
+                                                <a href="/album.php?id=<?php echo $id ?>" class="box_Covers square_Covers">
+                                                    <img src="<?php echo $img ?>">
+                                                </a>
+                                            <?php
+                                            }
                                         }
                                     }
                                     else{ //el usuario NO tiene albumes favoritos
@@ -204,7 +417,7 @@
 
                         <section class="containers_Home user_Container_Home"> <!-- CONTENEDOR DE ARTISTAS FAVORITOS O RECOMENDADOS -->
                             <?php
-                                $artistasUS = "SELECT * FROM favoritos_artistas WHERE Id_Usuario = '$id'";
+                                $artistasUS = "SELECT * FROM favoritos_artistas WHERE Id_Usuario = '$mainid'";
                                 $envioARU = mysqli_query($conn, $artistasUS);
                                 if(mysqli_num_rows($envioARU) > 0){
                                     ?>
@@ -288,7 +501,7 @@
 
                         <section class="containers_Home user_Container_Home"> <!-- CONTENEDOR DE CANCIONES FAVORITOS O RECOMENDADOS -->
                             <?php
-                                $cacnionesU = "SELECT * FROM favoritos_canciones WHERE Id_Usuario = '$id'";
+                                $cacnionesU = "SELECT Id_Cancion FROM favoritos_canciones WHERE Id_Usuario = '$mainid'";
                                 $envioCU = mysqli_query($conn, $cacnionesU);
                                 if(mysqli_num_rows($envioCU) > 0){
                                     ?>
@@ -305,14 +518,28 @@
                             <?php
                                     if (mysqli_num_rows($envioCU) > 0){ //el usuario SI tiene canciones favoritos
                                         while ($mostrarCU = mysqli_fetch_array($envioCU)){ 
-                                            $id = $mostrarCU['Id'];
-                                            $img = $mostrarCU['Portada'];
-                                        ?>
-                                            <a href="/cancion.php?id=<?php echo $id ?>" class="box_Covers square_Covers">
-                                                <img src="<?php echo $img ?>">
-                                                <i class='bx bx-play-circle' ></i>
-                                            </a>
-                                        <?php
+                                            $id1 = $mostrarCU['Id_Cancion'];
+
+                                            $cacnionesU2 = "SELECT * FROM canciones WHERE Id = '$id1'";
+                                            $envioCU2 = mysqli_query($conn, $cacnionesU2);
+
+                                            while($mostrarCU2 = mysqli_fetch_array($envioCU2)){
+                                                $id = $mostrarCU2['Id'];
+
+                                                $id3 = $mostrarCU2['Id_Album'];
+                                                $portadaC = "SELECT Portada FROM albumes WHERE Id = '$id3'";
+                                                $envioCU3 = mysqli_query($conn, $portadaC);
+                                                $mostrarCU3 = mysqli_fetch_assoc($envioCU3);
+
+                                                $img = $mostrarCU3['Portada'];
+
+                                                ?>
+                                                    <a href="/cancion.php?id=<?php echo $id ?>" class="box_Covers square_Covers">
+                                                        <img src="<?php echo $img ?>">
+                                                        <i class='bx bx-play-circle' ></i>
+                                                    </a>
+                                                <?php
+                                            }
                                         }
                                     }
                                     else{ //el usuario NO tiene canciones favoritos
@@ -337,12 +564,18 @@
                                                 $resultadoId3 = mysqli_query($conn, $query3);
 
                                                 while($RandMostrar3 = mysqli_fetch_array($resultadoId3)){
-                                                    $id3 = $RandMostrar3['Id'];
-                                                    $img3 = $RandMostrar3['Portada'];  
+                                                    $id = $RandMostrar3['Id'];
+
+                                                    $id3 = $RandMostrar3['Id_Album'];
+                                                    $portadaC = "SELECT Portada FROM albumes WHERE Id = '$id3'";
+                                                    $envioCU3 = mysqli_query($conn, $portadaC);
+                                                    $mostrarCU3 = mysqli_fetch_assoc($envioCU3);
+
+                                                    $img = $mostrarCU3['Portada']; 
                                                 }
                                             ?>
-                                                <a href="/cancion.php?id=<?php echo $id3 ?>" class="box_Covers square_Covers">
-                                                    <img src="<?php echo $img3 ?>">
+                                                <a href="/cancion.php?id=<?php echo $id ?>" class="box_Covers square_Covers">
+                                                    <img src="<?php echo $img ?>">
                                                     <i class='bx bx-play-circle' ></i>
                                                 </a>
                                             <?php
@@ -350,10 +583,6 @@
                                         }
                                     }
                                 ?>
-                                <!-- <a href="" class="box_Covers square_Covers">
-                                    <img src="assets/img/wallhaven-e7qx3k.jpg">
-                                    <i class='bx bx-play-circle' ></i>
-                                </a> -->
                             </article>
                             <div class="slider_Container">
                                 <button class="slider_prev"><</button>
@@ -448,7 +677,6 @@
                 </div>
             </section> -->
         </div>
-
     </main>
 
 

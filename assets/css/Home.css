@@ -84,6 +84,7 @@
     position: relative;
 }
 .user_Container_Home{
+    /* width: 70vw; */
     width: 70vw;
 }
 .superiors_Container_Home{
@@ -162,7 +163,7 @@
     height: 150px;
     /* height: auto; */
     border-radius: 5rem;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 .control_Overflow_Name{
     width: 100%;
