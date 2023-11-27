@@ -1,5 +1,15 @@
 
-/*--------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------*/
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-size: 16px;
+    color: #fff;
+}
 .overlay{
     background: rgba(0, 0, 0, .3);
     position: fixed;
@@ -16,11 +26,6 @@
     visibility: visible;
 }
 .popup{
-
-      /* 
-    + 
-    background: linear-gradient(to bottom right, #FF2CDF, #0014FF)
-    - */
   background: linear-gradient(to bottom right, #1732b870, #380051, #5c028a, #672d8e, #1732b870);
     backdrop-filter: blur(20px);
     border: 2px solid rgba(245, 243, 243, 0.2);
@@ -33,16 +38,22 @@
    align-items: center;
 }
 .icon{
-    height: 15rem;
+    height: 50vh;
     
+}
+.ion{
+    height: 65vh;
+}
+.io{
+    height: 90vh;
 }
 #cerrar{
     font-size: 20px;
     float: left;
-    color: #9449aa;
+    color: #fff;
     margin-bottom: 90%;
 }
-#te_dije:hover{
+#cerrar:hover{
     opacity: 60%;
 }
 
@@ -76,10 +87,10 @@
 .separado{
     margin-left: 2rem;
 }
-#abrir-popup{
+.abrir-popup{
     display: none;
 }
-.cerrar-popup{
+.cerrar-popup {
     background: transparent;
     color: #fff;
     width: 100px;
@@ -90,7 +101,9 @@
     border-radius: 6px;
 
 }
-/*---------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------*/
+
 .input-field input{
     width: 225px;
     height: 35px;
@@ -107,4 +120,63 @@
 .input-field label{
     font-size: 19px;
     margin-left: 3px;
+}
+
+
+
+.bodypop{
+    width: 100%;
+    height: 100%;
+   
+}
+.mainpops{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+.imags{
+    height: 100px;
+    width: 100px;
+}
+.btnhi{
+    width: 20px;
+    height: 20%;
+}
+.sele {
+    background: transparent;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 7px;
+    border: #fff solid 2px;
+    padding-left: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+option{
+    background-color: #000;
+}
+.opp{
+    background: transparent;
+}
+
+.abrir-popu2{
+    background: linear-gradient(to bottom right, #000, #1732b870, #380051, #5c028a, #672d8e, #1732b870, #000);
+    color: #fff;
+    font-size: 16px;
+    width: 100px;
+    height: 35px;
+    border-color: #fff;
+    border-radius: 6px;
+}
+.text{
+    background-color: transparent;
+    overflow: hidden;
+    resize: none;
+    border: #fff solid 2px;
+    border-radius: 6px;
+    width: 96%;
 }
