@@ -13,8 +13,9 @@
                 if(password_verify($contra, $contras))
                 {
                     session_start();
-                    $_SESSION['logueado']=true;
-                    $_SESSION['emailUs'] = $correo;
+                    $_SESSION['id']=$indic['Id'];
+                    $_SESSION['nombre']=$indic['Nombre'];
+                    $_SESSION['tipo']=$indic['Tipo_Usuario'];
                     header("location: /");
                 }
                 else{
@@ -31,4 +32,3 @@
             echo'<script> alert("ERROR :b") </script>';
         }
     }
-?>

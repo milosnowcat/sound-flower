@@ -10,6 +10,7 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
 <?php
 } else {
   include_once 'assets/php/conexion.php';
+  $usuario = $_SESSION['id'];
 ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -19,36 +20,33 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
       <title>Document</title>
     </head>
     <body>
-      <form action="assets/php/crear-artista.php" method="post" enctype="multipart/form-data">
+      <form action="assets/php/crear-album.php" method="post" enctype="multipart/form-data">
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" id="nombre" required />
-        <label for="descripcion">Descripción</label>
-        <textarea name="descripcion" id="descripcion" cols="30" rows="10" required></textarea>
-        <label for="foto">Foto</label>
+        <label for="foto">Portada</label>
         <input type="file" name="foto" id="foto" accept="image/*" />
-        <img id="preview" src="/assets/img/artist.jpg" alt="album" />
+        <img id="preview" src="/assets/img/album.jpg" alt="album" />
+        
+        <label for="artista">Artista</label>
+        <select name="artista" id="artista" required>
         <?php
         if ($_SESSION['tipo'] == 3) {
-          ?>
-          <label for="disquera">Disquera</label>
-          <select name="disquera" id="disquera" required>
-            <?php
-            $query = 'SELECT Id, Nombre FROM usuarios WHERE Tipo_Usuario = 2';
-            $result = mysqli_query($conn, $query);
-            while ($row = mysqli_fetch_array($result)) {
-            ?>
-              <option value="<?php echo $row['Id'] ?>"><?php echo $row['Nombre'] ?></option>
-            <?php
-            }
-            ?>
-          </select>
+            $query = "SELECT Id, Nombre FROM artistas";
+        } else {
+            $query = "SELECT Id, Nombre FROM artistas WHERE Id_Disquera = $usuario";
+        }
+        $result = mysqli_query($conn, $query);
+        while ($row = mysqli_fetch_array($result)) {
+        ?>
+            <option value="<?php echo $row['Id'] ?>"><?php echo $row['Nombre'] ?></option>
         <?php
         }
         ?>
+        </select>
         <input type="submit" value="Crear">
       </form>
       <script type="module" src="assets/js/crear-artista.js"></script>
     </body>
   </html>
 <?php
-  }
+}
