@@ -5,8 +5,8 @@
     }
     require_once('assets/php/conexion.php');
     
-    if(isset($_GET['numeroPlay'])){
-        $numeroPlay = $_GET['numeroPlay'];
+    if(isset($_GET['id'])){
+        $numeroPlay = $_GET['id'];
     } else {
         // Si no se proporciona, establece un valor predeterminado
         $numeroPlay = 1;
