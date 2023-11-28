@@ -39,6 +39,8 @@
   margin: 0;
 
   color: #fff;
+
+  box-sizing: border-box;
 }
 
 html,
