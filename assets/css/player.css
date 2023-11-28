@@ -1,0 +1,188 @@
+#mainPlayer {
+    width: 99wh;
+    height: 93vh;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ______seccion donde va el reproductor ahsjajs_______ */
+.songPlayer {
+    height: 100%;
+    width: 55%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* aqui esta toda la informacion de la cancion reproduciendose */
+.currentSong {
+    height: 100%;
+    width: 80%;
+    /* background-color: olive; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* primer div */
+.currentSongImg {
+    height: 60%;
+    width: 60%;
+    /* background-color: pink; */
+}
+
+.namesSong {
+    font-weight: bolder;
+    font-size: x-large;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    color: white;
+}
+
+.namesArtist {
+    font-weight: 500;
+    font-size: medium;
+    margin-top: 1%;
+    color: #C0BFC0;
+}
+
+/* segundo div */
+.namesContainer {
+    height: 10%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: violet; */
+    padding: 4%;
+    box-sizing: border-box;
+}
+
+
+/* ______seccion donde va la fila de reproduccion_______ */
+.playQueue {
+    height: 100%;
+    width: 45%;
+    /* background-color: orange; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* contenedor blanco  */
+.queueContainer {
+    height: 90%;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.50);
+    border-radius: 20px;
+    padding: 2%;
+    box-sizing: border-box;
+    
+    /* overscroll-behavior: none; */
+}
+
+.containerTittle {
+    height: 7%;
+    width: 100%;
+    color: white;
+    font-size: x-large;
+    font-weight: 700; 
+}
+
+/* lo que contiene las canciones en la fila */
+.provisionalSongContainer {
+    height: 90%;
+    width: 100%;
+    /* background-color: blue; */
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.provisionalSongContainer::-webkit-scrollbar {
+    background-color: transparent;
+    display: none;
+  }
+
+/* canciones en la fila asjaja ayuda */
+.songQueueContainer {
+    height: 12%;
+    width: 100%;
+    background-color: #120D14;
+    border-bottom: 1px solid #C0BFC0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* contenedor imagen/nombre/artista */
+.artistInfo {
+    height: 100%;
+    width: 80%;
+    /* background-color: cadetblue; */
+    padding: 1%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgContainer {
+    height: 100%;
+    max-width: 20%;
+    /* background-color: hotpink; */
+    overflow: hidden;
+    border: none;
+}
+
+.albumImg, .songImg {
+    width: 100%;  
+    height: 100%; 
+}
+
+.nameSongNArtist {
+    /* height: 100%; */
+    flex-grow: 1;
+    max-width: 82%;
+    /* background-color: hotpink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start;
+    /* padding: 1%;
+    box-sizing: border-box; */
+    /* justify-content: flex-start; */
+}
+
+.nameSong, .nameArtist {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.nameSong {
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.nameArtist {
+    font-size: small;
+    margin-top: 1%;
+}
+
+/* contenedor duracion/like */
+.songInfo{
+    height: 100%;
+    width: 20%;
+    /* background-color: orangered; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.songInfoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
