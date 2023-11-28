@@ -17,7 +17,7 @@ main{
    align-content: center;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;  
+    min-height: 83.3vh;  
 }
 
 .logi1{
@@ -209,4 +209,20 @@ input:valid ~ label {
 }
 .register-link p a:hover{
     text-decoration: underline;
+}
+#logo{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+}
+#imgs{
+    float: left;
+}
+.txtt{
+    margin-left: 0.3rem;
+}
+.log{
+    width: 4.5rem;
+    height: 4.5rem;
 }
