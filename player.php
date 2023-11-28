@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/player.css"> 
     <link rel="stylesheet" href="assets/css/style.css"> 
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script type="text/javaScript" src="player.js"></script>
     <title>Reproductor</title>
 </head>
 <body> 
@@ -31,7 +32,7 @@
                     <a  class="namesSong" href="#">Heaven</a>
                     <a  class="namesArtist" href="#">Mitski</a>
                 </div>
-                <audio controls preload="metadata" src="cancionEjemplo/Laufey.mp3"></audio>
+                <audio controls autoplay preload="metadata" src="cancionEjemplo/Laufey.mp3"></audio>
             </article>
         </section>
 
@@ -111,13 +112,13 @@
                                 <div class="songQueueContainer">
                                     <!-- contenedor imagen/nombre/artista -->
                                     <section class="artistInfo">
-                                        <div class="imgContainer">
-                                            <img class="albumImg" src= "<?php echo $img; ?>" alt="">
-                                        </div>
+                                        <button onclick="anotherSong()" class="imgContainer">
+                                            <img class="albumImg" src="<?php echo $img; ?>" alt="">
+                                        </button>
                                         
                                         <div class="nameSongNArtist">
-                                            <a class="nameSong" href="#"><?php echo $nom; ?></a>
-                                            <a class="nameArtist" href="#"><?php echo $nombreArtista; ?></a>
+                                            <p class="nameSong"><?php echo $nom; ?></p>
+                                            <p class="nameArtist"><?php echo $nombreArtista; ?></p>
                                         </div>
                                     </section>
                                     

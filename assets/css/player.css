@@ -132,6 +132,7 @@
     max-width: 20%;
     /* background-color: hotpink; */
     overflow: hidden;
+    border: none;
 }
 
 .albumImg, .songImg {
