@@ -13,8 +13,8 @@ function redireccionAlbum(id){
     window.location.href = nuevaURL;
 }
 
-function redireccionArtista(id){
-    var nuevaURL = "/artista.php?id=" + id;
+function redireccionArtista(nom){
+    var nuevaURL = "/artista.php?nombre=" + nom;
     window.location.href = nuevaURL;
 }
 

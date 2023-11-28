@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="assets/css/Home.css">
     <script src="assets/js/slider.js" defer></script>
-    <script src="assets/js/redirecciones.js"></script>
+    <script src="assets/js/redirecciones.js" defer></script>
     <title>Home</title>
 </head>
 <body>
@@ -96,7 +96,7 @@
                                             $img = $mostrarD['Foto'];
                                             $nom = $mostrarD['Nombre'];
                                             ?>
-                                                <li onclick="redireccionArtista(<?php echo $id ?>)" class="box_Covers round_Covers">
+                                                <li onclick="redireccionArtista('<?php echo $nom ?>')" class="box_Covers round_Covers">
                                                     <div class="img">
                                                         <img src="<?php echo $img ?>" draggable = "false">
                                                     </div>
@@ -209,7 +209,7 @@
                                             $img1 = $mostrar['Foto'];
                                             $nom1 = $mostrar['Nombre'];
                                             ?>
-                                                <li onclick="redireccionUsuario(<?php echo $id1 ?>)" class="box_Covers round_Covers">
+                                                <li onclick="redireccionArtista('<?php echo $nom1 ?>')" class="box_Covers round_Covers">
                                                     <div class="img">
                                                         <img src="<?php echo $img1 ?>">
                                                     </div>
@@ -479,7 +479,7 @@
                                                 $nom = $mostrarARFAV['Nombre'];
 
                                                 ?>
-                                                    <li onclick="redireccionArtista(<?php echo $id ?>)" class="box_Covers round_Covers">
+                                                    <li onclick="redireccionArtista('<?php echo $nom ?>')" class="box_Covers round_Covers">
                                                         <div class="img">
                                                             <img src="<?php echo $img ?>">
                                                         </div>
@@ -516,7 +516,7 @@
                                                     $nom2 = $RandMostrar2['Nombre']; 
                                                 }
                                             ?>
-                                                <li onclick="redireccionArtista(<?php echo $id2 ?>)" class="box_Covers round_Covers">
+                                                <li onclick="redireccionArtista('<?php echo $nom2 ?>')" class="box_Covers round_Covers">
                                                     <div class="img">
                                                         <img src="<?php echo $img2 ?>">
                                                     </div>
