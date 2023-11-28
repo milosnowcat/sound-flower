@@ -24,7 +24,8 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
 
     $sql_numero = "SELECT Id FROM canciones WHERE Id_Album = $album";
     $resultado_numero = $conn->query($sql_numero);
-    $numero = $resultado_numero->num_rows++;
+    $numero = $resultado_numero->num_rows;
+    $numero++;
 
     if ($resultado_verificacion->num_rows > 0) {
         echo '<script>window.alert("Este album ya tiene asignada esta canción.");
@@ -50,7 +51,9 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
         $row_verificacion = $resultado_verificacion->fetch_array();
 
         foreach ($artistas as $artista) {
-            // TODO hacer un insert a cacion_artista por cada artista
+            $sql_insert_artista = "INSERT INTO cancion_artista (Id_Cancion, Id_Artista)
+                VALUES ('$row_verificacion[0]', '$artista')";
+            $conn->query($sql_insert_artista);
         }
     }
 }

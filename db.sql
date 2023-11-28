@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2023 a las 18:08:48
+-- Tiempo de generación: 28-11-2023 a las 03:58:48
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -19,9 +19,9 @@ SET time_zone = "+00:00";
 
 --
 -- Base de datos: `sound`
+--
 CREATE DATABASE IF NOT EXISTS `sound` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci;
 USE `sound`;
---
 
 -- --------------------------------------------------------
 
@@ -184,18 +184,6 @@ INSERT INTO `artistas` (`Id`, `Nombre`, `Descripcion`, `Foto`, `Id_Disquera`) VA
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cacion_artista`
---
-
-CREATE TABLE `cacion_artista` (
-  `Id` int(11) NOT NULL,
-  `Id_Cancion` int(11) NOT NULL,
-  `Id_Artista` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `canciones`
 --
 
@@ -208,6 +196,155 @@ CREATE TABLE `canciones` (
   `Id_Album` int(11) NOT NULL,
   `Reproducciones` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `canciones`
+--
+
+INSERT INTO `canciones` (`Id`, `Nombre`, `Archivo`, `Duracion`, `Numero`, `Id_Album`, `Reproducciones`) VALUES
+(1, 'Smack That', '/assets/audio/Smack That.mp3', 3, 1, 1, 0),
+(2, 'Gangsta`s Paradise', '/assets/audio/Gangsta`s Paradise.mp3', 4, 1, 2, 0),
+(3, 'Stayin Alive', '/assets/audio/Stayin Alive.mp3', 4, 1, 3, 0),
+(4, 'Daylight', '/assets/audio/Daylight.mp3', 3, 1, 4, 0),
+(5, 'It`s Been So Long', '/assets/audio/It`s Been So Long.mp3', 2, 1, 5, 0),
+(6, 'Superman', '/assets/audio/Superman.mp3', 5, 1, 6, 0),
+(7, 'Wait a Minute!', '/assets/audio/Wait a Minute!.mp3', 3, 1, 7, 0),
+(8, 'Clandestina - JVSTIN Remix Slowed + Reverb + Bass Boosted', '/assets/audio/Clandestina - JVSTIN Remix Slowed + Reverb + Bass Boosted.mp3', 3, 1, 8, 0),
+(9, 'Unholy (feat. Kim Petras)', '/assets/audio/Unholy (feat. Kim Petras).mp3', 2, 1, 9, 0),
+(10, 'La Trampa es Ley', '/assets/audio/La Trampa es Ley.mp3', 2, 1, 10, 0),
+(11, 'Wicked Game', '/assets/audio/Wicked Game.mp3', 4, 1, 11, 0),
+(12, 'Mind Games', '/assets/audio/Mind Games.mp3', 4, 1, 12, 0),
+(13, 'Way down We Go', '/assets/audio/Way down We Go.mp3', 3, 1, 13, 0),
+(14, 'Black Out Days', '/assets/audio/Black Out Days.mp3', 3, 1, 14, 0),
+(15, 'Find Me', '/assets/audio/Find Me.mp3', 3, 1, 15, 0),
+(16, '505', '/assets/audio/505.mp3', 4, 1, 16, 0),
+(17, 'I Wanna Be Yours', '/assets/audio/I Wanna Be Yours.mp3', 3, 1, 17, 0),
+(18, 'Angels - Radio Edit', '/assets/audio/Angels - Radio Edit.mp3', 3, 1, 18, 0),
+(19, 'Intro (Infected)', '/assets/audio/Intro (Infected).mp3', 4, 1, 19, 0),
+(20, 'Hidden In the Sand', '/assets/audio/Hidden In the Sand.mp3', 1, 1, 20, 0),
+(21, 'Dreamer', '/assets/audio/Dreamer.mp3', 3, 1, 21, 0),
+(22, 'When Memories Snow', '/assets/audio/When Memories Snow.mp3', 1, 1, 22, 0),
+(23, 'Slt Him Out Again (feat. Kaliii)', '/assets/audio/Slt Him Out Again (feat. Kaliii).mp3', 3, 1, 23, 0),
+(24, 'Supermercado', '/assets/audio/Supermercado.mp3', 3, 1, 24, 0),
+(25, 'A Potion For Love', '/assets/audio/A Potion For Love.mp3', 3, 1, 25, 0),
+(26, 'MOOD OF THE CENTURY', '/assets/audio/MOOD OF THE CENTURY.mp3', 2, 1, 26, 0),
+(27, 'Princess Diana (with Nicki Minaj)', '/assets/audio/Princess Diana (with Nicki Minaj).mp3', 2, 1, 27, 0),
+(28, 'TRICK OR TREAT', '/assets/audio/TRICK OR TREAT.mp3', 2, 1, 28, 0),
+(29, 'STUPID (feat. Yung Baby Tate)', '/assets/audio/STUPID (feat. Yung Baby Tate).mp3', 2, 1, 29, 0),
+(30, 'Cpr', '/assets/audio/Cpr.mp3', 3, 1, 30, 0),
+(31, 'Met a Girl', '/assets/audio/Met a Girl.mp3', 3, 1, 31, 0),
+(32, 'Black Skinhead', '/assets/audio/Black Skinhead.mp3', 3, 1, 32, 0),
+(33, 'Nada me da satisfacción', '/assets/audio/Nada me da satisfacción.mp3', 3, 1, 33, 0),
+(34, 'MONACO', '/assets/audio/MONACO.mp3', 4, 1, 34, 0),
+(35, 'Million Dollar Man', '/assets/audio/Million Dollar Man.mp3', 3, 1, 35, 0),
+(36, 'Heaven', '/assets/audio/Heaven.mp3', 3, 2, 22, 0),
+(37, 'Worms', '/assets/audio/Worms.mp3', 2, 1, 36, 0),
+(38, 'Flashing Lights', '/assets/audio/Flashing Lights.mp3', 3, 1, 37, 0),
+(39, 'niño,', '/assets/audio/niño,.mp3', 4, 1, 38, 0),
+(40, 'Somos Algo', '/assets/audio/Somos Algo.mp3', 3, 1, 39, 0),
+(41, 'Non-Stop', '/assets/audio/Non-Stop.mp3', 6, 1, 40, 0),
+(42, 'You`ll Be Back', '/assets/audio/You`ll Be Back.mp3', 3, 2, 40, 0),
+(43, 'NIGHT DANCER', '/assets/audio/NIGHT DANCER.mp3', 3, 1, 41, 0),
+(44, '冬のはなし', '/assets/audio/冬のはなし.mp3', 3, 1, 42, 0),
+(45, 'STAY (with Justin Bieber)', '/assets/audio/STAY (with Justin Bieber).mp3', 2, 1, 43, 0),
+(46, 'Payphone', '/assets/audio/Payphone.mp3', 3, 1, 44, 0),
+(47, 'Mi Buen Amor', '/assets/audio/Mi Buen Amor.mp3', 3, 1, 45, 0),
+(48, 'Blank Space', '/assets/audio/Blank Space.mp3', 3, 1, 46, 0),
+(49, 'My Time', '/assets/audio/My Time.mp3', 3, 1, 47, 0),
+(50, 'Don', '/assets/audio/Don.mp3', 3, 1, 48, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cancion_artista`
+--
+
+CREATE TABLE `cancion_artista` (
+  `Id` int(11) NOT NULL,
+  `Id_Cancion` int(11) NOT NULL,
+  `Id_Artista` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `cancion_artista`
+--
+
+INSERT INTO `cancion_artista` (`Id`, `Id_Cancion`, `Id_Artista`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 3),
+(4, 2, 4),
+(5, 3, 5),
+(6, 4, 6),
+(7, 5, 7),
+(8, 6, 8),
+(9, 6, 9),
+(10, 7, 10),
+(11, 8, 11),
+(12, 8, 12),
+(13, 8, 13),
+(14, 8, 14),
+(15, 9, 15),
+(16, 9, 16),
+(17, 10, 17),
+(18, 11, 18),
+(19, 12, 19),
+(20, 13, 20),
+(21, 14, 71),
+(22, 15, 21),
+(23, 15, 22),
+(24, 16, 23),
+(25, 17, 23),
+(26, 18, 24),
+(27, 18, 25),
+(28, 19, 26),
+(29, 20, 27),
+(30, 21, 28),
+(31, 22, 29),
+(32, 23, 30),
+(33, 23, 31),
+(34, 24, 32),
+(35, 25, 33),
+(36, 26, 34),
+(37, 27, 35),
+(38, 27, 36),
+(39, 28, 37),
+(40, 28, 38),
+(41, 28, 39),
+(42, 29, 40),
+(43, 29, 41),
+(44, 30, 42),
+(45, 31, 43),
+(46, 32, 44),
+(47, 33, 45),
+(48, 34, 46),
+(49, 35, 47),
+(50, 36, 29),
+(51, 37, 48),
+(52, 38, 49),
+(53, 38, 50),
+(54, 39, 51),
+(55, 39, 52),
+(56, 40, 53),
+(57, 41, 54),
+(58, 41, 55),
+(59, 41, 56),
+(60, 41, 57),
+(61, 41, 58),
+(62, 41, 59),
+(63, 41, 60),
+(64, 42, 58),
+(65, 42, 61),
+(66, 43, 62),
+(67, 44, 63),
+(68, 45, 64),
+(69, 45, 65),
+(70, 46, 66),
+(71, 47, 32),
+(72, 47, 67),
+(73, 48, 68),
+(74, 49, 69),
+(75, 50, 70);
 
 -- --------------------------------------------------------
 
@@ -377,15 +514,15 @@ ALTER TABLE `artistas`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indices de la tabla `cacion_artista`
---
-ALTER TABLE `cacion_artista`
-  ADD PRIMARY KEY (`Id`);
-
---
 -- Indices de la tabla `canciones`
 --
 ALTER TABLE `canciones`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `cancion_artista`
+--
+ALTER TABLE `cancion_artista`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -459,16 +596,16 @@ ALTER TABLE `artistas`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- AUTO_INCREMENT de la tabla `cacion_artista`
---
-ALTER TABLE `cacion_artista`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT de la tabla `cancion_artista`
+--
+ALTER TABLE `cancion_artista`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT de la tabla `cancion_playlist`
