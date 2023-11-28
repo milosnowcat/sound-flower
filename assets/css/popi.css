@@ -180,3 +180,7 @@ option{
     border-radius: 6px;
     width: 96%;
 }
+
+#bg {
+    background: linear-gradient(180deg, #000 0%, #000 0.01%, #3f0e53 100%);
+}

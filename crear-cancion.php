@@ -21,17 +21,13 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
       <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
       <title>Document</title>
     </head>
-    <body>
+    <body id="bg">
     <main class="mainpops">
 
-<div class="btnhi">
-  <input class="abrir-popu2" id="abrir-popup" type="submit" value="Crear cancion" > 
-</div>
-
-<div class="overlay" id="overlay" >
+<div class="overlay active" id="overlay" >
   <div class="popup" id="popup">
       <div class="ion">
-        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i id="cerrar" class='bx bx-x'></i></a>
+        <a href="/" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i id="cerrar" class='bx bx-x'></i></a>
       </div>
       <h1>Crea tu cancion</h1>     
       <form action="assets/php/crear-cancion.php" method="post" enctype="multipart/form-data">
@@ -103,7 +99,7 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
 
 
         <div id="terminar" >
-          <input class="cerrar-popup" type="submit"value="CREAR">
+          <input class="cerrar-popup" type="submit" value="CREAR">
         </div>
 
 

@@ -25,17 +25,13 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] < 2) {
 
       <title>Document</title>
     </head>
-    <body class="bodypop">
+    <body class="bodypop" id="bg">
       <main class="mainpops">
 
-        <div class="btnhi">
-          <input class="abrir-popu2" id="abrir-popup" type="submit" value="Crear album" > 
-        </div>
-
-        <div class="overlay" id="overlay" >
+        <div class="overlay active" id="overlay" >
           <div class="popup" id="popup">
               <div class="ion">
-                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i id="cerrar" class='bx bx-x'></i></a>
+                <a href="/" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i id="cerrar" class='bx bx-x'></i></a>
               </div>
               <h1>Crea tu album</h1>       
               <form action="assets/php/crear-album.php" method="post" enctype="multipart/form-data"  class="separado">
