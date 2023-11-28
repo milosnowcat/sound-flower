@@ -13,43 +13,43 @@
 
 ### Sprint 2
 
-- Maquetar la página de inicio
-- Programar la página de inicio
-- Maquetar la página de búsqueda de música
+- ~~Maquetar la página de inicio~~
+- ~~Programar la página de inicio~~
+- ~~Maquetar la página de búsqueda de música~~
 - Programar la página de búsqueda de música
-- Programar la página de registro
+- ~~Programar la página de registro~~
 
 ### Sprint 3
 
 - Implementar la reproducción de música
-- Configurar la autenticación de usuario
-- Maquetar la página de perfil de usuario
-- Programar la página de perfil de usuario
-- Programar la funcionalidad de recuperación de contraseña
+- ~~Configurar la autenticación de usuario~~
+- ~~Maquetar la página de perfil de usuario~~
+- ~~Programar la página de perfil de usuario~~
+- ~~Programar la funcionalidad de recuperación de contraseña~~
 
 ### Sprint 4
 
-- Desarrollar la funcionalidad de creación de listas de reproducción
-- Desarrollar la gestión de listas de reproducción
-- Maquetar la página de suscripciones
-- Programar la página de suscripciones
-- Programar la funcionalidad de notificaciones de eventos
+- ~~Desarrollar la funcionalidad de creación de listas de reproducción~~
+- ~~Desarrollar la gestión de listas de reproducción~~
+- ~~Maquetar la página de suscripciones~~
+- ~~Programar la página de suscripciones~~
+- __Programar la funcionalidad de notificaciones de eventos__
 
 ### Sprint 5
 
-- Implementar la simulación de suscripciones
-- Integrar procesos de pago simulados
-- Maquetar la página de reproducción de música
+- ~~Implementar la simulación de suscripciones~~
+- ~~Integrar procesos de pago simulados~~
+- ~~Maquetar la página de reproducción de música~~
 - Programar la página de reproducción de música
-- Programar la funcionalidad de recomendaciones de música
+- ~~Programar la funcionalidad de recomendaciones de música~~
 
 ### Sprint 6
 
 - Desarrollar la funcionalidad de compartir listas de reproducción
-- Implementar la función de "Me gusta" y "No me gusta" en las canciones
+- Implementar la función de "Me gusta" y __"No me gusta"__ en las canciones
 - Programar la capacidad de seguir a otros usuarios
-- Crear una función de recomendación de artistas basada en preferencias
-- Desarrollar la funcionalidad de comentarios en canciones y listas de reproducción
+- __Crear una función de recomendación de artistas basada en preferencias__
+- __Desarrollar la funcionalidad de comentarios en canciones y listas de reproducción__
 
 ### Sprint 7
 
