@@ -75,8 +75,9 @@
                                 ?>
                             </ul>
                             
-                          <input class="abrir-popup" class="add_Playlists" id="abrir-popup" type="submit" >
-                          <label class="add_Playlists" for="abrir-popup"><i class='bx bxs-plus-circle'></i></label>  
+                            <a class="add_Playlists" href="">
+                                <i class='bx bxs-plus-circle'></i>
+                            </a>
                           
                             <div class="slider_Container">
                                 <button class="slider_button button_left"><</button>
@@ -357,9 +358,8 @@
                                 }
                             ?>
 
-                            <a class="add_Playlists" href="">
-                                <i class='bx bxs-plus-circle'></i>
-                            </a>
+                            <input class="abrir-popup" class="add_Playlists" id="abrir-popup" type="submit" >
+                            <label class="add_Playlists" for="abrir-popup"><i class='bx bxs-plus-circle'></i></label>
                         </section>
 
 
