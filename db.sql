@@ -438,7 +438,7 @@ CREATE TABLE `generos_cancion` (
 CREATE TABLE `playlists` (
   `Id` int(11) NOT NULL,
   `Nombre` varchar(255) NOT NULL,
-  `Foto` varchar(500) NOT NULL,
+  `Foto` varchar(500) NOT NULL DEFAULT '/assets/img/playlist.jpg',
   `Id_Usuario` int(11) NOT NULL,
   `Id_Publica` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
