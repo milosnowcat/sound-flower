@@ -5,13 +5,18 @@
     }
     require_once('assets/php/conexion.php');
     
-    $numeroPlay=1;
+    if(isset($_GET['numeroPlay'])){
+        $numeroPlay = $_GET['numeroPlay'];
+    } else {
+        // Si no se proporciona, establece un valor predeterminado
+        $numeroPlay = 1;
+    }
 
     $id=$_SESSION['id'];
     $creador=$_SESSION['nombre'];
     $nCanciones=0;
     $play1 = "SELECT * FROM playlists WHERE Id_Usuario = '$id' AND ID = '$numeroPlay'";
-    $env1=mysqli_query($conn,$play1);  
+    $env1=mysqli_query($conn,$play1);
     while($mostrarPlay1 = mysqli_fetch_array($env1)){
         $canPlay1 = "SELECT * FROM cancion_playlist WHERE Id_Playlist= '{$mostrarPlay1['Id']}'";
         $envcan1=mysqli_query($conn,$canPlay1);
@@ -20,11 +25,11 @@
             $envcancion1=mysqli_query($conn,$can1);
             while($mostrarCan1 = mysqli_fetch_array($envcancion1)){
                 $nCanciones=$nCanciones+1;
-             } 
-         } 
+             }
+         }
     }
     $play = "SELECT * FROM playlists WHERE Id_Usuario = '$id' AND ID = '$numeroPlay'";
-    $env=mysqli_query($conn,$play); 
+    $env=mysqli_query($conn,$play);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,10 +85,13 @@
                                 <article class="body-likes">
                                     <a href="#"><i class='bx bx-like'></i></a>
                                     <div></div>
-                                    <a href="##"><i class='bx bx-dislike'></i></a>             
+                                    <a href="##"><i class='bx bx-dislike'></i></a>
                                 </article>
                                 <h1><?php echo $mostrarCan['Nombre'] ?></h1>
-                                <em>ID: <?php echo $mostrarCan['Id'] ?> <br> Tiempo: <?php echo $mostrarCan['Duracion'] ?>seg</em> 
+                                <em>
+                                    ID: <?php echo $mostrarCan['Id'] ?><br>
+                                    Tiempo: <?php echo $mostrarCan['Duracion'] ?>min
+                                </em> 
                             </article>
                         </article>
 
