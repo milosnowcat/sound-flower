@@ -1,8 +1,8 @@
 <?php
-    // session_start();
-    // if(!isset($_SESSION['id'])){
-    //     header('Location: login.html');
-    // }
+    session_start();
+    if(!isset($_SESSION['id'])){
+        header('Location: login.html');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="assets/css/style.css">    
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 
     <link rel="stylesheet" href="assets/css/Home.css">
@@ -28,11 +28,11 @@
         <?php
             require_once('assets/php/conexion.php');
 
-            // $mainid = $_SESSION['id'];
-            // $usuario = $_SESSION['tipo'];
+            $mainid = $_SESSION['id'];
+            $usuario = $_SESSION['tipo'];
 
-            $mainid = '';
-            $usuario = '3';
+            // $mainid = '';
+            // $usuario = '3';
 
             // $mainid = '1';
             // $usuario = '2';
