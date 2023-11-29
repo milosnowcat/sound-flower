@@ -61,7 +61,7 @@
                                             $nom = $mostrarD['Nombre'];
                                             ?>
                                                 <li onclick="redireccionUsuario(<?php echo $id ?>)" class="box_Covers round_Covers">
-                                                    <div class="img_Container_BoxCovers"">
+                                                    <div class="img_Container_BoxCovers">
                                                         <img src="<?php echo $img ?>" draggable = "false">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -100,7 +100,7 @@
                                             $nom = $mostrarD['Nombre'];
                                             ?>
                                             <li onclick="redireccionArtista('<?php echo $nom ?>')" class="box_Covers round_Covers">
-                                                <div class="img_Container_BoxCovers"">
+                                                <div class="img_Container_BoxCovers">
                                                     <img src="<?php echo $img ?>" draggable="false">
                                                 </div>
                                                 <p><?php echo $nom ?></p>
@@ -137,7 +137,7 @@
                                             $nom = $mostrarD['Nombre'];
                                             ?>
                                                 <li onclick="redireccionUsuario(<?php echo $id ?>)" class="box_Covers round_Covers">
-                                                    <div class="img_Container_BoxCovers"">
+                                                    <div class="img_Container_BoxCovers">
                                                         <img src="<?php echo $img ?>" draggable = "false">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -171,7 +171,7 @@
                                             $nom = $mostrarD['Nombre'];
                                             ?>
                                                 <li onclick="redireccionUsuario(<?php echo $id ?>)" class="box_Covers round_Covers">
-                                                    <div class="img_Container_BoxCovers"">
+                                                    <div class="img_Container_BoxCovers">
                                                         <img src="<?php echo $img ?>" draggable = "false">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -207,7 +207,7 @@
                                             $nom1 = $mostrar['Nombre'];
                                             ?>
                                                 <li onclick="redireccionArtista('<?php echo $nom1 ?>')" class="box_Covers round_Covers">
-                                                    <div class="img_Container_BoxCovers"">
+                                                    <div class="img_Container_BoxCovers">
                                                         <img src="<?php echo $img1 ?>">
                                                     </div>
                                                     <p><?php echo $nom1 ?></p>
@@ -250,7 +250,7 @@
 
                                                 ?>
                                                     <li onclick="redireccionAlbum(<?php echo $id1 ?>)" class="box_Covers square_Covers">
-                                                        <div class="img_Container_BoxCovers"">
+                                                        <div class="img_Container_BoxCovers">
                                                             <img src="<?php echo $img1 ?>">
                                                         </div>
                                                         <p><?php echo $nom1 ?></p>
@@ -300,7 +300,7 @@
                                                     // $img1 = $mostrarC['Portada'];
                                                     ?>
                                                         <li onclick="redireccionCancion(<?php echo $id1 ?>)" class="box_Covers square_Covers">
-                                                            <div class="img_Container_BoxCovers"">
+                                                            <div class="img_Container_BoxCovers">
                                                                 <img src="<?php echo $img1 ?>">
                                                                 <i class='bx bx-play-circle' ></i>
                                                             </div>
@@ -388,7 +388,7 @@
                                                 $nom = $mostrarU2['Nombre'];
                                             ?>
                                                 <li onclick="redireccionAlbum(<?php echo $id ?>)" class="box_Covers square_Covers">
-                                                    <div class="img_Container_BoxCovers"">
+                                                    <div class="img_Container_BoxCovers">
                                                         <img src="<?php echo $img ?>">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -425,7 +425,7 @@
                                                 }
                                             ?>
                                                 <li onclick="redireccionAlbum(<?php echo $id ?>)" class="box_Covers square_Covers">
-                                                    <div class="img_Container_BoxCovers"">
+                                                    <div class="img_Container_BoxCovers">
                                                         <img src="<?php echo $img ?>">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -474,7 +474,7 @@
 
                                                 ?>
                                                     <li onclick="redireccionArtista('<?php echo $nom ?>')" class="box_Covers round_Covers">
-                                                        <div class="img_Container_BoxCovers"">
+                                                        <div class="img_Container_BoxCovers">
                                                             <img src="<?php echo $img ?>">
                                                         </div>
                                                         <p><?php echo $nom ?></p>
@@ -510,7 +510,7 @@
                                                     $nom2 = $RandMostrar2['Nombre']; 
                                                     ?>
                                                     <li onclick="redireccionArtista('<?php echo $nom2 ?>')" class="box_Covers round_Covers">
-                                                        <div class="img_Container_BoxCovers"">
+                                                        <div class="img_Container_BoxCovers">
                                                             <img src="<?php echo $img2 ?>">
                                                         </div>
                                                         <p><?php echo $nom2 ?></p>
@@ -567,7 +567,7 @@
                                             }
                                         ?>
                                             <li onclick="redireccionCancion(<?php echo $id ?>)" class="box_Covers square_Covers">
-                                                <div class="img_Container_BoxCovers"">
+                                                <div class="img_Container_BoxCovers">
                                                     <img src="<?php echo $img ?>">
                                                     <i class='bx bx-play-circle' ></i>
                                                 </div>
