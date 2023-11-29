@@ -1,4 +1,4 @@
-
+@import url(style.css);
 *{
     margin: 0%;
     padding: 0%;
@@ -7,16 +7,14 @@
 }
 body{
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    height: 100%;    
     background: linear-gradient(180deg, #000 0%, #000 0.01%, #3f0e53 100%);
     font-family: consolas;
 }
 main{    
     width: 35rem;
     height: 40rem;
+    margin-left: 28%;
 }
 /*---------------------------------------------*/
 .hed-list{

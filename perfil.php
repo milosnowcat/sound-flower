@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="assets/css/perfil.css">
 </head>
 <body>
+    <?php
+        require 'assets/components/mainHeader.php';
+    ?>
     <main>
         <section class="head_perfil">
             <article class="foto_perfil">
@@ -62,5 +65,8 @@
         </section>
     </main>
     <script type="module" src="assets/js/perfil.js"></script>
+    <?php
+        require 'assets/components/mainFooter.php';
+    ?>
 </body>
 </html>

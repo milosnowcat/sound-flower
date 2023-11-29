@@ -1,3 +1,4 @@
+@import url(style.css);
 *{
     margin: 0%;
     padding: 0%;
@@ -6,10 +7,7 @@
 }
 body{
     width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    height: 100%;
     background: linear-gradient(180deg, #000 0%, #000 0.01%, #3f0e53 100%);
     font-family: consolas;
 }
@@ -18,6 +16,7 @@ main{
     padding: 1%;
     width: 35rem;
     height: 95vh;
+    margin-left: 30%;
 }
 .head_perfil{
     width: 100%;

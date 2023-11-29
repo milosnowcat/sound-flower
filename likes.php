@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 0){
+    if(!isset($_SESSION['id'])){
         header('Location: login.html');
     }
     require_once('assets/php/conexion.php');
@@ -11,14 +11,12 @@
     $play1 = "SELECT * FROM favoritos_canciones WHERE Id_Usuario = '$id'";
     $env1=mysqli_query($conn,$play1);
     while($mostrarPlay1 = mysqli_fetch_array($env1)){
-        // while($mostrarCanPlay1 = mysqli_fetch_array($envcan1)){
             $can1 = "SELECT * FROM canciones WHERE Id= '{$mostrarPlay1['Id_Cancion']}'";
             $envcancion1=mysqli_query($conn,$can1);
             
             while($mostrarCan1 = mysqli_fetch_array($envcancion1)){
                 $nCanciones=$nCanciones+1;
              }
-        //  }
     }
 ?>
 <!DOCTYPE html>
@@ -31,6 +29,9 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <?php
+        require 'assets/components/mainHeader.php';
+    ?>
     <main>
         <?php
             $canPlay = "SELECT * FROM favoritos_canciones WHERE Id_Usuario = '$id'";
@@ -75,7 +76,7 @@
                             </article>
                             <article class="body-contenido">
                                 <article class="body-likes">
-                                    <a href="#"><i class='bx bx-like'></i></a>
+                                    <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>
                                     <div></div>
                                     <a href="##"><i class='bx bx-dislike'></i></a>
                                 </article>
@@ -91,7 +92,9 @@
                 <?php } ?>
 
         </section>
-        
     </main>
+    <?php
+        require 'assets/components/mainFooter.php';
+    ?>
 </body>
 </html>

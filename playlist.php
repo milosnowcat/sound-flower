@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 0){
+    if(!isset($_SESSION['id'])){
         header('Location: login.html');
     }
     require_once('assets/php/conexion.php');
@@ -8,8 +8,7 @@
     if(isset($_GET['id'])){
         $numeroPlay = $_GET['id'];
     } else {
-        // Si no se proporciona, establece un valor predeterminado
-        $numeroPlay = 1;
+        header('Location: /');
     }
 
     $id=$_SESSION['id'];
@@ -46,11 +45,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Playlist</title>
     <link rel="stylesheet" href="assets/css/lista.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <?php
+        require 'assets/components/mainHeader.php';
+    ?>
+    
     <main>
         <?php
          while($mostrarPlay = mysqli_fetch_array($env)){
@@ -93,7 +96,7 @@
                             </article>
                             <article class="body-contenido">
                                 <article class="body-likes">
-                                    <a href="#"><i class='bx bx-like'></i></a>
+                                    <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>
                                     <div></div>
                                     <a href="##"><i class='bx bx-dislike'></i></a>
                                 </article>
@@ -112,5 +115,8 @@
         </section>
         
     </main>
+    <?php
+        require 'assets/components/mainFooter.php';
+    ?>
 </body>
 </html>
