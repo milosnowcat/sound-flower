@@ -17,7 +17,7 @@ main{
    align-content: center;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;  
+    min-height: 83.3vh;  
 }
 
 .logi1{
@@ -71,10 +71,9 @@ input:focus ~label{
     left: 15px;
     font-size: 16px;
     padding: 0 2px;
-    background: #50205e;
+    background: linear-gradient(180deg, #000 0%, #000 0.01%, #3f0e53 100%);
 }
 input:valid ~ label {
-	background: #50205e;
 	left: 16px;
 	padding: 0 2px;
 	top: 0;
@@ -210,4 +209,20 @@ input:valid ~ label {
 }
 .register-link p a:hover{
     text-decoration: underline;
+}
+#logo{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+}
+#imgs{
+    float: left;
+}
+.txtt{
+    margin-left: 0.3rem;
+}
+.log{
+    width: 4.5rem;
+    height: 4.5rem;
 }

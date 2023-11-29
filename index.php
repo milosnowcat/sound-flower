@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/popi.css">    
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 
     <link rel="stylesheet" href="assets/css/Home.css">
@@ -77,6 +78,7 @@
                             <a class="add_Playlists" href="crear-disquera.php">
                                 <i class='bx bxs-plus-circle'></i>
                             </a>
+                          
                             <div class="slider_Container">
                                 <button class="slider_button button_left"><</button>
                                 <button class="slider_button button_right">></button>
@@ -351,9 +353,8 @@
                                 }
                             ?>
 
-                            <a class="add_Playlists" href="">
-                                <i class='bx bxs-plus-circle'></i>
-                            </a>
+                            <input class="abrir-popup" class="add_Playlists" id="abrir-popup" type="submit" >
+                            <label class="add_Playlists" for="abrir-popup"><i class='bx bxs-plus-circle'></i></label>
                         </section>
 
 
@@ -588,6 +589,36 @@
         ?>
     </main>
 
+        <div class="overlay" id="overlay">
+                <div class="popup" id="popup">
+                    <div class="icon">
+                        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i id="cerrar" class='bx bx-x'></i></a>
+                    </div>
+                    <h1>Crea tu playlist</h1>
+                    <form action="assets/php/crear-playlist.php" method='post' class="separado">
+
+
+                    
+                        <div class="input-field" id="nombre">
+                            <label>Nombre de la playlist</label>
+                            <input type="text" name='nombre_play' required>   
+                        </div>
+
+                        <div  class="input-field">
+                            <label class="foto" for="imag">Sube aqui tu foto</label>
+                            <input type="file" id="imag" class="ayuda" name="foto">
+                          
+                        </div>
+                        <div id="terminar" >
+                            <input class="cerrar-popup" type="submit"value="continuar">
+                        </div>
+                    </form>   
+                </div>
+        </div>
+    
+       
+    </main>
+    <script src="/assets/js/popi.js"></script>
 
     <?php
         require 'assets/components/mainFooter.php';
