@@ -19,24 +19,25 @@
         $canPlay1 = "SELECT * FROM cancion_playlist WHERE Id_Playlist= '{$mostrarPlay1['Id']}'";
         $envcan1=mysqli_query($conn,$canPlay1);
         $mostrarCanPlay1 = mysqli_fetch_array($envcan1);
-        // while($mostrarCanPlay1 = mysqli_fetch_array($envcan1)){
+        while($mostrarCanPlay1 = mysqli_fetch_array($envcan1)){
             $can1 = "SELECT * FROM canciones WHERE Id= '{$mostrarCanPlay1['Id_Cancion']}'";
             $envcancion1=mysqli_query($conn,$can1);
             
             while($mostrarCan1 = mysqli_fetch_array($envcancion1)){
                 $nCanciones=$nCanciones+1;
-             }
+            }
 
-             if($mostrarPlay1['Id_Usuario'] != $id && !$mostrarPlay1['Id_Publica']) {
+            if($mostrarPlay1['Id_Usuario'] != $id && !$mostrarPlay1['Id_Publica']) {
                 header('Location: /');
-             }
+            }
+        }
 
-             $query_usuario = "SELECT Nombre FROM usuarios WHERE Id = '{$mostrarPlay1['Id_Usuario']}'";
-             $result = mysqli_query($conn, $query_usuario);
-             $array_usuario =mysqli_fetch_array($result);
-             $creador=$array_usuario['Nombre'];
-        //  }
+        $query_usuario = "SELECT Nombre FROM usuarios WHERE Id = '{$mostrarPlay1['Id_Usuario']}'";
+        $result = mysqli_query($conn, $query_usuario);
+        $array_usuario =mysqli_fetch_array($result);
+        $creador=$array_usuario['Nombre'];
     }
+    
     $play = "SELECT * FROM playlists WHERE Id = '$numeroPlay'";
     $env=mysqli_query($conn,$play);
 ?>
