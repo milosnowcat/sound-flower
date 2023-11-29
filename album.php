@@ -51,7 +51,7 @@
             <article class="titu">
                 <h1> <?php echo $result_album['Nombre'] ?> </h1>
                 <br>
-                <a href="#" class="c1">
+                <a href="/player.php?id=<?php echo $result_album['Id'] ?>&t=a&n=1" class="c1">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
@@ -66,27 +66,30 @@
         <section class="body-list">
             <?php
                 $envcancion=mysqli_query($conn,$can1);
+                $numero = 0;
                 while($mostrarCan = mysqli_fetch_array($envcancion)){
+                    $numero++;
                     ?>
-                    
-                    <article class="cancion">
-                        <span id="span3"></span>
-                        <article class="dody-img">
-                            <img src=" <?php echo $result_album['Portada'] ?> " alt="">
-                        </article>
-                        <article class="body-contenido">
-                            <article class="body-likes">
-                                <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>
-                                <div></div>
-                                <a href="##"><i class='bx bx-dislike'></i></a>
+                    <a href="/player.php?id=<?php echo $result_album['Id'] ?>&t=a&n=<?php echo $numero ?>">
+                        <article class="cancion">
+                            <span id="span3"></span>
+                            <article class="dody-img">
+                                <img src=" <?php echo $result_album['Portada'] ?> " alt="">
                             </article>
-                            <h1><?php echo $mostrarCan['Nombre'] ?></h1>
-                            <em>
-                                ID: <?php echo $mostrarCan['Id'] ?><br>
-                                Tiempo: <?php echo $mostrarCan['Duracion'] ?>min
-                            </em> 
+                            <article class="body-contenido">
+                                <article class="body-likes">
+                                    <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>
+                                    <div></div>
+                                    <a href="##"><i class='bx bx-dislike'></i></a>
+                                </article>
+                                <h1><?php echo $mostrarCan['Nombre'] ?></h1>
+                                <em>
+                                    ID: <?php echo $mostrarCan['Id'] ?><br>
+                                    Tiempo: <?php echo $mostrarCan['Duracion'] ?>min
+                                </em> 
+                            </article>
                         </article>
-                    </article>
+                    </a>
 
                 <?php } ?>
         </section>
