@@ -1,6 +1,6 @@
 <?php
+    session_start();
     require_once('assets/php/conexion.php');
-    $_SESSION['id'] = '1';
     $id = $_SESSION['id'];
 
     $selectorIMG = "SELECT Foto FROM usuarios WHERE Id = '$id'";
