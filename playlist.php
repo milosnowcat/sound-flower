@@ -85,23 +85,30 @@
         </section>
         <section class="body-list">
             <?php
+            $numero = 0;
            
                 while($mostrarCanPlay = mysqli_fetch_array($envcan)){
                     $can = "SELECT * FROM canciones WHERE Id= '{$mostrarCanPlay['Id_Cancion']}'";
                     $envcancion=mysqli_query($conn,$can);
                     while($mostrarCan = mysqli_fetch_array($envcancion)){
+                        $sql_album = "SELECT * FROM albumes WHERE Id='{$mostrarCan['Id_Album']}'";
+                        $query_album = mysqli_query($conn, $sql_album);
+                        $result_album = mysqli_fetch_array($query_album);
+                        $numero++;
                         ?>
-                        <a href="player.php?id=<?php echo $mostrarCan['Id'] ?>&t=c&n=1">
+                        <a href="/player.php?id=<?php echo $numeroPlay ?>&t=p&n=<?php echo $numero ?>">
                         <article class="cancion">
                             <span id="span3"></span>
                             <article class="dody-img">
-                                <img src=" <?php echo $mostrarCan['Portada'] ?> " alt="">
+                                <img src=" <?php echo $result_album['Portada'] ?> " alt="">
                             </article>
                             <article class="body-contenido">
                                 <article class="body-likes">
                                     <em><?php echo $mostrarCan['Duracion'] ?>:00</em>
                                     <div></div>
-                                    <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>                                    
+                                    <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>  
+                                    <div></div>
+                                    <a href="/agregar.php?id=<?php echo $mostrarCan['Id'] ?>"><i class='bx bxs-playlist'></i></i></a>  
                                 </article>
                                 <article class="nomm">
                                     <h1><?php echo $mostrarCan['Nombre'] ?></h1>
@@ -124,9 +131,7 @@
                     <?php } ?>
                 <?php } ?>
             <?php } ?>
-
-        </section>
-        
+        </section>  
     </main>
     <?php
         require 'assets/components/mainFooter.php';
