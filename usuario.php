@@ -47,13 +47,13 @@
             <br><br>
             <a class="hov" href="pago.php">Renovar suscripción</a>
             <section class="playlist">
+                <div>
                 <?php while($playlist = mysqli_fetch_array($enviocnacion)){ ?>
-                    <div>
-                        <a href="/playlist.php?id=<?php echo $playlist['Id']; ?>" class="cancion">
-                            <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
-                        </a>
-                    </div>
+                    <a href="/playlist.php?id=<?php echo $playlist['Id']; ?>" class="cancion">
+                        <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
+                    </a>
                 <?php } ?>
+                </div>
             </section>
         </section>
     </main>
