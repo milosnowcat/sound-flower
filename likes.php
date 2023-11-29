@@ -4,7 +4,6 @@
         header('Location: login.html');
     }
     require_once('assets/php/conexion.php');
-
     $id=$_SESSION['id'];
     $creador=$_SESSION['nombre'];
     $nCanciones=0;
@@ -45,7 +44,7 @@
             <article class="titu">
                 <h1>Likes</h1>
                 <br>
-                <a href="#" class="c1">
+                <a href="/player.php?id=<?php echo $id ?>&t=u&n=1" class="c1">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
@@ -54,7 +53,9 @@
                     <i class='bx bx-play-circle'></i>
                 </a>
                 <h5>N.Canciones <?php echo $nCanciones?> </h5>
-                <h5> <?php echo $creador ?> </h5>
+                <article class="nomm">
+                    <h5> <?php echo $creador ?> </h5>
+                </article>
             </article>
         </section>
         <section class="body-list">
@@ -76,14 +77,24 @@
                             </article>
                             <article class="body-contenido">
                                 <article class="body-likes">
-                                    <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>
+                                    <em><?php echo $mostrarCan['Duracion'] ?>:00</em>
                                     <div></div>
-                                    <a href="##"><i class='bx bx-dislike'></i></a>
+                                    <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>
                                 </article>
-                                <h1><?php echo $mostrarCan['Nombre'] ?></h1>
+                                <article class="nomm">
+                                    <h1><?php echo $mostrarCan['Nombre']; ?></h1>
+                                </article>
                                 <em>
-                                    ID: <?php echo $mostrarCan['Id'] ?><br>
-                                    Tiempo: <?php echo $mostrarCan['Duracion'] ?>min
+                                    <?php
+                                        $sqlAr = "SELECT * FROM cancion_artista WHERE Id_Cancion = '{$mostrarCan['Id']}'";
+                                        $envAr=mysqli_query($conn,$sqlAr);
+                                        $mosAr=mysqli_fetch_array($envAr);
+
+                                        $sqlAr2 = "SELECT * FROM artistas WHERE Id = '{$mosAr['Id_Artista']}'";
+                                        $envAr2=mysqli_query($conn,$sqlAr2);
+                                        $mosAr2=mysqli_fetch_array($envAr2);
+                                    ?>
+                                    <?php echo $mosAr2['Nombre'] ?><br>
                                 </em> 
                             </article>
                         </article>

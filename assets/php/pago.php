@@ -6,7 +6,6 @@
     }
     
     require_once('conexion.php');
-    mysqli_set_charset($conn,'utf8');
     $usuario=$_SESSION['id'];
     if($_POST){
         $active=$_POST['nombre'];
