@@ -60,7 +60,7 @@
                                             $nom = $mostrarD['Nombre'];
                                             ?>
                                                 <li onclick="redireccionUsuario(<?php echo $id ?>)" class="box_Covers round_Covers">
-                                                    <div class="img">
+                                                    <div class="img_Container_BoxCovers"">
                                                         <img src="<?php echo $img ?>" draggable = "false">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -74,7 +74,7 @@
                                 ?>
                             </ul>
                             
-                            <a class="add_Playlists" href="">
+                            <a class="add_Playlists" href="crear-disquera.php">
                                 <i class='bx bxs-plus-circle'></i>
                             </a>
                             <div class="slider_Container">
@@ -88,20 +88,21 @@
                             <h1>Artistas</h1>
                             <ul class="box_Covers_Container">
                                 <?php
-                                    $disqueras = "SELECT * FROM artistas";
+                                    $disqueras = "SELECT MIN(Id) as Id, Nombre, MIN(Foto) as Foto FROM artistas GROUP BY Nombre";
                                     $envioD = mysqli_query($conn, $disqueras);
+                                    
                                     if(mysqli_num_rows($envioD) > 0){
                                         while($mostrarD = mysqli_fetch_assoc($envioD)){
                                             $id = $mostrarD['Id'];
                                             $img = $mostrarD['Foto'];
                                             $nom = $mostrarD['Nombre'];
                                             ?>
-                                                <li onclick="redireccionArtista('<?php echo $nom ?>')" class="box_Covers round_Covers">
-                                                    <div class="img">
-                                                        <img src="<?php echo $img ?>" draggable = "false">
-                                                    </div>
-                                                    <p><?php echo $nom ?></p>
-                                                </li>
+                                            <li onclick="redireccionArtista('<?php echo $nom ?>')" class="box_Covers round_Covers">
+                                                <div class="img_Container_BoxCovers"">
+                                                    <img src="<?php echo $img ?>" draggable="false">
+                                                </div>
+                                                <p><?php echo $nom ?></p>
+                                            </li>
                                             <?php
                                         }
                                     }
@@ -110,7 +111,7 @@
                                     }
                                 ?>
                             </ul>
-                            <a class="add_Playlists" href="">
+                            <a class="add_Playlists" href="crear-artista.php">
                                 <i class='bx bxs-plus-circle'></i>
                             </a>
                             <div class="slider_Container">
@@ -134,7 +135,7 @@
                                             $nom = $mostrarD['Nombre'];
                                             ?>
                                                 <li onclick="redireccionUsuario(<?php echo $id ?>)" class="box_Covers round_Covers">
-                                                    <div class="img">
+                                                    <div class="img_Container_BoxCovers"">
                                                         <img src="<?php echo $img ?>" draggable = "false">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -147,9 +148,6 @@
                                     }
                                 ?>
                             </ul>
-                            <a class="add_Playlists" href="">
-                                <i class='bx bxs-plus-circle'></i>
-                            </a>
                             <div class="slider_Container">
                                 <button class="slider_button button_left"><</button>
                                 <button class="slider_button button_right">></button>
@@ -171,7 +169,7 @@
                                             $nom = $mostrarD['Nombre'];
                                             ?>
                                                 <li onclick="redireccionUsuario(<?php echo $id ?>)" class="box_Covers round_Covers">
-                                                    <div class="img">
+                                                    <div class="img_Container_BoxCovers"">
                                                         <img src="<?php echo $img ?>" draggable = "false">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -184,9 +182,6 @@
                                     }
                                 ?>
                             </ul>
-                            <a class="add_Playlists" href="">
-                                <i class='bx bxs-plus-circle'></i>
-                            </a>
                             <div class="slider_Container">
                                 <button class="slider_button button_left"><</button>
                                 <button class="slider_button button_right">></button>
@@ -210,7 +205,7 @@
                                             $nom1 = $mostrar['Nombre'];
                                             ?>
                                                 <li onclick="redireccionArtista('<?php echo $nom1 ?>')" class="box_Covers round_Covers">
-                                                    <div class="img">
+                                                    <div class="img_Container_BoxCovers"">
                                                         <img src="<?php echo $img1 ?>">
                                                     </div>
                                                     <p><?php echo $nom1 ?></p>
@@ -223,7 +218,7 @@
                                     }
                                 ?>
                             </ul>
-                            <a class="add_Playlists" href="">
+                            <a class="add_Playlists" href="crear-artista.php">
                                 <i class='bx bxs-plus-circle'></i>
                             </a>
                             <div class="slider_Container">
@@ -253,7 +248,7 @@
 
                                                 ?>
                                                     <li onclick="redireccionAlbum(<?php echo $id1 ?>)" class="box_Covers square_Covers">
-                                                        <div class="img">
+                                                        <div class="img_Container_BoxCovers"">
                                                             <img src="<?php echo $img1 ?>">
                                                         </div>
                                                         <p><?php echo $nom1 ?></p>
@@ -267,7 +262,7 @@
                                     }
                                 ?>
                             </ul>
-                            <a class="add_Playlists" href="">
+                            <a class="add_Playlists" href="crear-album.php">
                                 <i class='bx bxs-plus-circle'></i>
                             </a>
                             <div class="slider_Container">
@@ -303,7 +298,7 @@
                                                     // $img1 = $mostrarC['Portada'];
                                                     ?>
                                                         <li onclick="redireccionCancion(<?php echo $id1 ?>)" class="box_Covers square_Covers">
-                                                            <div class="img">
+                                                            <div class="img_Container_BoxCovers"">
                                                                 <img src="<?php echo $img1 ?>">
                                                                 <i class='bx bx-play-circle' ></i>
                                                             </div>
@@ -319,7 +314,7 @@
                                     }
                                 ?>
                             </ul>
-                            <a class="add_Playlists" href="">
+                            <a class="add_Playlists" href="crear-cancion.php">
                                 <i class='bx bxs-plus-circle'></i>
                             </a>
                             <div class="slider_Container">
@@ -392,7 +387,7 @@
                                                 $nom = $mostrarU2['Nombre'];
                                             ?>
                                                 <li onclick="redireccionAlbum(<?php echo $id ?>)" class="box_Covers square_Covers">
-                                                    <div class="img">
+                                                    <div class="img_Container_BoxCovers"">
                                                         <img src="<?php echo $img ?>">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -416,9 +411,7 @@
 
                                             shuffle($ids);
 
-                                            $totalIds = count($ids);
-
-                                            for($i = 0; $i < $totalIds; $i++){ 
+                                            for($i = 0; $i < 10; $i++){ 
                                                 $randomId = $ids[$i];
 
                                                 $query = "SELECT * FROM albumes WHERE id = '$randomId'";
@@ -431,7 +424,7 @@
                                                 }
                                             ?>
                                                 <li onclick="redireccionAlbum(<?php echo $id ?>)" class="box_Covers square_Covers">
-                                                    <div class="img">
+                                                    <div class="img_Container_BoxCovers"">
                                                         <img src="<?php echo $img ?>">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -480,7 +473,7 @@
 
                                                 ?>
                                                     <li onclick="redireccionArtista('<?php echo $nom ?>')" class="box_Covers round_Covers">
-                                                        <div class="img">
+                                                        <div class="img_Container_BoxCovers"">
                                                             <img src="<?php echo $img ?>">
                                                         </div>
                                                         <p><?php echo $nom ?></p>
@@ -490,11 +483,11 @@
                                         }
                                     }
                                     else{ //el usuario NO tiene artistas favoritos
-                                        $allIds2 = "SELECT Id FROM artistas";
+                                        $allIds2 = "SELECT DISTINCT Id FROM artistas";
                                         $idResult2 = mysqli_query($conn, $allIds2);
-                                        
+
                                         if(mysqli_num_rows($idResult2) <= 0){
-                                            
+
                                         }
                                         else{
                                             $ids2 = array();
@@ -504,7 +497,7 @@
 
                                             shuffle($ids2);
 
-                                            for($i = 0; $i < 5; $i++){ 
+                                            for($i = 0; $i < 10 && $i < count($ids2); $i++){ 
                                                 $randomId2 = $ids2[$i];
 
                                                 $query2 = "SELECT * FROM artistas WHERE Id = '$randomId2'";
@@ -514,15 +507,15 @@
                                                     $id2 = $RandMostrar2['Id'];
                                                     $img2 = $RandMostrar2['Foto'];
                                                     $nom2 = $RandMostrar2['Nombre']; 
+                                                    ?>
+                                                    <li onclick="redireccionArtista('<?php echo $nom2 ?>')" class="box_Covers round_Covers">
+                                                        <div class="img_Container_BoxCovers"">
+                                                            <img src="<?php echo $img2 ?>">
+                                                        </div>
+                                                        <p><?php echo $nom2 ?></p>
+                                                    </li>
+                                                    <?php
                                                 }
-                                            ?>
-                                                <li onclick="redireccionArtista('<?php echo $nom2 ?>')" class="box_Covers round_Covers">
-                                                    <div class="img">
-                                                        <img src="<?php echo $img2 ?>">
-                                                    </div>
-                                                    <p><?php echo $nom2 ?></p>
-                                                </li>
-                                            <?php
                                             }
                                         }
                                     }
@@ -553,9 +546,8 @@
 
                                         shuffle($ids3);
 
-                                        $totalIds = count($ids3);
 
-                                        for($i = 0; $i < $totalIds; $i++){ 
+                                        for($i = 0; $i < 10; $i++){ 
                                             $randomId3 = $ids3[$i];
 
                                             $query3 = "SELECT * FROM canciones WHERE id = '$randomId3'";
@@ -574,7 +566,7 @@
                                             }
                                         ?>
                                             <li onclick="redireccionCancion(<?php echo $id ?>)" class="box_Covers square_Covers">
-                                                <div class="img">
+                                                <div class="img_Container_BoxCovers"">
                                                     <img src="<?php echo $img ?>">
                                                     <i class='bx bx-play-circle' ></i>
                                                 </div>
