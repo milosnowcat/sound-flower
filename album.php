@@ -51,6 +51,7 @@
             <article class="titu">
                 <h1> <?php echo $result_album['Nombre'] ?> </h1>
                 <br>
+
                 <a href="/player.php?id=<?php echo $result_album['Id'] ?>&t=a&n=1" class="c1">
                     <span id="span1"></span>
                     <span id="span2"></span>
@@ -59,10 +60,14 @@
                     Play
                     <i class='bx bx-play-circle'></i>
                 </a>
-                <h5>N.Canciones <?php echo $nCanciones?> </h5>
+                <h5 class="h5alb">N.Canciones <?php echo $nCanciones?> </h5>
+                
+                <a class="alb" href="assets/php/like.php?album=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>
+                
                 <article class="nomm">
                     <h5> <?php echo $creador ?> </h5>
                 </article>
+
             </article>
         </section>
         <section class="body-list">
