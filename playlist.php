@@ -68,7 +68,7 @@
             <article class="titu">
                 <h1> <?php echo $mostrarPlay['Nombre'] ?> </h1>
                 <br>
-                <a href="#" class="c1">
+                <a href="/player.php?id=<?php echo $numeroPlay ?>&t=p&n=1" class="c1">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
@@ -88,7 +88,7 @@
                     $envcancion=mysqli_query($conn,$can);
                     while($mostrarCan = mysqli_fetch_array($envcancion)){
                         ?>
-                        
+                        <a href="player.php?id=<?php echo $mostrarCan['Id'] ?>&t=c&n=1">
                         <article class="cancion">
                             <span id="span3"></span>
                             <article class="dody-img">
@@ -107,7 +107,7 @@
                                 </em> 
                             </article>
                         </article>
-
+                        </a>
                     <?php } ?>
                 <?php } ?>
             <?php } ?>
