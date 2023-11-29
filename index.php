@@ -369,6 +369,9 @@
                             </a>
                             <?php
                                 $playlists = "SELECT * FROM playlists WHERE Id_Usuario = '$mainid'";
+                                if($search) {
+                                    $playlists .= " AND Nombre LIKE '%$buscar%'";
+                                }
                                 $envioPL = mysqli_query($conn, $playlists);
                                 while($mostrarPL = mysqli_fetch_array($envioPL)){
                             ?>
@@ -405,7 +408,7 @@
                             ?>
                             <ul class="box_Covers_Container">
                                 <?php
-                                    if (mysqli_num_rows($envioALU) > 0){ //el usuario SI tiene albumes favoritos
+                                    if (mysqli_num_rows($envioALU) > 0 && !$search){ //el usuario SI tiene albumes favoritos
                                         while ($mostrarAlU = mysqli_fetch_array($envioALU)){ 
                                             $id1 = $mostrarAlU['Id_Album'];
                                             
@@ -429,6 +432,9 @@
                                     }
                                     else{ //el usuario NO tiene albumes favoritos
                                         $allIds = "SELECT id FROM albumes";
+                                        if($search) {
+                                            $allIds .= " WHERE Nombre LIKE '%$buscar%'";
+                                        }
                                         $idResult = mysqli_query($conn, $allIds);
                                         
                                         if(mysqli_num_rows($idResult) <= 0){
@@ -490,7 +496,7 @@
                             ?>
                             <ul class="box_Covers_Container">
                             <?php
-                                    if (mysqli_num_rows($envioARU) > 0){ //el usuario SI tiene artistas favoritos
+                                    if (mysqli_num_rows($envioARU) > 0 && !$search){ //el usuario SI tiene artistas favoritos
                                         while ($mostrarARU = mysqli_fetch_array($envioARU)){ 
                                             $idAF = $mostrarARU['Id_Artista'];
 
@@ -515,6 +521,9 @@
                                     }
                                     else{ //el usuario NO tiene artistas favoritos
                                         $allIds2 = "SELECT DISTINCT Id FROM artistas";
+                                        if($search) {
+                                            $allIds2 .= " WHERE Nombre LIKE '%$buscar%'";
+                                        }
                                         $idResult2 = mysqli_query($conn, $allIds2);
 
                                         if(mysqli_num_rows($idResult2) <= 0){
@@ -564,6 +573,9 @@
                             <ul class="box_Covers_Container">
                                 <?php
                                     $allIds3 = "SELECT id FROM canciones";
+                                    if($search) {
+                                        $allIds3 .= " WHERE Nombre LIKE '%$buscar%'";
+                                    }
                                     $idResult3 = mysqli_query($conn, $allIds3);
                                     
                                     if(mysqli_num_rows($idResult3) <= 0){
