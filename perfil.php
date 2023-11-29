@@ -53,12 +53,6 @@
                         <a href="/playlist.php?id=<?php echo $playlist['Id']; ?>" class="cancion">
                             <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
                         </a>
-                        <a href="/playlist.php?id= <?php echo $playlist['Id']; ?>" class="cancion">
-                            <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
-                        </a>
-                        <a href="/playlist.php?id= <?php echo $playlist['Id']; ?>" class="cancion">
-                            <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
-                        </a>
                     </div>
                 <?php } ?>
             </section>
