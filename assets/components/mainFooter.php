@@ -12,7 +12,7 @@
     <footer id="main_Footer">
         <section onclick="redireccionIndex()" id="up_Footer_Section">
             <div id="logo_Footer_Container">
-                <img src="logo.svg">
+                <img src="/assets/img/logo.svg">
             </div>
             <div id="name_Container">
                 <h1>SOUND FLOWER</h1>
