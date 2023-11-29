@@ -172,4 +172,5 @@ option{
 
 #bg {
     background: linear-gradient(180deg, #000 0%, #000 0.01%, #3f0e53 100%);
+    height: 100vh;
 }
