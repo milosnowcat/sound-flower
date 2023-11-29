@@ -69,7 +69,7 @@
                         $query_album = mysqli_query($conn, $sql_album);
                         $result_album = mysqli_fetch_array($query_album);
                         ?>
-                        
+                        <a href="player.php?id=<?php echo $mostrarCan['Id'] ?>&t=c&n=1">
                         <article class="cancion">
                             <span id="span3"></span>
                             <article class="dody-img">
@@ -80,6 +80,8 @@
                                     <em><?php echo $mostrarCan['Duracion'] ?>:00</em>
                                     <div></div>
                                     <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>
+                                    <div></div>
+                                    <a href="/agregar.php?id=<?php echo $mostrarCan['Id'] ?>"><i class='bx bxs-playlist'></i></i></a>  
                                 </article>
                                 <article class="nomm">
                                     <h1><?php echo $mostrarCan['Nombre']; ?></h1>
@@ -98,7 +100,7 @@
                                 </em> 
                             </article>
                         </article>
-
+                        </a>
                     <?php } ?>
                 <?php } ?>
 

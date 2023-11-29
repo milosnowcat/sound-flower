@@ -101,7 +101,9 @@
                                 <article class="body-likes">
                                     <em><?php echo $mostrarCan['Duracion'] ?>:00</em>
                                     <div></div>
-                                    <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>                                    
+                                    <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>  
+                                    <div></div>
+                                    <a href="/agregar.php?id=<?php echo $mostrarCan['Id'] ?>"><i class='bx bxs-playlist'></i></i></a>  
                                 </article>
                                 <article class="nomm">
                                     <h1><?php echo $mostrarCan['Nombre'] ?></h1>
@@ -124,9 +126,7 @@
                     <?php } ?>
                 <?php } ?>
             <?php } ?>
-
-        </section>
-        
+        </section>  
     </main>
     <?php
         require 'assets/components/mainFooter.php';
