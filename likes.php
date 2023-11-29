@@ -11,14 +11,12 @@
     $play1 = "SELECT * FROM favoritos_canciones WHERE Id_Usuario = '$id'";
     $env1=mysqli_query($conn,$play1);
     while($mostrarPlay1 = mysqli_fetch_array($env1)){
-        // while($mostrarCanPlay1 = mysqli_fetch_array($envcan1)){
             $can1 = "SELECT * FROM canciones WHERE Id= '{$mostrarPlay1['Id_Cancion']}'";
             $envcancion1=mysqli_query($conn,$can1);
             
             while($mostrarCan1 = mysqli_fetch_array($envcancion1)){
                 $nCanciones=$nCanciones+1;
              }
-        //  }
     }
 ?>
 <!DOCTYPE html>
