@@ -220,6 +220,9 @@
                             <ul class="box_Covers_Container">
                                 <?php
                                     $artistas = "SELECT * FROM artistas WHERE Id_Disquera = '$mainid'";
+                                    if($search) {
+                                        $artistas .= " AND Nombre LIKE '%$buscar%'";
+                                    }
                                     $envio = mysqli_query($conn, $artistas);
                                     if(mysqli_num_rows($envio) > 0){
                                         while($mostrar = mysqli_fetch_assoc($envio)){
@@ -262,6 +265,9 @@
                                             $idA = $mostrarA['Id'];
 
                                             $albumes = "SELECT * FROM albumes WHERE Id_Artista = '$idA'";
+                                            if($search) {
+                                                $albumes .= " AND Nombre LIKE '%$buscar%'";
+                                            }
                                             $envioAL = mysqli_query($conn, $albumes);
 
                                             while($mostrarAL = mysqli_fetch_array($envioAL)){
@@ -313,6 +319,9 @@
                                                 $img1 = $mostrarAL['Portada'];
 
                                                 $canciones = "SELECT * FROM canciones WHERE Id_Album = '$idAL'";
+                                                if($search) {
+                                                    $canciones .= " AND Nombre LIKE '%$buscar%'";
+                                                }
                                                 $envioC = mysqli_query($conn, $canciones);
 
                                                 while($mostrarC = mysqli_fetch_array($envioC)){
