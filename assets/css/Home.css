@@ -142,7 +142,8 @@
     align-items: center;
     flex-direction: column;
     cursor: pointer;
-    padding-left: 1.3rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
 }
 .square_Covers .img_Container_BoxCovers img{
     width: 100%;
