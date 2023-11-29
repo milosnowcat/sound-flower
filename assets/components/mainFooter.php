@@ -6,10 +6,11 @@
 
     <link rel="stylesheet" href="assets/components/mainFooter.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script src="assets/js/redirecciones.js"></script>
 </head>
 <body>
     <footer id="main_Footer">
-        <section id="up_Footer_Section">
+        <section onclick="redireccionIndex()" id="up_Footer_Section">
             <div id="logo_Footer_Container">
                 <img src="logo.svg">
             </div>
@@ -32,9 +33,9 @@
             <article id="middle_center_Container">
                 <hr>
                 <div>
-                    <a href="#">Terminos y Condiciones</a>
-                    <a href="#">Aviso de Privacidad</a>
-                    <a href="#">Acerca de Nosotros</a>
+                    <!-- <a href="#">Terminos y Condiciones</a> -->
+                    <!-- <a href="#">Aviso de Privacidad</a> -->
+                    <!-- <a href="#">Acerca de Nosotros</a> -->
                 </div>
             </article>
 
