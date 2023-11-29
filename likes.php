@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 0){
+    if(!isset($_SESSION['id'])){
         header('Location: login.html');
     }
     require_once('assets/php/conexion.php');

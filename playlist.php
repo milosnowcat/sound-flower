@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 0){
+    if(!isset($_SESSION['id'])){
         header('Location: login.html');
     }
     require_once('assets/php/conexion.php');
@@ -8,8 +8,7 @@
     if(isset($_GET['id'])){
         $numeroPlay = $_GET['id'];
     } else {
-        // Si no se proporciona, establece un valor predeterminado
-        $numeroPlay = 1;
+        header('Location: /');
     }
 
     $id=$_SESSION['id'];
