@@ -1,0 +1,11 @@
+@import url(style.css);
+main{
+    width: 50rem;
+    margin-left: 20%;
+}
+.tyc{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 2%;
+    border-bottom: #3f0e53 solid 2px;
+}

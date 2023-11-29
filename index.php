@@ -616,7 +616,7 @@
                 <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i id="cerrar" class='bx bx-x'></i></a>
             </div>
             <h1>Crea tu playlist</h1>
-            <form action="assets/php/crear-playlist.php" method='post' class="separado">
+            <form action="assets/php/crear-playlist.php" method='post' class="separado" enctype="multipart/form-data">
 
                 <div class="input-field" id="nombre">
                     <label>Nombre de la playlist</label>
@@ -628,6 +628,12 @@
                     <input type="file" id="imag" class="ayuda" name="foto">
                     
                 </div>
+                <br>
+                <div  class="input-field">
+                    <label>Hacer pública</label>
+                    <input type="checkbox" name="publica">
+                </div>
+
                 <div id="terminar" >
                     <input class="cerrar-popup" type="submit"value="continuar">
                 </div>
