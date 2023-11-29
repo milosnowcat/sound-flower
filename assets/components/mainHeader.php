@@ -19,7 +19,7 @@
 
 <header id="main_Header">
     <section onclick="redireccionIndex()" id="logo_Container">
-        <img src="logo.svg">
+        <img src="/assets/img/logo.svg">
     </section>
 
     <nav id="navegation_Conatiner">
