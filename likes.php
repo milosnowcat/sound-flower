@@ -78,7 +78,7 @@
                             </article>
                             <article class="body-contenido">
                                 <article class="body-likes">
-                                    <a href="#"><i class='bx bx-like'></i></a>
+                                    <a href="assets/php/like.php?cancion=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>
                                     <div></div>
                                     <a href="##"><i class='bx bx-dislike'></i></a>
                                 </article>

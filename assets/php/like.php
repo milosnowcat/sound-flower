@@ -21,3 +21,5 @@ if ($query_verificacion->num_rows == 0) {
     $sql = "DELETE FROM favoritos_canciones WHERE Id_Usuario = $id AND Id_Cancion = $cancion";
     $conn->query($sql);
 }
+
+header("Location: /likes.php");
