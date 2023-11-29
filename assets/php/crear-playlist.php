@@ -5,10 +5,10 @@
     $nombre=$_POST['nombre_play'];
     $archivo=$_FILES['foto'];
     $publica=$_POST['publica'];
-    $es_publica = false;
+    $es_publica = 0;
 
     if($publica) {
-        $es_publica = true;
+        $es_publica = 1;
     }
 
     $rud="/assets/img/playlists/";
