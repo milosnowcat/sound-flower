@@ -9,8 +9,7 @@
     $sql="SELECT * FROM usuarios WHERE Id = '$usuario'";
     $envio=mysqli_query($conn,$sql);
     $mostrar = mysqli_fetch_array($envio);
-    $idUS=$mostrar['Id'];
-    $sqlcancion="SELECT * FROM playlists WHERE Id_Usuario = '$idUS'";
+    $sqlcancion="SELECT * FROM playlists WHERE Id_Usuario = $usuario AND Id_Publica = 1";
     $enviocnacion=mysqli_query($conn,$sqlcancion);
 ?>
 
@@ -51,12 +50,6 @@
                 <?php while($playlist = mysqli_fetch_array($enviocnacion)){ ?>
                     <div>
                         <a href="/playlist.php?id=<?php echo $playlist['Id']; ?>" class="cancion">
-                            <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
-                        </a>
-                        <a href="/playlist.php?id= <?php echo $playlist['Id']; ?>" class="cancion">
-                            <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
-                        </a>
-                        <a href="/playlist.php?id= <?php echo $playlist['Id']; ?>" class="cancion">
                             <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
                         </a>
                     </div>

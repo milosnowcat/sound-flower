@@ -12,11 +12,9 @@
     }
     
 ?>
-
 <link rel="stylesheet" href="assets/components/mainHeader.css">
 <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 <script src="assets/js/redirecciones.js"></script>
-
 <header id="main_Header">
     <section onclick="redireccionIndex()" id="logo_Container">
         <img src="logo.svg">
