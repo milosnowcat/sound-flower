@@ -31,6 +31,9 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <?php
+        require 'assets/components/mainHeader.php';
+    ?>
     <main>
         <?php
             $canPlay = "SELECT * FROM favoritos_canciones WHERE Id_Usuario = '$id'";
@@ -91,7 +94,9 @@
                 <?php } ?>
 
         </section>
-        
     </main>
+    <?php
+        require 'assets/components/mainFooter.php';
+    ?>
 </body>
 </html>
