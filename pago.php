@@ -15,6 +15,9 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 0){
     <link rel="stylesheet" href="assets/css/pago.css">
 </head>
 <body>
+    <?php
+        require 'assets/components/mainHeader.php';
+    ?>
     <main class="c2">
         <div  class="logi1">
            
@@ -60,6 +63,8 @@ if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 0){
             </form>
         </div>
     </main>
-    
+    <?php
+        require 'assets/components/mainFooter.php';
+    ?>
 </body>
 </html>
