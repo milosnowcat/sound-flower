@@ -44,7 +44,7 @@
             <article class="titu">
                 <h1>Likes</h1>
                 <br>
-                <a href="#" class="c1">
+                <a href="/player.php?id=<?php echo $id ?>&t=u&n=1" class="c1">
                     <span id="span1"></span>
                     <span id="span2"></span>
                     <span id="span3"></span>
