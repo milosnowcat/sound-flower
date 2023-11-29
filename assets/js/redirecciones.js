@@ -4,7 +4,7 @@ function redireccionPlaylist(id){
 }
 
 function redireccionCancion(id){
-    var nuevaURL = "/cancion.php?id=" + id;
+    var nuevaURL = "/player.php?id=" + id + "&t=c";
     window.location.href = nuevaURL;
 }
 
@@ -21,4 +21,8 @@ function redireccionArtista(nom){
 function redireccionUsuario(id){
     var nuevaURL = "/usuario.php?id=" + id;
     window.location.href = nuevaURL;
+}
+
+function redireccionIndex(){
+    window.location.href = "/";
 }
