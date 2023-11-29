@@ -1,7 +1,6 @@
 <?php
     require_once('assets/php/conexion.php');
     $id = $_SESSION['id'];
-
     $selectorIMG = "SELECT Foto FROM usuarios WHERE Id = '$id'";
     $envioIMG = mysqli_query($conn, $selectorIMG);
     if(mysqli_num_rows($envioIMG) > 0){

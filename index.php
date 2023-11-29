@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/Home.css">
     <script src="assets/js/slider.js" defer></script>
     <script src="assets/js/redirecciones.js" defer></script>
+    <script src="/assets/js/popi.js" defer></script>
     <title>Home</title>
 </head>
 <body>
@@ -589,36 +590,32 @@
         ?>
     </main>
 
-        <div class="overlay" id="overlay">
-                <div class="popup" id="popup">
-                    <div class="icon">
-                        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i id="cerrar" class='bx bx-x'></i></a>
-                    </div>
-                    <h1>Crea tu playlist</h1>
-                    <form action="assets/php/crear-playlist.php" method='post' class="separado">
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+            <div class="icon">
+                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i id="cerrar" class='bx bx-x'></i></a>
+            </div>
+            <h1>Crea tu playlist</h1>
+            <form action="assets/php/crear-playlist.php" method='post' class="separado">
 
-
-                    
-                        <div class="input-field" id="nombre">
-                            <label>Nombre de la playlist</label>
-                            <input type="text" name='nombre_play' required>   
-                        </div>
-
-                        <div  class="input-field">
-                            <label class="foto" for="imag">Sube aqui tu foto</label>
-                            <input type="file" id="imag" class="ayuda" name="foto">
-                          
-                        </div>
-                        <div id="terminar" >
-                            <input class="cerrar-popup" type="submit"value="continuar">
-                        </div>
-                    </form>   
+                <div class="input-field" id="nombre">
+                    <label>Nombre de la playlist</label>
+                    <input type="text" name='nombre_play' required>   
                 </div>
+
+                <div  class="input-field">
+                    <label class="foto" for="imag">Sube aqui tu foto</label>
+                    <input type="file" id="imag" class="ayuda" name="foto">
+                    
+                </div>
+                <div id="terminar" >
+                    <input class="cerrar-popup" type="submit"value="continuar">
+                </div>
+
+            </form>   
         </div>
+    </div>
     
-       
-    </main>
-    <script src="/assets/js/popi.js"></script>
 
     <?php
         require 'assets/components/mainFooter.php';
