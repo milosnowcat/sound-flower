@@ -18,6 +18,8 @@
 #up_Footer_Section{
     display: flex;
     flex-direction: row;
+    cursor: pointer;
+    width: fit-content;
 }
 #logo_Footer_Container{
     height: 100%;

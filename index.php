@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/Home.css">
     <script src="assets/js/slider.js" defer></script>
     <script src="assets/js/redirecciones.js" defer></script>
+    <script src="/assets/js/popi.js" defer></script>
     <title>Home</title>
 </head>
 <body>
@@ -114,7 +115,7 @@
                                             $nom = $mostrarD['Nombre'];
                                             ?>
                                             <li onclick="redireccionArtista('<?php echo $nom ?>')" class="box_Covers round_Covers">
-                                                <div class="img_Container_BoxCovers"">
+                                                <div class="img_Container_BoxCovers">
                                                     <img src="<?php echo $img ?>" draggable="false">
                                                 </div>
                                                 <p><?php echo $nom ?></p>
@@ -154,7 +155,7 @@
                                             $nom = $mostrarD['Nombre'];
                                             ?>
                                                 <li onclick="redireccionUsuario(<?php echo $id ?>)" class="box_Covers round_Covers">
-                                                    <div class="img_Container_BoxCovers"">
+                                                    <div class="img_Container_BoxCovers">
                                                         <img src="<?php echo $img ?>" draggable = "false">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -191,7 +192,7 @@
                                             $nom = $mostrarD['Nombre'];
                                             ?>
                                                 <li onclick="redireccionUsuario(<?php echo $id ?>)" class="box_Covers round_Covers">
-                                                    <div class="img_Container_BoxCovers"">
+                                                    <div class="img_Container_BoxCovers">
                                                         <img src="<?php echo $img ?>" draggable = "false">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -227,7 +228,7 @@
                                             $nom1 = $mostrar['Nombre'];
                                             ?>
                                                 <li onclick="redireccionArtista('<?php echo $nom1 ?>')" class="box_Covers round_Covers">
-                                                    <div class="img_Container_BoxCovers"">
+                                                    <div class="img_Container_BoxCovers">
                                                         <img src="<?php echo $img1 ?>">
                                                     </div>
                                                     <p><?php echo $nom1 ?></p>
@@ -270,7 +271,7 @@
 
                                                 ?>
                                                     <li onclick="redireccionAlbum(<?php echo $id1 ?>)" class="box_Covers square_Covers">
-                                                        <div class="img_Container_BoxCovers"">
+                                                        <div class="img_Container_BoxCovers">
                                                             <img src="<?php echo $img1 ?>">
                                                         </div>
                                                         <p><?php echo $nom1 ?></p>
@@ -320,7 +321,7 @@
                                                     // $img1 = $mostrarC['Portada'];
                                                     ?>
                                                         <li onclick="redireccionCancion(<?php echo $id1 ?>)" class="box_Covers square_Covers">
-                                                            <div class="img_Container_BoxCovers"">
+                                                            <div class="img_Container_BoxCovers">
                                                                 <img src="<?php echo $img1 ?>">
                                                                 <i class='bx bx-play-circle' ></i>
                                                             </div>
@@ -408,7 +409,7 @@
                                                 $nom = $mostrarU2['Nombre'];
                                             ?>
                                                 <li onclick="redireccionAlbum(<?php echo $id ?>)" class="box_Covers square_Covers">
-                                                    <div class="img_Container_BoxCovers"">
+                                                    <div class="img_Container_BoxCovers">
                                                         <img src="<?php echo $img ?>">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -445,7 +446,7 @@
                                                 }
                                             ?>
                                                 <li onclick="redireccionAlbum(<?php echo $id ?>)" class="box_Covers square_Covers">
-                                                    <div class="img_Container_BoxCovers"">
+                                                    <div class="img_Container_BoxCovers">
                                                         <img src="<?php echo $img ?>">
                                                     </div>
                                                     <p><?php echo $nom ?></p>
@@ -494,7 +495,7 @@
 
                                                 ?>
                                                     <li onclick="redireccionArtista('<?php echo $nom ?>')" class="box_Covers round_Covers">
-                                                        <div class="img_Container_BoxCovers"">
+                                                        <div class="img_Container_BoxCovers">
                                                             <img src="<?php echo $img ?>">
                                                         </div>
                                                         <p><?php echo $nom ?></p>
@@ -530,7 +531,7 @@
                                                     $nom2 = $RandMostrar2['Nombre']; 
                                                     ?>
                                                     <li onclick="redireccionArtista('<?php echo $nom2 ?>')" class="box_Covers round_Covers">
-                                                        <div class="img_Container_BoxCovers"">
+                                                        <div class="img_Container_BoxCovers">
                                                             <img src="<?php echo $img2 ?>">
                                                         </div>
                                                         <p><?php echo $nom2 ?></p>
@@ -587,7 +588,7 @@
                                             }
                                         ?>
                                             <li onclick="redireccionCancion(<?php echo $id ?>)" class="box_Covers square_Covers">
-                                                <div class="img_Container_BoxCovers"">
+                                                <div class="img_Container_BoxCovers">
                                                     <img src="<?php echo $img ?>">
                                                     <i class='bx bx-play-circle' ></i>
                                                 </div>
@@ -609,36 +610,32 @@
         ?>
     </main>
 
-        <div class="overlay" id="overlay">
-                <div class="popup" id="popup">
-                    <div class="icon">
-                        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i id="cerrar" class='bx bx-x'></i></a>
-                    </div>
-                    <h1>Crea tu playlist</h1>
-                    <form action="assets/php/crear-playlist.php" method='post' class="separado">
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+            <div class="icon">
+                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i id="cerrar" class='bx bx-x'></i></a>
+            </div>
+            <h1>Crea tu playlist</h1>
+            <form action="assets/php/crear-playlist.php" method='post' class="separado">
 
-
-                    
-                        <div class="input-field" id="nombre">
-                            <label>Nombre de la playlist</label>
-                            <input type="text" name='nombre_play' required>   
-                        </div>
-
-                        <div  class="input-field">
-                            <label class="foto" for="imag">Sube aqui tu foto</label>
-                            <input type="file" id="imag" class="ayuda" name="foto">
-                          
-                        </div>
-                        <div id="terminar" >
-                            <input class="cerrar-popup" type="submit"value="continuar">
-                        </div>
-                    </form>   
+                <div class="input-field" id="nombre">
+                    <label>Nombre de la playlist</label>
+                    <input type="text" name='nombre_play' required>   
                 </div>
+
+                <div  class="input-field">
+                    <label class="foto" for="imag">Sube aqui tu foto</label>
+                    <input type="file" id="imag" class="ayuda" name="foto">
+                    
+                </div>
+                <div id="terminar" >
+                    <input class="cerrar-popup" type="submit"value="continuar">
+                </div>
+
+            </form>   
         </div>
+    </div>
     
-       
-    </main>
-    <script src="/assets/js/popi.js"></script>
 
     <?php
         require 'assets/components/mainFooter.php';
