@@ -1,6 +1,5 @@
 <?php
     require_once('assets/php/conexion.php');
-    $_SESSION['id'] = '1';
     $id = $_SESSION['id'];
 
     $selectorIMG = "SELECT Foto FROM usuarios WHERE Id = '$id'";
@@ -31,11 +30,11 @@
         </section>
 
         <nav id="navegation_Conatiner">
-            <form action="" method="post">
+            <form action="/index.php" method="get">
                 <label>
                     <section id="search_Container">
                         <input type="search" 
-                        name="searchHeader"
+                        name="search"
                         placeholder="¿Qué canción quieres escuchar?"
                         >
                     </section>
