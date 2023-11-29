@@ -3,6 +3,13 @@
     if(!isset($_SESSION['id'])){
         header('Location: login.html');
     }
+
+    $search = false;
+
+    if(isset($_GET['search'])) {
+        $search = true;
+        $buscar = $_GET['search'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,6 +61,9 @@
                             <ul class="box_Covers_Container">
                                 <?php
                                     $disqueras = "SELECT * FROM usuarios WHERE Tipo_Usuario = '2'";
+                                    if($search) {
+                                        $disqueras .= " AND Nombre LIKE '%$buscar%'";
+                                    }
                                     $envioD = mysqli_query($conn, $disqueras);
                                     if(mysqli_num_rows($envioD) > 0){
                                         while($mostrarD = mysqli_fetch_assoc($envioD)){
@@ -92,6 +102,10 @@
                             <ul class="box_Covers_Container">
                                 <?php
                                     $disqueras = "SELECT MIN(Id) as Id, Nombre, MIN(Foto) as Foto FROM artistas GROUP BY Nombre";
+                                    if($search) {
+                                        $disqueras .= " HAVING Nombre LIKE '%$buscar%'";
+                                    }
+                                    
                                     $envioD = mysqli_query($conn, $disqueras);
                                     
                                     if(mysqli_num_rows($envioD) > 0){
@@ -130,6 +144,9 @@
                             <ul class="box_Covers_Container">
                                 <?php
                                     $disqueras = "SELECT * FROM usuarios WHERE Tipo_Usuario = '1'";
+                                    if($search) {
+                                        $disqueras .= " AND Nombre LIKE '%$buscar%'";
+                                    }
                                     $envioD = mysqli_query($conn, $disqueras);
                                     if(mysqli_num_rows($envioD) > 0){
                                         while($mostrarD = mysqli_fetch_assoc($envioD)){
@@ -164,6 +181,9 @@
                             <ul class="box_Covers_Container">
                                 <?php
                                     $disqueras = "SELECT * FROM usuarios WHERE Tipo_Usuario = '0'";
+                                    if($search) {
+                                        $disqueras .= " AND Nombre LIKE '%$buscar%'";
+                                    }
                                     $envioD = mysqli_query($conn, $disqueras);
                                     if(mysqli_num_rows($envioD) > 0){
                                         while($mostrarD = mysqli_fetch_assoc($envioD)){

@@ -7,7 +7,7 @@
 }
 body{
     width: 100vw;
-    height: 100%;
+    height: 110%;
     background: linear-gradient(180deg, #000 0%, #000 0.01%, #3f0e53 100%);
     font-family: consolas;
 }

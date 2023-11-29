@@ -1,18 +1,15 @@
 <link rel="stylesheet" href="assets/components/mainFooter.css">
 <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 <script src="assets/js/redirecciones.js"></script>
-
 <footer id="main_Footer">
     <section onclick="redireccionIndex()" id="up_Footer_Section">
         <div id="logo_Footer_Container">
-            <img src="/assets/img/logo.svg">
+            <img src=/assets/img/logo.svg>
         </div>
         <div id="name_Container">
             <h1>SOUND FLOWER</h1>
         </div>
     </section>
-
-
     <section id="middle_Footer_Section">
         <article id="middle_left_Container">
             <hr>
