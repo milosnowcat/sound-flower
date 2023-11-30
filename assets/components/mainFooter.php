@@ -23,7 +23,7 @@
         <article id="middle_center_Container">
             <hr>
             <div>
-                <!-- <a href="#">Terminos y Condiciones</a> -->
+                <a href="tyc.php">Terminos y Condiciones</a>
                 <!-- <a href="#">Aviso de Privacidad</a> -->
                 <!-- <a href="#">Acerca de Nosotros</a> -->
             </div>

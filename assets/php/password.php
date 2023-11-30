@@ -1,4 +1,4 @@
-<?php
+<?php //cambia la contraseña
     require_once('conexion.php');
 
     $correo=$_POST['cambiaCorreo'];

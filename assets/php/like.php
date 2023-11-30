@@ -1,4 +1,4 @@
-<?php
+<?php //hace que el usuario pueda darle likes tanto a canciones como a albumes
 session_start();
 if(!isset($_SESSION['id']) || !isset($_GET['cancion'])){
     header('Location: /login.html');
