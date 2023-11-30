@@ -4,6 +4,7 @@
         header('Location: login.html');
     }
 
+    //verifica si se ha hecho una busqueda y la obtiene
     $search = false;
 
     if(isset($_GET['search'])) {
@@ -41,14 +42,15 @@
             $mainid = $_SESSION['id'];
             $usuario = $_SESSION['tipo'];
             
-            if($usuario == 3){
+            if($usuario == 3){ //el usuario es un administrador
                 ?>
                     <section class="containers_Home superiors_Container_Home"> <!-- CONTENEDOR DE TODAS LAS DISQUERAS -->
                         <h1>Disqueras</h1>
                         <ul class="box_Covers_Container">
                             <?php
                                 $disqueras = "SELECT * FROM usuarios WHERE Tipo_Usuario = '2'";
-                                if($search) {
+                                if($search) { //verifica si se hizo una busqueda y si es asi, añade una condicion
+                                              //adicional para mostrar los resultados de la busqueda
                                     $disqueras .= " AND Nombre LIKE '%$buscar%'";
                                 }
                                 $envioD = mysqli_query($conn, $disqueras);
@@ -88,6 +90,7 @@
                         <h1>Artistas</h1>
                         <ul class="box_Covers_Container">
                             <?php
+                                //filtra por nombre para que no halla elementos repetidos
                                 $disqueras = "SELECT MIN(Id) as Id, Nombre, MIN(Foto) as Foto FROM artistas GROUP BY Nombre";
                                 if($search) {
                                     $disqueras .= " HAVING Nombre LIKE '%$buscar%'";
@@ -200,7 +203,7 @@
                     </section>
                 <?php
             }
-            elseif($usuario == 2){
+            elseif($usuario == 2){ //el usuario es una disquera
                 ?>
                     <section class="containers_Home superiors_Container_Home"> <!-- CONTENEDOR DE TODOS LOS ARTISTAS -->
                         <h1>Artistas</h1>
@@ -343,7 +346,7 @@
                     </section>
                 <?php
             }
-            else{
+            else{ //puede ser artista, usuario suscrito y usuario no suscrito
                 ?>
                     <section id="playlists_Container"> <!-- CONTENEDOR DE TODAS LAS PLAYLISTS -->
                         <h1>Playlists</h1>
@@ -617,8 +620,8 @@
         ?>
     </main>
 
-    <div class="overlay" id="overlay">
-        <div class="popup" id="popup">
+    <div class="overlay" id="overlay"> <!-- cONTEDOR QUE SE SOBREPONE A LA PAGINA -->
+        <div class="popup" id="popup"> <!-- CONTEDOR PARA CREAR UNA PLAYLIST -->
             <div class="icon">
                 <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i id="cerrar" class='bx bx-x'></i></a>
             </div>
