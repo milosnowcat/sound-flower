@@ -36,7 +36,7 @@
         </form>
     </nav>
 
-    <section onclick="redireccionUsuario(<?php echo $id ?>)" id="user_Container">
+    <section onclick="redireccionUsuario()" id="user_Container">
         <img src="<?php echo $img ?>">                    
     </section>
 </header>

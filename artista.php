@@ -4,16 +4,21 @@
         header('Location: login.html');
     }
     require_once('assets/php/conexion.php');
-    $usuario=$_SESSION['id'];
-    $current = true;
-    if(isset($_GET['id'])) {
-        $usuario = $_GET['id'];
-        $current = false;
+    if(isset($_GET['nombre'])) {
+        $artista = $_GET['nombre'];
+    } else {
+        header("Location: /");
     }
-    $sql="SELECT * FROM usuarios WHERE Id = '$usuario'";
+    $sql="SELECT * FROM artistas WHERE Nombre = '$artista'";
     $envio=mysqli_query($conn,$sql);
     $mostrar = mysqli_fetch_array($envio);
-    $sqlcancion="SELECT * FROM playlists WHERE Id_Usuario = $usuario AND Id_Publica = 1";
+    $sqlcancion="SELECT DISTINCT alb.Id, alb.Nombre, alb.Portada, alb.Id_Artista
+    FROM albumes alb
+    JOIN canciones can ON alb.Id = can.Id_Album
+    JOIN cancion_artista ca ON can.Id = ca.Id_Cancion
+    JOIN artistas art ON ca.Id_Artista = art.Id
+    WHERE art.Nombre = '$artista'";
+    
     $enviocnacion=mysqli_query($conn,$sqlcancion);
 ?>
 
@@ -34,7 +39,7 @@
             <article class="foto_perfil">
                 <form id="fotoUsuario" enctype="multipart/form-data">
                     <input type="file" name="foto_usuario" id="fot" accept="image/*" >
-                    <label for="fot"><img src="<?php echo $mostrar['Foto']; ?>" alt="" id="preview"></label>
+                    <label for="fot"><img src="<?php echo $mostrar['Foto']; ?>" alt=""></label>
                 </form>
             </article>
             <article class="nombre_perfil">
@@ -44,23 +49,15 @@
         
         <section class="body_perfil">
             <h2>Descripccion</h2>
-            <textarea name="" id="desc" cols="30" rows="10">
-            </textarea>
+            <textarea name="" id="desc" cols="30" rows="10"><?php echo $mostrar['Descripcion'] ?></textarea>
             <br>
-            <?php
-                if($current) {
-            ?>
-                <a class="hov" href="password.html">cambiar contraseña</a>
-                <br><br>
-                <a class="hov" href="pago.php">Renovar suscripción</a>
-            <?php
-                }
-            ?>
+            <br>
+            <br>
             <section class="playlist">
                 <div>
                 <?php while($playlist = mysqli_fetch_array($enviocnacion)){ ?>
-                    <a href="/playlist.php?id=<?php echo $playlist['Id']; ?>" class="cancion">
-                        <img class="play-foto" src="<?php echo $playlist['Foto']; ?>" alt="">
+                    <a href="/album.php?id=<?php echo $playlist['Id']; ?>" class="cancion">
+                        <img class="play-foto" src="<?php echo $playlist['Portada']; ?>" alt="">
                     </a>
                 <?php } ?>
                 </div>
