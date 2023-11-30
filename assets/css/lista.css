@@ -190,3 +190,10 @@ em{
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+.alb{
+    float: right;
+    margin-right: 1rem;
+}
+.h5alb{
+    width: 7rem;
+}
