@@ -448,7 +448,7 @@
 
                                             shuffle($ids);
 
-                                            for($i = 0; $i < 10; $i++){ 
+                                            for($i = 0; $i < 10 && $i < count($ids); $i++){
                                                 $randomId = $ids[$i];
 
                                                 $query = "SELECT * FROM albumes WHERE id = '$randomId'";
@@ -590,7 +590,7 @@
                                         shuffle($ids3);
 
 
-                                        for($i = 0; $i < 10; $i++){ 
+                                        for($i = 0; $i < 10 && $i < count($ids3); $i++){ 
                                             $randomId3 = $ids3[$i];
 
                                             $query3 = "SELECT * FROM canciones WHERE id = '$randomId3'";
