@@ -62,7 +62,7 @@
                 </a>
                 <h5 class="h5alb">N.Canciones <?php echo $nCanciones?> </h5>
                 
-                <a class="alb" href="assets/php/like.php?album=<?php echo $mostrarCan['Id'] ?>"><i class='bx bx-like'></i></a>
+                <a class="alb" href="assets/php/like.php?album=<?php echo $numeroPlay ?>"><i class='bx bx-like'></i></a>
                 
                 <article class="nomm">
                     <h5> <?php echo $creador ?> </h5>
