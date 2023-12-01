@@ -167,20 +167,20 @@
                     <div class="audioContainer__buttons">
                         <button onclick="document.getElementById('player').volume -= 0.1"
                             class="audioContainer__buttons-volumen">
-                            <img class="audioContainer__buttons-volumen-img" src="playerSvg/volume-low-solid.svg" alt="">
+                            <img class="audioContainer__buttons-volumen-img" src="/assets/img/player/volume-low-solid.svg" alt="">
                         </button>
                         <button id="before__button" class="audioContainer__buttons-change" onclick="reproducirCancion(<?php echo ($songId . ', \'' . $type. '\', ' . $songNumber-1); ?>)">
-                            <img class="audioContainer__buttons-change-img" src="playerSvg/forward-solid.svg" alt="">
+                            <img class="audioContainer__buttons-change-img" src="/assets/img/player/forward-solid.svg" alt="">
                         </button>
                         <button id="buttonAudio" class="audioContainer__buttons-play">
                             <img id="jajawe" class="audioContainer__buttons-play-img" src="" alt="">
                         </button>
                         <button id="next__button" class="audioContainer__buttons-change" onclick="reproducirCancion(<?php echo ($songId . ', \'' . $type. '\', ' . $songNumber+1); ?>)">
-                            <img class="audioContainer__buttons-change-img" src="playerSvg/forward-solid.svg" alt="">
+                            <img class="audioContainer__buttons-change-img" src="/assets/img/player/forward-solid.svg" alt="">
                         </button>
                         <button onclick="document.getElementById('player').volume += 0.1"
                             class="audioContainer__buttons-volumen">
-                            <img class="audioContainer__buttons-volumen-img" src="playerSvg/volume-high-solid.svg" alt="">
+                            <img class="audioContainer__buttons-volumen-img" src="/assets/img/player/volume-high-solid.svg" alt="">
                         </button>
                     </div>
                 </div>

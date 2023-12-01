@@ -1,6 +1,6 @@
 let player = document.getElementById('player');
 let pausa = 1;
-let imgPlay = "playerSvg/play-solid.svg";
+let imgPlay = "/assets/img/player/play-solid.svg";
 var currentTime = player.currentTime;
 let duration;
 let canciones = document.getElementById('player').src;
@@ -15,10 +15,10 @@ document.getElementById('buttonAudio').addEventListener("click", function () {
     pausa += 1;
     if (pausa % 2 == 0) {
         player.pause();
-        imgPlay = "playerSvg/play-solid.svg";
+        imgPlay = "/assets/img/player/play-solid.svg";
     } else {
         player.play();
-        imgPlay = "playerSvg/pause-solid.svg";
+        imgPlay = "/assets/img/player/pause-solid.svg";
     }
     document.getElementById("jajawe").src=imgPlay;
 });
@@ -40,7 +40,7 @@ document.getElementById("before__button").addEventListener("click", function () 
     i--;
     document.getElementById("player").src=canciones[i];
     document.getElementById('player').play();
-    imgPlay = "playerSvg/pause-solid.svg";
+    imgPlay = "/assets/img/player/pause-solid.svg";
     document.getElementById("jajawe").src=imgPlay;
 });
 
@@ -51,7 +51,7 @@ document.getElementById("next__button").addEventListener("click", function () {
     i++;
     document.getElementById("player").src=canciones[i];
     document.getElementById('player').play();
-    imgPlay = "playerSvg/pause-solid.svg";
+    imgPlay = "/assets/img/player/pause-solid.svg";
     document.getElementById("jajawe").src=imgPlay;
 });
 
