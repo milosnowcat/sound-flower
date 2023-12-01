@@ -32,3 +32,4 @@
             echo'<script> alert("ERROR :b") </script>';
         }
     }
+?>

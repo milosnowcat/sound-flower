@@ -19,7 +19,7 @@
 /* aqui esta toda la informacion de la cancion reproduciendose */
 .currentSong {
     height: 100%;
-    width: 80%;
+    width: 90%;
     /* background-color: olive; */
     display: flex;
     flex-direction: column;
@@ -29,9 +29,23 @@
 
 /* primer div */
 .currentSongImg {
-    height: 60%;
+    max-height: 60%;
     width: 60%;
     /* background-color: pink; */
+}
+
+/* segundo div */
+.namesContainer {
+    max-height: 15%;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: violet; */
+    padding: 4%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .namesSong {
@@ -40,6 +54,7 @@
     margin-bottom: 1%;
     margin-top: 1%;
     color: white;
+    text-align: center;
 }
 
 .namesArtist {
@@ -47,21 +62,117 @@
     font-size: medium;
     margin-top: 1%;
     color: #C0BFC0;
+    text-align: center;
 }
 
-/* segundo div */
-.namesContainer {
-    height: 10%;
-    width: 60%;
+/* tercer div */
+.audioContainer {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     align-items: center;
-    justify-content: center;
-    /* background-color: violet; */
-    padding: 4%;
-    box-sizing: border-box;
+    width: 60%;
+    margin-top: 1rem;
 }
-
+  
+.audioContainer .audioContainer__bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.audioContainer .audioContainer__bar .audioContainer__bar-time {
+    color: white;
+    font-size: 0.8rem;
+    display: block;
+    width: 2.5rem;
+}
+  
+.audioContainer .audioContainer__bar .audioContainer__bar-progress {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 0.3rem;
+    border-radius: 999px;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    -ms-border-radius: 999px;
+    -o-border-radius: 999px;
+    cursor: pointer;
+}
+  
+.audioContainer .audioContainer__bar .audioContainer__bar-progress-range {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 0%;
+    height: 0.3rem;
+    border-radius: 999px;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    -ms-border-radius: 999px;
+    -o-border-radius: 999px;
+    transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+  
+.audioContainer .audioContainer__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+  
+.audioContainer .audioContainer__buttons .audioContainer__buttons-volumen,
+.audioContainer .audioContainer__buttons .audioContainer__buttons-change,
+.audioContainer .audioContainer__buttons .audioContainer__buttons-play,
+.audioContainer .audioContainer__others .audioContainer__others-button {
+    background: none;
+    display: block;
+    width: min-content;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+}
+  
+.audioContainer .audioContainer__buttons .audioContainer__buttons-volumen:hover,
+.audioContainer .audioContainer__buttons .audioContainer__buttons-change:hover,
+.audioContainer .audioContainer__buttons .audioContainer__buttons-play:hover,
+.audioContainer .audioContainer__others .audioContainer__others-button:hover {
+    opacity: 0.8;
+}
+  
+.audioContainer .audioContainer__buttons .audioContainer__buttons-volumen-img {
+    height: 1rem;
+}
+  
+.audioContainer .audioContainer__buttons .audioContainer__buttons-change-img {
+    height: 2rem;
+}
+  
+.audioContainer .audioContainer__buttons #before__button {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+  
+.audioContainer .audioContainer__buttons .audioContainer__buttons-play-img {
+    width: 3rem;
+    height: 3rem;
+}
 
 /* ______seccion donde va la fila de reproduccion_______ */
 .playQueue {
