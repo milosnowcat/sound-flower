@@ -342,7 +342,7 @@
                                 $randomSongsQuery = "SELECT Id, Nombre, Id_Album, Duracion
                                                         FROM canciones
                                                         WHERE Id != '$songId'
-                                                        ORDER BY RAND()"; 
+                                                        ORDER BY RAND()";
                                 $randomSongsResult = mysqli_query($conn, $randomSongsQuery);
 
                                 if ($randomSongsResult) {
@@ -379,7 +379,7 @@
                                             <div class="songQueueContainer">
                                                 <!-- contenedor imagen/nombre/artista -->
                                                 <section class="artistInfo">
-                                                    <button onclick="reproducirCancion(<?php echo $id; ?>)" class="imgContainer">
+                                                    <button onclick="reproducirCancion(<?php echo ($id - 1 . ', \'c\', ' . $numero_cancion); ?>)" class="imgContainer">
                                                         <!-- Ajusta las rutas y formatos según tu aplicación -->
                                                         <img class="albumImg" src="<?php echo $portada_album; ?>" alt="">
                                                     </button>
