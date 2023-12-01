@@ -11,6 +11,7 @@
         $active=$_POST['nombre'];
         $sql="UPDATE usuarios SET Tipo_Usuario=1 WHERE Id ='$usuario'";
         $env=mysqli_query($conn,$sql);
+        $_SESSION['tipo'] = 1;
         echo '<script> alert("Su pago se realizo con exito");
         location.href = "/" </script>';
     }
