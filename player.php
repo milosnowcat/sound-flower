@@ -379,7 +379,7 @@
                                             <div class="songQueueContainer">
                                                 <!-- contenedor imagen/nombre/artista -->
                                                 <section class="artistInfo">
-                                                    <button onclick="reproducirCancion(<?php echo $id; ?>)" class="imgContainer">
+                                                    <button onclick="reproducirCancion(<?php echo $id - 1 . ', \'c\', 1'; ?>)" class="imgContainer">
                                                         <!-- Ajusta las rutas y formatos según tu aplicación -->
                                                         <img class="albumImg" src="<?php echo $portada_album; ?>" alt="">
                                                     </button>
