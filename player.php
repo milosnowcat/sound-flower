@@ -169,13 +169,13 @@
                             class="audioContainer__buttons-volumen">
                             <img class="audioContainer__buttons-volumen-img" src="/assets/img/player/volume-low-solid.svg" alt="">
                         </button>
-                        <button id="before__button" class="audioContainer__buttons-change" onclick="reproducirCancion(<?php echo ($songId . ', \'' . $type. '\', ' . $songNumber-1); ?>)">
+                        <button id="before__button" class="audioContainer__buttons-change" onclick="reproducirCancion(<?php echo ($songId . ', \'' . $type. '\', ' . ($songNumber-1)); ?>)">
                             <img class="audioContainer__buttons-change-img" src="/assets/img/player/forward-solid.svg" alt="">
                         </button>
                         <button id="buttonAudio" class="audioContainer__buttons-play">
                             <img id="jajawe" class="audioContainer__buttons-play-img" src="" alt="">
                         </button>
-                        <button id="next__button" class="audioContainer__buttons-change" onclick="reproducirCancion(<?php echo ($songId . ', \'' . $type. '\', ' . $songNumber+1); ?>)">
+                        <button id="next__button" class="audioContainer__buttons-change" onclick="reproducirCancion(<?php echo ($songId . ', \'' . $type. '\', ' . ($songNumber+1)); ?>)">
                             <img class="audioContainer__buttons-change-img" src="/assets/img/player/forward-solid.svg" alt="">
                         </button>
                         <button onclick="document.getElementById('player').volume += 0.1"
@@ -379,7 +379,7 @@
                                             <div class="songQueueContainer">
                                                 <!-- contenedor imagen/nombre/artista -->
                                                 <section class="artistInfo">
-                                                    <button onclick="reproducirCancion(<?php echo $id - 1 . ', \'c\', 1'; ?>)" class="imgContainer">
+                                                    <button onclick="reproducirCancion(<?php echo (($id - 1) . ', \'c\', 1'); ?>)" class="imgContainer">
                                                         <!-- Ajusta las rutas y formatos según tu aplicación -->
                                                         <img class="albumImg" src="<?php echo $portada_album; ?>" alt="">
                                                     </button>
